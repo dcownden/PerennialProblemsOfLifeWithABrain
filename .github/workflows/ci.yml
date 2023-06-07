@@ -36,6 +36,3 @@ jobs:
         run: |
           echo Add other actions to run-tests,
           echo test, and deploy your project.
-
-      #- name: Execute tests
-      #  run: make test
