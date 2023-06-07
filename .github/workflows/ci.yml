@@ -1,0 +1,41 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+env:
+  NB_KERNEL: python3
+  MPLBACKEND: Agg
+  
+jobs:
+  run-tests:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+      - uses: actions/checkout@v3
+      
+      - name: Setup Python
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10' 
+
+      - name: Install dependencies 
+        run:
+          pip install pytest -r requirements.txt
+          jupyter kernelspec list
+          
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to run-tests,
+          echo test, and deploy your project.
+
+      #- name: Execute tests
+      #  run: make test
