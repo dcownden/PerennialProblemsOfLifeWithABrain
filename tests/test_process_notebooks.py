@@ -9,7 +9,7 @@ def cmd():
 
 def test_raises_not_implemented_error(cmd):
 
-    nb = "tutorials/raises_notimplemented_error.ipynb"
+    nb = "sequences/test_sequences/raises_notimplemented_error.ipynb"
     cmdline = cmd + ["--check-only", "--execute", nb]
     res = run(cmdline, capture_output=True)
     assert not res.returncode
@@ -18,7 +18,7 @@ def test_raises_not_implemented_error(cmd):
 
 def test_raises_name_error(cmd):
 
-    nb = "tutorials/raises_name_error.ipynb"
+    nb = "sequences/test_sequences/raises_name_error.ipynb"
     cmdline = cmd + ["--check-only", "--execute", nb]
     res = run(cmdline, capture_output=True)
     assert res.returncode
@@ -29,7 +29,7 @@ def test_raises_name_error(cmd):
 
 def test_executed_out_of_order(cmd):
 
-    nb = "tutorials/executed_out_of_order.ipynb"
+    nb = "sequences/test_sequences/executed_out_of_order.ipynb"
     cmdline = cmd + ["--check-only", nb]
     res = run(cmdline, capture_output=True)
     assert res.returncode
@@ -39,7 +39,7 @@ def test_executed_out_of_order(cmd):
 
 def test_executed_partially(cmd):
 
-    nb = "tutorials/executed_partially.ipynb"
+    nb = "sequences/test_sequences/executed_partially.ipynb"
     cmdline = cmd + ["--check-only", "--check-execution", nb]
     res = run(cmdline, capture_output=True)
     assert res.returncode
@@ -49,7 +49,7 @@ def test_executed_partially(cmd):
 
 def test_executed_with_error(cmd):
 
-    nb = "tutorials/executed_with_error.ipynb"
+    nb = "sequences/test_sequences/executed_with_error.ipynb"
     cmdline = cmd + ["--check-only", "--check-execution", nb]
     res = run(cmdline, capture_output=True)
     assert res.returncode
@@ -59,7 +59,7 @@ def test_executed_with_error(cmd):
 
 def test_executed_successfully(cmd):
 
-    nb = "tutorials/executed_successfully.ipynb"
+    nb = "sequences/test_sequences/executed_successfully.ipynb"
     cmdline = cmd + ["--check-only", "--check-execution", nb]
     res = run(cmdline, capture_output=True)
     assert not res.returncode
