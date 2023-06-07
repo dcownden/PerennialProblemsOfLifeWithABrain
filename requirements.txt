@@ -3,7 +3,7 @@ decorator
 flake8
 fuzzywuzzy[speedup]
 ipywidgets
-Jinja2==3.0.0
+Jinja2
 jupyter-client
 matplotlib
 nbconvert
