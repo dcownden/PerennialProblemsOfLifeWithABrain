@@ -253,7 +253,7 @@ def extract_solutions(nb, nb_dir, nb_name):
     solution_snippets = {}
 
     nb_cells = nb.get("cells", [])
-    for i, cell in enumerate(nb_cells):
+    for cell in nb_cells:
 
         if has_solution(cell):
 
@@ -265,9 +265,9 @@ def extract_solutions(nb, nb_dir, nb_name):
 
             # Extract image data from the cell outputs
             cell_images = {}
-            for j, output in enumerate(cell.get("outputs", [])):
+            for i, output in enumerate(cell.get("outputs", [])):
 
-                fname = f"static/{nb_name}_Solution_{cell_id}_{j}.png"
+                fname = f"static/{nb_name}_Solution_{cell_id}_{i}.png"
                 try:
                     image_data = a2b_base64(output["data"]["image/png"])
                 except KeyError:
@@ -322,7 +322,7 @@ def extract_solutions(nb, nb_dir, nb_name):
 def instructor_version(nb, nb_dir, nb_name):
     """Convert notebook to instructor notebook."""
     nb = deepcopy(nb)
-    _, tutorial_dir = os.path.split(nb_dir)
+    #_, tutorial_dir = os.path.split(nb_dir)
 
     nb_cells = nb.get("cells", [])
     for i, cell in enumerate(nb_cells):

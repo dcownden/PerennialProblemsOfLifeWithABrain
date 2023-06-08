@@ -1,10 +1,24 @@
-name: CI
+name: test_ci
 
 on:
   push:
     branches: [ "main" ]
+    paths: 
+      - 'ci_scripts/**.py'
+      - 'tests/**.py'
+      - 'sequences/test_sequences/**.py'
+      - 'Makefile'
+      - 'requirements.txt'
+      - '.github/workflows/test_ci.yml'
   pull_request:
     branches: [ "main" ]
+    paths:
+      - 'ci_scripts/**.py'
+      - 'tests/**.py'
+      - 'sequences/test_sequences/**.py'
+      - 'Makefile'
+      - 'requirements.txt'
+      - '.github/workflows/test_ci.yml'
   workflow_dispatch:
 
 env:
