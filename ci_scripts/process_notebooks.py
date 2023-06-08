@@ -133,14 +133,14 @@ def main(arglist):
         # Ensure that Colab metadata dict exists and enforce some settings
         add_colab_metadata(nb, nb_name)
 
-        # Write the original notebook back to disk, clearing outputs only for tutorials
+        # Write the original notebook back to disk, clearing outputs only for sequences
         print(f"Writing complete notebook to {nb_path}")
         with open(nb_path, "w") as f:
-            nb_clean = clean_notebook(nb, clear_outputs=nb_path.startswith("tutorials"))
+            nb_clean = clean_notebook(nb, clear_outputs=nb_path.startswith("sequences"))
             nbformat.write(nb_clean, f)
 
-        # if the notebook is not in tutorials, skip the creation/update of the student, static, solutions directories
-        if not nb_path.startswith("tutorials"):
+        # if the notebook is not in sequences, skip the creation/update of the student, static, solutions directories
+        if not nb_path.startswith("sequences"):
           continue
 
         # Create subdirectories, if they don't exist
@@ -247,7 +247,7 @@ def check_execution(executor, nb, raise_fast):
 def extract_solutions(nb, nb_dir, nb_name):
     """Convert solution cells to markdown; embed images from Python output."""
     nb = deepcopy(nb)
-    _, tutorial_dir = os.path.split(nb_dir)
+    _, sequence_dir = os.path.split(nb_dir)
 
     static_images = {}
     solution_snippets = {}
@@ -283,14 +283,14 @@ def extract_solutions(nb, nb_dir, nb_name):
             # Convert the solution cell to markdown,
             # Insert a link to the solution snippet script on github,
             # and embed the image as a link to static file (also on github)
-            py_url = f"{GITHUB_TREE_URL}/tutorials/{tutorial_dir}/{py_fname}"
+            py_url = f"{GITHUB_TREE_URL}/sequences/{sequence_dir}/{py_fname}"
             new_source = f"[*Click for solution*]({py_url})\n\n"
 
             if cell_images:
                 new_source += "*Example output:*\n\n"
                 for f, img in cell_images.items():
 
-                    url = f"{GITHUB_RAW_URL}/tutorials/{tutorial_dir}/{f}"
+                    url = f"{GITHUB_RAW_URL}/sequences/{sequence_dir}/{f}"
 
                     # Handle matplotlib retina mode
                     dpi_w, dpi_h = img.info["dpi"]
@@ -322,7 +322,7 @@ def extract_solutions(nb, nb_dir, nb_name):
 def instructor_version(nb, nb_dir, nb_name):
     """Convert notebook to instructor notebook."""
     nb = deepcopy(nb)
-    #_, tutorial_dir = os.path.split(nb_dir)
+    #_, sequence_dir = os.path.split(nb_dir)
 
     nb_cells = nb.get("cells", [])
     for i, cell in enumerate(nb_cells):
@@ -495,16 +495,16 @@ def test_redirect_colab_badge_to_main_branch():
 
     original = (
         "\"https://colab.research.google.com/github/dcownden/"
-        "PerennialProblemsOfLifeWithABrain/blob/W1D1-updates/tutorials/W1D1_ModelTypes/"
-        "W1D1_Tutorial1.ipynb\""
+        "PerennialProblemsOfLifeWithABrain/blob/W1D1-updates/sequences/W1D1_ModelTypes/"
+        "W1D1_sequence1.ipynb\""
     )
     cell = {"source": original}
     redirect_colab_badge_to_main_branch(cell)
 
     expected = (
         "\"https://colab.research.google.com/github/dcownden/"
-        "PerennialProblemsOfLifeWithABrain/blob/main/tutorials/W1D1_ModelTypes/"
-        "W1D1_Tutorial1.ipynb\""
+        "PerennialProblemsOfLifeWithABrain/blob/main/sequences/W1D1_ModelTypes/"
+        "W1D1_sequence1.ipynb\""
     )
 
     assert cell["source"] == expected
@@ -514,10 +514,10 @@ def redirect_colab_badge_to_student_version(cell):
     """Modify the Colab badge to point at student version of the notebook."""
     cell_text = cell["source"]
     # redirect the colab badge
-    p = re.compile(r"(^.+blob/" + MAIN_BRANCH + r"/tutorials/W\dD\d\w+)/(\w+\.ipynb.+)")
+    p = re.compile(r"(^.+blob/" + MAIN_BRANCH + r"/sequences/W\dD\d\w+)/(\w+\.ipynb.+)")
     cell_text = p.sub(r"\1/student/\2", cell_text)
     # redirect the kaggle badge
-    p = re.compile(r"(^.+/tutorials/W\dD\d\w+)/(\w+\.ipynb.+)")
+    p = re.compile(r"(^.+/sequences/W\dD\d\w+)/(\w+\.ipynb.+)")
     cell["source"] = p.sub(r"\1/student/\2", cell_text)
 
 
@@ -525,10 +525,10 @@ def redirect_colab_badge_to_instructor_version(cell):
     """Modify the Colab badge to point at instructor version of the notebook."""
     cell_text = cell["source"]
     # redirect the colab badge
-    p = re.compile(r"(^.+blob/" + MAIN_BRANCH + r"/tutorials/W\dD\d\w+)/(\w+\.ipynb.+)")
+    p = re.compile(r"(^.+blob/" + MAIN_BRANCH + r"/sequences/W\dD\d\w+)/(\w+\.ipynb.+)")
     cell_text = p.sub(r"\1/instructor/\2", cell_text)
     # redirect the kaggle badge
-    p = re.compile(r"(^.+/tutorials/W\dD\d\w+)/(\w+\.ipynb.+)")
+    p = re.compile(r"(^.+/sequences/W\dD\d\w+)/(\w+\.ipynb.+)")
     cell["source"] = p.sub(r"\1/instructor/\2", cell_text)
 
 
@@ -536,8 +536,8 @@ def test_redirect_colab_badge_to_student_version():
 
     original = (
         "\"https://colab.research.google.com/github/dcownden/"
-        "PerennialProblemsOfLifeWithABrain/blob/main/tutorials/W1D1_ModelTypes/"
-        "W1D1_Tutorial1.ipynb\""
+        "PerennialProblemsOfLifeWithABrain/blob/main/sequences/W1D1_ModelTypes/"
+        "W1D1_sequence1.ipynb\""
     )
 
     cell = {"source": original}
@@ -545,8 +545,8 @@ def test_redirect_colab_badge_to_student_version():
 
     expected = (
         "\"https://colab.research.google.com/github/dcownden/"
-        "PerennialProblemsOfLifeWithABrain/blob/main/tutorials/W1D1_ModelTypes/student/"
-        "W1D1_Tutorial1.ipynb\""
+        "PerennialProblemsOfLifeWithABrain/blob/main/sequences/W1D1_ModelTypes/student/"
+        "W1D1_sequence1.ipynb\""
     )
 
     assert cell["source"] == expected

@@ -6,7 +6,7 @@ import traceback
 import json
 from bs4 import BeautifulSoup
 
-REPO = os.environ.get("NMA_REPO", "precourse")
+REPO = os.environ.get("PPLWB_REPO", "precourse")
 
 def main():
     with open('tutorials/materials.yml') as fh:

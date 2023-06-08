@@ -9,7 +9,7 @@ import sys
 import argparse
 import subprocess
 
-REPO = os.environ.get("NMA_REPO", "course-content")
+REPO = os.environ.get("PPLWB_REPO", "course-content")
 
 def main(arglist):
 
@@ -81,7 +81,7 @@ def make_colab_badge(branch, nb_dir, nb_fname, student=False):
         nb_dir = os.path.join(nb_dir, "student")
     url = (
         "https://colab.research.google.com/"
-        f"github/NeuromatchAcademy/{REPO}/blob/"
+        f"github/dcownden/{REPO}/blob/"
         f"{branch}/{nb_dir}/{nb_fname}"
     )
     return f"[![{alt_text}]({badge_svg})]({url})"
@@ -90,7 +90,7 @@ def make_colab_badge(branch, nb_dir, nb_fname, student=False):
 def parse_args(arglist):
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("--branch", default=os.environ.get("NMA_MAIN_BRANCH", "main"))
+    parser.add_argument("--branch", default=os.environ.get("PPLWB_MAIN_BRANCH", "main"))
     parser.add_argument("--output")
     parser.add_argument("notebooks", nargs="*")
     return parser.parse_args(arglist)

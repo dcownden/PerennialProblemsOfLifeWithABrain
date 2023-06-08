@@ -7,8 +7,8 @@ import os
 from glob import glob
 import yaml
 
-REPO = os.environ.get("NMA_REPO", "course-content")
-MAIN_BRANCH = os.environ.get("NMA_MAIN_BRANCH", "main")
+REPO = os.environ.get("PPLWB_REPO", "course-content")
+MAIN_BRANCH = os.environ.get("PPLWB_MAIN_BRANCH", "main")
 
 
 def main():
@@ -97,7 +97,7 @@ def main():
         # Add further reading
         further_reading_file = f"{day_path}/further_reading.md"
         if os.path.exists(further_reading_file):
-            reading_url = f"https://github.com/NeuromatchAcademy/{REPO}/blob/{MAIN_BRANCH}/{further_reading_file}"
+            reading_url = f"https://github.com/dcownden/{REPO}/blob/{MAIN_BRANCH}/{further_reading_file}"
             course_readme_text.extend([f"[Further Reading]({reading_url})"])
             course_readme_text.append("\n")
 
@@ -228,7 +228,7 @@ def make_colab_badge(local_path):
     alt_text = "Open In Colab"
     badge_svg = "https://colab.research.google.com/assets/colab-badge.svg"
     service = "https://colab.research.google.com"
-    url_base = f"{service}/github/NeuromatchAcademy/{REPO}/blob/{MAIN_BRANCH}"
+    url_base = f"{service}/github/dcownden/{REPO}/blob/{MAIN_BRANCH}"
     return make_badge(alt_text, badge_svg, service, local_path, url_base)
 
 
@@ -237,7 +237,7 @@ def make_kaggle_badge(local_path):
     alt_text = "Open In kaggle"
     badge_svg = "https://kaggle.com/static/images/open-in-kaggle.svg"
     service = "https://kaggle.com/kernels/welcome?src="
-    url_base = f"{service}https://raw.githubusercontent.com/NeuromatchAcademy/{REPO}/{MAIN_BRANCH}"
+    url_base = f"{service}https://raw.githubusercontent.com/dcownden/{REPO}/{MAIN_BRANCH}"
     return make_badge(alt_text, badge_svg, service, local_path, url_base)
 
 
@@ -246,7 +246,7 @@ def make_nbviewer_badge(local_path):
     alt_text = "View the notebook"
     badge_svg = "https://img.shields.io/badge/render-nbviewer-orange.svg"
     service = "https://nbviewer.jupyter.org"
-    url_base = f"{service}/github/NeuromatchAcademy/{REPO}/blob/{MAIN_BRANCH}"
+    url_base = f"{service}/github/dcownden/{REPO}/blob/{MAIN_BRANCH}"
     return make_badge(alt_text, badge_svg, service, f"{local_path}?flush_cache=true", url_base)
 
 

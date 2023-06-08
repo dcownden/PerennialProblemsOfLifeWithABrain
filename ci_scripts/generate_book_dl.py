@@ -6,7 +6,7 @@ import traceback
 import json
 from bs4 import BeautifulSoup
 
-REPO = os.environ.get("NMA_REPO", "course-content-dl")
+REPO = os.environ.get("PPLWB_REPO", "PerennialProblemsOfLifeWithABrain")
 ARG = sys.argv[1]
 
 def main():
@@ -169,7 +169,7 @@ def link_hidden_cells(content):
     updated_cells = cells.copy()
 
     i_updated_cell = 0
-    for i_cell, cell in enumerate(cells):
+    for cell in cells:
         updated_cell = updated_cells[i_updated_cell]
         if "source" not in cell:
             continue
