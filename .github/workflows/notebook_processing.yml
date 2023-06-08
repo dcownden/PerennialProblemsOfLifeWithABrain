@@ -68,7 +68,7 @@ jobs:
           done
 
       - name: Process notebooks on pull request
-        if: ${{ "!contains(env.COMMIT_MESSAGE, 'skip ci')" && github.event_name == 'pull_request' }}
+        if: ${{ !contains(env.COMMIT_MESSAGE, 'skip ci') && github.event_name == 'pull_request' }}
         id: process_notebooks_pr
         run: |
           branch=${{ github.event.pull_request.head.ref }}
@@ -83,7 +83,7 @@ jobs:
           python ci_scripts/make_pr_comment.py $nbs --branch $branch --o comment.txt
 
       - name: Process notebooks on push
-        if: ${{ "!contains(env.COMMIT_MESSAGE, 'skip ci')" && github.event_name == 'push' }}
+        if: ${{ !contains(env.COMMIT_MESSAGE, 'skip ci') && github.event_name == 'push' }}
         id: process_notebooks_push
         run: | 
           branch=${{ github.event.push.head.ref }}
