@@ -1,4 +1,4 @@
-notebook==6.4.8
+notebook==6.4.12
 ipywidgets==7.7.1
 matplotlib==3.7.1
 requests==2.27.1
