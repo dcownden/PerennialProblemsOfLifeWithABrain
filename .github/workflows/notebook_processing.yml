@@ -100,7 +100,7 @@ jobs:
           python ci_scripts/make_pr_comment.py $nbs --branch $branch --o comment.txt
 
       - name: Add PR comment
-        if: "!contains(env.COMMIT_MESSAGE, 'skip ci')"
+        if: ${{ !contains(env.COMMIT_MESSAGE, 'skip ci') && github.event_name == 'pull_request' }}
         uses: machine-learning-apps/pr-comment@1.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
