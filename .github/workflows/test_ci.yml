@@ -43,6 +43,7 @@ jobs:
 
       - name: Install dependencies 
         run: |
+          python -m pip install --upgrade pip wheel
           pip install pytest -r requirements.txt
           jupyter kernelspec list
           
