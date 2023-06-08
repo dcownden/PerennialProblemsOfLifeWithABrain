@@ -73,7 +73,7 @@ jobs:
         if: ${{ !contains(env.COMMIT_MESSAGE, 'skip ci') && github.event_name == 'pull_request' }}
         id: process_notebooks_pr
         run: |
-          branch=${{ github.event.pull_request.head.ref }}
+          branch=${GITHUB_HEAD_REF}
           nbs=`python ci_scripts/select_notebooks.py ${{ steps.changed-files.outputs.all_changed_files }}`
           if ${{ contains(env.COMMIT_MESSAGE, 'ci:check') }}; then
             execflag="--check-execution";
@@ -88,7 +88,7 @@ jobs:
         if: ${{ !contains(env.COMMIT_MESSAGE, 'skip ci') && github.event_name == 'push' }}
         id: process_notebooks_push
         run: | 
-          branch=${{ github.event.push.head.ref }}
+          branch=${GITHUB_REF}}
           nbs=`python ci_scripts/select_notebooks.py ${{ steps.changed-files.outputs.all_changed_files }}`
           if ${{ contains(env.COMMIT_MESSAGE, 'ci:check') }}; then
             execflag="--check-execution";
