@@ -1,4 +1,4 @@
-"""Process tutorials for Neuromatch Academy
+"""Process sequences for Comp Neuro Book
 
 - Filter input file list for .ipynb files
 - Check that the cells have been executed sequentially on a fresh kernel
@@ -32,14 +32,14 @@ from PIL import Image
 import nbformat
 from nbconvert.preprocessors import ExecutePreprocessor
 
-REPO = os.environ.get("NMA_REPO", "course-content")
-MAIN_BRANCH = os.environ.get("NMA_MAIN_BRANCH", "main")
+REPO = os.environ.get("PPLWB_REPO", "PerennialProblemsOfLifeWithABrain")
+MAIN_BRANCH = os.environ.get("PPLWB_MAIN_BRANCH", "main")
 
 GITHUB_RAW_URL = (
-    f"https://raw.githubusercontent.com/NeuromatchAcademy/{REPO}/{MAIN_BRANCH}"
+    f"https://raw.githubusercontent.com/dcownden/{REPO}/{MAIN_BRANCH}"
 )
 GITHUB_TREE_URL = (
-    f"https://github.com/NeuromatchAcademy/{REPO}/tree/{MAIN_BRANCH}/"
+    f"https://github.com/dcownden/{REPO}/tree/{MAIN_BRANCH}/"
 )
 
 
@@ -163,14 +163,14 @@ def main(arglist):
             if has_colab_badge(cell):
                 redirect_colab_badge_to_student_version(cell)
                 # add kaggle badge
-                add_kaggle_badge(cell, nb_path)
+                # add_kaggle_badge(cell, nb_path)
 
         # Loop through cells and point the colab badge at the instructor version
         for cell in instructor_nb.get("cells", []):
             if has_colab_badge(cell):
                 redirect_colab_badge_to_instructor_version(cell)
                 # add kaggle badge
-                add_kaggle_badge(cell, nb_path)
+                # add_kaggle_badge(cell, nb_path)
 
         # Write the student version of the notebook
         student_nb_path = os.path.join(student_dir, nb_fname)
@@ -487,23 +487,23 @@ def test_has_colab_badge():
 def redirect_colab_badge_to_main_branch(cell):
     """Modify the Colab badge to point at the main branch on Github."""
     cell_text = cell["source"]
-    p = re.compile(r"^(.+/NeuromatchAcademy/" + REPO + r"/blob/)[\w-]+(/.+$)")
+    p = re.compile(r"^(.+/dcownden/" + REPO + r"/blob/)[\w-]+(/.+$)")
     cell["source"] = p.sub(r"\1" + MAIN_BRANCH + r"\2", cell_text)
 
 
 def test_redirect_colab_badge_to_main_branch():
 
     original = (
-        "\"https://colab.research.google.com/github/NeuromatchAcademy/"
-        "course-content/blob/W1D1-updates/tutorials/W1D1_ModelTypes/"
+        "\"https://colab.research.google.com/github/dcownden/"
+        "PerennialProblemsOfLifeWithABrain/blob/W1D1-updates/tutorials/W1D1_ModelTypes/"
         "W1D1_Tutorial1.ipynb\""
     )
     cell = {"source": original}
     redirect_colab_badge_to_main_branch(cell)
 
     expected = (
-        "\"https://colab.research.google.com/github/NeuromatchAcademy/"
-        "course-content/blob/main/tutorials/W1D1_ModelTypes/"
+        "\"https://colab.research.google.com/github/dcownden/"
+        "PerennialProblemsOfLifeWithABrain/blob/main/tutorials/W1D1_ModelTypes/"
         "W1D1_Tutorial1.ipynb\""
     )
 
@@ -535,8 +535,8 @@ def redirect_colab_badge_to_instructor_version(cell):
 def test_redirect_colab_badge_to_student_version():
 
     original = (
-        "\"https://colab.research.google.com/github/NeuromatchAcademy/"
-        "course-content/blob/main/tutorials/W1D1_ModelTypes/"
+        "\"https://colab.research.google.com/github/dcownden/"
+        "PerennialProblemsOfLifeWithABrain/blob/main/tutorials/W1D1_ModelTypes/"
         "W1D1_Tutorial1.ipynb\""
     )
 
@@ -544,8 +544,8 @@ def test_redirect_colab_badge_to_student_version():
     redirect_colab_badge_to_student_version(cell)
 
     expected = (
-        "\"https://colab.research.google.com/github/NeuromatchAcademy/"
-        "course-content/blob/main/tutorials/W1D1_ModelTypes/student/"
+        "\"https://colab.research.google.com/github/dcownden/"
+        "PerennialProblemsOfLifeWithABrain/blob/main/tutorials/W1D1_ModelTypes/student/"
         "W1D1_Tutorial1.ipynb\""
     )
 
@@ -558,7 +558,7 @@ def add_kaggle_badge(cell, nb_path):
         badge_link = "https://kaggle.com/static/images/open-in-kaggle.svg"
         service = "https://kaggle.com/kernels/welcome?src="
         alter = "Open in Kaggle"
-        basic_url = "https://raw.githubusercontent.com/NeuromatchAcademy"
+        basic_url = "https://raw.githubusercontent.com/dcownden"
         a = f'<a href=\"{service}{basic_url}/{REPO}/{MAIN_BRANCH}/{nb_path}\" target=\"_parent\"><img src=\"{badge_link}\" alt=\"{alter}\"/></a>'
         cell["source"] += f' &nbsp; {a}'
 
@@ -600,7 +600,7 @@ def exit(errors):
 def parse_args(arglist):
     """Handle the command-line arguments."""
     parser = argparse.ArgumentParser(
-        description="Process neuromatch tutorial notebooks",
+        description="Process sequence notebooks",
     )
     parser.add_argument(
         "files",

@@ -4,7 +4,7 @@ from pytest import fixture
 
 @fixture
 def cmd():
-    return ["python", "scripts/process_notebooks.py"]
+    return ["python", "ci_scripts/process_notebooks.py"]
 
 
 def test_raises_not_implemented_error(cmd):
