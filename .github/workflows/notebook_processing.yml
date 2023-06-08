@@ -67,11 +67,27 @@ jobs:
             echo "$file was changed."
           done
 
-      - name: Process notebooks
+      - name: Process notebooks on pull request
         if: "!contains(env.COMMIT_MESSAGE, 'skip ci')"
-        id: process_notebooks
+        if: github.event_name == pull_request
+        id: process_notebooks_pr
         run: |
           branch=${{ github.event.pull_request.head.ref }}
+          nbs=`python ci_scripts/select_notebooks.py ${{ steps.changed-files.outputs.all_changed_files }}`
+          if ${{ contains(env.COMMIT_MESSAGE, 'ci:check') }}; then
+            execflag="--check-execution";
+          else
+            execflag="--execute";
+          fi
+          python ci_scripts/process_notebooks.py $nbs $execflag
+          python ci_scripts/verify_exercises.py $nbs --c "$COMMIT_MESSAGE"
+          python ci_scripts/make_pr_comment.py $nbs --branch $branch --o comment.txt
+
+      - name: Process notebooks on push
+        if: "!contains(env.COMMIT_MESSAGE, 'skip ci')"
+        id: process_notebooks_push
+        run: | 
+          branch=${{ github.event.push.head.ref }}
           nbs=`python ci_scripts/select_notebooks.py ${{ steps.changed-files.outputs.all_changed_files }}`
           if ${{ contains(env.COMMIT_MESSAGE, 'ci:check') }}; then
             execflag="--check-execution";
