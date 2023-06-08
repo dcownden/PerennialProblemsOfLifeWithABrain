@@ -5,10 +5,12 @@ on:
     branches: [ "main" ]
     paths: 
       - 'sequences/**.ipynb'
+      - '.github/workflows.notebook_processing.yml'
   pull_request:
     branches: [ "main" ]
     paths: 
       - 'sequences/**.ipynb'
+      - '.github/workflows.notebook_processing.yml'
   workflow_dispatch:
 
 env:
