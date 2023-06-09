@@ -1,4 +1,4 @@
-"""Lint tutorial notebooks with pyflakes and pycodestyle (aka flake8).
+"""Lint sequence notebooks with pyflakes and pycodestyle (aka flake8).
 
 Running this script on a notebook will print a report of issues flagged by
 pyflakes (which checks some aspects of code quality) and pycodestyle (which
@@ -6,7 +6,7 @@ checks adherence to the PEP8 stylistic standards).
 
 Note that these checks do not capture all potential issues with a codebase,
 and some checks will false-alarm because of deliberate choices we have made
-about how to write tutorials. Nevertheless, this can be an easy way to flag
+about how to write interactive sequences. Nevertheless, this can be an easy way to flag
 potential issues.
 
 Requires nbformat (part of Jupyter) and flake8.

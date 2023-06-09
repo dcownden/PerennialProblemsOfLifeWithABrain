@@ -99,8 +99,8 @@ jobs:
           python ci_scripts/verify_exercises.py $nbs --c "$COMMIT_MESSAGE"
           python ci_scripts/make_pr_comment.py $nbs --branch $branch --o comment.txt
 
-      - name: Add PR comment
-        if: ${{ !contains(env.COMMIT_MESSAGE, 'skip ci') && github.event_name == 'pull_request' }}
+      - name: Add PR/Push comment
+        if: ${{ !contains(env.COMMIT_MESSAGE, 'skip ci') && (github.event_name == 'pull_request' } || github.event_name == 'pull_request') }}
         uses: machine-learning-apps/pr-comment@1.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -109,7 +109,7 @@ jobs:
 
       - name: Update READMEs
         if: "!contains(env.COMMIT_MESSAGE, 'skip ci')"
-        run: python ci_scripts/generate_tutorial_readmes.py
+        run: python ci_scripts/generate_sequence_directory_readmes.py
 
       - name: Remove unreferenced derivatives
         if: "!contains(env.COMMIT_MESSAGE, 'skip ci') && success()"
@@ -126,7 +126,7 @@ jobs:
           git add '**/static/*.png'
           git add '**/solutions/*.py'
           git add '**/README.md'
-          git diff-index --quiet HEAD || git commit -m "Process tutorial notebooks"
+          git diff-index --quiet HEAD || git commit -m "Process sequence notebooks"
 
       - name: Push post-processed files
         if: "!contains(env.COMMIT_MESSAGE, 'skip ci') && success()"

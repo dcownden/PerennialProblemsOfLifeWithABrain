@@ -44,8 +44,8 @@ def main(arglist):
 
 
 def make_lint_report(nb_fpath):
-    """Run the tutorial linter on a notebook and capture the output."""
-    cmdline = ["python", "ci/lint_tutorial.py", nb_fpath]
+    """Run the sequence linter on a notebook and capture the output."""
+    cmdline = ["python", "ci_scripts/lint_sequence.py", nb_fpath]
     res = subprocess.run(cmdline, capture_output=True)
     return res.stdout.decode()
 
@@ -62,7 +62,7 @@ def make_colab_badge_table(branch, notebooks):
         nb_name, _ = os.path.splitext(nb_fname)
         header.append(nb_name)
         instructor.append(make_colab_badge(branch, nb_dir, nb_fname))
-        if "tutorials" in nb_dir:
+        if "sequences" in nb_dir:
             student.append(make_colab_badge(branch, nb_dir, nb_fname, student=True))
         divider.append("-")
 
