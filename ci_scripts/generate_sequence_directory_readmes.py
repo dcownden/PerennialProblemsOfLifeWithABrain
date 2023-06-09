@@ -158,7 +158,7 @@ def load_slide_urls():
     with open('sequences/materials.yml') as fh:
         materials = yaml.load(fh, Loader=yaml.FullLoader)
     slide_links = {}
-    for ind, chapter_dict in enumerate(materials):
+    for chapter_dict in materials:
         if 'slides' in chapter_dict:
             slide_links[chapter_dict['chapter']] = []
             for slide_info in chapter_dict['slides']:

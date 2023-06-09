@@ -9,7 +9,7 @@ import sys
 import argparse
 import subprocess
 
-REPO = os.environ.get("PPLWB_REPO", "course-content")
+REPO = os.environ.get("PPLWB_REPO", "PerennialProblemsOfLifeWithABrain")
 
 def main(arglist):
 
