@@ -39,7 +39,7 @@ jobs:
 
       - name: Set up ffmpeg
         if: "!contains(env.COMMIT_MESSAGE, 'skip ci')"
-        uses: actions/setup-ffmpeg@v2
+        uses: FedericoCarboni/setup-ffmpeg@v2
 
       - name: Set up Python
         if: "!contains(env.COMMIT_MESSAGE, 'skip ci')"
