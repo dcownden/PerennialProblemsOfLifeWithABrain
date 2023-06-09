@@ -73,23 +73,23 @@ def main():
         ])
 
         # Add a link to the YouTube lecture playlist, if we have one
-        youtube_url = playlist_urls.get(chapter_code, None)
-        if youtube_url is not None:
-            part_readme_text.extend([
-                f"[YouTube Playlist]({youtube_url})"
-                "",
-            ])
+        #youtube_url = playlist_urls.get(chapter_code, None)
+        #if youtube_url is not None:
+        #    part_readme_text.extend([
+        #        f"[YouTube Playlist]({youtube_url})"
+        #        "",
+        #    ])
 
-        slide_links_by_topic = slide_urls.get(chapter_code, None)
-        if slide_links_by_topic is not None:
-            slide_links = [
-                f"[{topic}]({url})" for topic, url in slide_links_by_topic
-            ]
-            part_readme_text.extend([
-                "",
-                "Slides: " + " | ".join(slide_links),
-                "",
-            ])
+        #slide_links_by_topic = slide_urls.get(chapter_code, None)
+        #if slide_links_by_topic is not None:
+        #    slide_links = [
+        #        f"[{topic}]({url})" for topic, url in slide_links_by_topic
+        #    ]
+        #    part_readme_text.extend([
+        #        "",
+        #        "Slides: " + " | ".join(slide_links),
+        #        "",
+        #    ])
 
         part_readme_text.extend(write_badge_table(student_notebooks))
         part_readme_text.append("\n")
