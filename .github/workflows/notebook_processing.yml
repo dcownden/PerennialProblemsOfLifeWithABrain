@@ -37,6 +37,10 @@ jobs:
           readonly local msg=$(git log -1 --pretty=format:"%s")
           echo "COMMIT_MESSAGE=$msg" >> $GITHUB_ENV
 
+      - name: Set up ffmpeg
+        if: "!contains(env.COMMIT_MESSAGE, 'skip ci')"
+        uses: actions/setup-ffmpeg@v2
+
       - name: Set up Python
         if: "!contains(env.COMMIT_MESSAGE, 'skip ci')"
         uses: actions/setup-python@v4
