@@ -15,7 +15,7 @@ on:
 
 env:
   NB_KERNEL: python
-  PPLWB_REPO: PerrenialProblemsOfLifeWithABrain
+  PPLWB_REPO: PerennialProblemsOfLifeWithABrain
   PPLWB_MAIN_BRANCH: main
 
 jobs:
