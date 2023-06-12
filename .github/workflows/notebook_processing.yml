@@ -93,6 +93,9 @@ jobs:
         id: process_notebooks_push
         run: | 
           branch=${GITHUB_REF}}
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git pull
           nbs=`python ci_scripts/select_notebooks.py ${{ steps.changed-files.outputs.all_changed_files }}`
           if ${{ contains(env.COMMIT_MESSAGE, 'ci:check') }}; then
             execflag="--check-execution";

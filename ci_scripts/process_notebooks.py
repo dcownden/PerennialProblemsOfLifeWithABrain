@@ -128,7 +128,7 @@ def main(arglist):
             if has_colab_badge(cell):
                 redirect_colab_badge_to_main_branch(cell)
                 # add kaggle badge
-                add_kaggle_badge(cell, nb_path)
+                #add_kaggle_badge(cell, nb_path)
 
         # Ensure that Colab metadata dict exists and enforce some settings
         add_colab_metadata(nb, nb_name)
