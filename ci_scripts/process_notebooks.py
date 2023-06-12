@@ -128,7 +128,7 @@ def main(arglist):
             if has_colab_badge(cell):
                 redirect_colab_badge_to_main_branch(cell)
                 # add kaggle badge
-                #add_kaggle_badge(cell, nb_path)
+                add_kaggle_badge(cell, nb_path)
 
         # Ensure that Colab metadata dict exists and enforce some settings
         add_colab_metadata(nb, nb_name)
@@ -163,14 +163,14 @@ def main(arglist):
             if has_colab_badge(cell):
                 redirect_colab_badge_to_student_version(cell)
                 # add kaggle badge
-                # add_kaggle_badge(cell, nb_path)
+                add_kaggle_badge(cell, nb_path)
 
         # Loop through cells and point the colab badge at the instructor version
         for cell in instructor_nb.get("cells", []):
             if has_colab_badge(cell):
                 redirect_colab_badge_to_instructor_version(cell)
                 # add kaggle badge
-                # add_kaggle_badge(cell, nb_path)
+                add_kaggle_badge(cell, nb_path)
 
         # Write the student version of the notebook
         student_nb_path = os.path.join(student_dir, nb_fname)
@@ -514,10 +514,10 @@ def redirect_colab_badge_to_student_version(cell):
     """Modify the Colab badge to point at student version of the notebook."""
     cell_text = cell["source"]
     # redirect the colab badge
-    p = re.compile(r"(^.+blob/" + MAIN_BRANCH + r"/sequences/W\dD\d\w+)/(\w+\.ipynb.+)")
+    p = re.compile(r"(^.+blob/" + MAIN_BRANCH + r"/sequences/P\dC\d\w+)/(\w+\.ipynb.+)")
     cell_text = p.sub(r"\1/student/\2", cell_text)
     # redirect the kaggle badge
-    p = re.compile(r"(^.+/sequences/W\dD\d\w+)/(\w+\.ipynb.+)")
+    p = re.compile(r"(^.+/sequences/P\dC\d\w+)/(\w+\.ipynb.+)")
     cell["source"] = p.sub(r"\1/student/\2", cell_text)
 
 
@@ -525,10 +525,10 @@ def redirect_colab_badge_to_instructor_version(cell):
     """Modify the Colab badge to point at instructor version of the notebook."""
     cell_text = cell["source"]
     # redirect the colab badge
-    p = re.compile(r"(^.+blob/" + MAIN_BRANCH + r"/sequences/W\dD\d\w+)/(\w+\.ipynb.+)")
+    p = re.compile(r"(^.+blob/" + MAIN_BRANCH + r"/sequences/P\dC\d\w+)/(\w+\.ipynb.+)")
     cell_text = p.sub(r"\1/instructor/\2", cell_text)
     # redirect the kaggle badge
-    p = re.compile(r"(^.+/sequences/W\dD\d\w+)/(\w+\.ipynb.+)")
+    p = re.compile(r"(^.+/sequences/P\dC\d\w+)/(\w+\.ipynb.+)")
     cell["source"] = p.sub(r"\1/instructor/\2", cell_text)
 
 
@@ -536,8 +536,8 @@ def test_redirect_colab_badge_to_student_version():
 
     original = (
         "\"https://colab.research.google.com/github/dcownden/"
-        "PerennialProblemsOfLifeWithABrain/blob/main/sequences/W1D1_ModelTypes/"
-        "W1D1_sequence1.ipynb\""
+        "PerennialProblemsOfLifeWithABrain/blob/main/sequences/P1C1_ModelTypes/"
+        "P1C1_Sequence1.ipynb\""
     )
 
     cell = {"source": original}
@@ -545,8 +545,8 @@ def test_redirect_colab_badge_to_student_version():
 
     expected = (
         "\"https://colab.research.google.com/github/dcownden/"
-        "PerennialProblemsOfLifeWithABrain/blob/main/sequences/W1D1_ModelTypes/student/"
-        "W1D1_sequence1.ipynb\""
+        "PerennialProblemsOfLifeWithABrain/blob/main/sequences/P1C1_ModelTypes/student/"
+        "P1C1_Sequence1.ipynb\""
     )
 
     assert cell["source"] == expected
