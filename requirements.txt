@@ -8,3 +8,4 @@ fuzzywuzzy[speedup]==0.18.0
 scikit-learn==1.2.2
 #torch==2.0.1 removed for now to speed up testing put back in later
 xkcd==2.4.2
+google-colab
