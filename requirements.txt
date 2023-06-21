@@ -1,9 +1,9 @@
 google-colab
-ipywidgets #==7.7.1
-matplotlib #==3.7.1
-pyyaml #==6.0
-flake8 #==6.0.0
-fuzzywuzzy[speedup] #==0.18.0
-scikit-learn #==1.2.2
+#ipywidgets #==7.7.1
+#matplotlib #==3.7.1
+#pyyaml #==6.0
+#flake8 #==6.0.0
+#fuzzywuzzy[speedup] #==0.18.0
+#scikit-learn #==1.2.2
 #torch==2.0.1 removed for now to speed up testing put back in later
-xkcd #==2.4.2
+#xkcd #==2.4.2
