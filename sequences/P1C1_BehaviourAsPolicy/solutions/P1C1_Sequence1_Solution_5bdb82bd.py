@@ -1,6 +1,6 @@
 
 
-def init_loc(n_rows, n_cols, num):
+def init_loc(n_rows, n_cols, num, rng=None):
   """
   Samples random 2d grid locations without replacement
 
@@ -9,6 +9,8 @@ def init_loc(n_rows, n_cols, num):
     n_cols: int
     num:    int, wnumber of samples to generate, should
             throw an error ifnum <= n_rows x n_cols
+  Optional Keyword Args
+    rng:    instance of numpy.random's default rng (reproducability)
 
   Returns:
     int_loc: ndarray(int) of flat indices for a grid
@@ -18,7 +20,9 @@ def init_loc(n_rows, n_cols, num):
     rc_plotting: ndarray(int) num x 2, same rc coordinates but structured
       in the way that matplotlib likes
   """
-  int_loc = np.random.choice(n_rows * n_cols, num, replace=False)
+  if rng is None:
+    rng = np.random.default_rng(seed=SEED)
+  int_loc = rng.choice(n_rows * n_cols, num, replace=False)
   rc_index = np.unravel_index(int_loc, (n_rows, n_cols))
   rc_plotting = np.array(rc_index).T
   return int_loc, rc_index, rc_plotting
@@ -35,3 +39,4 @@ with plt.xkcd():
   plot_food(fig, ax, rc_food)
 
   fig.legend(loc='outside right upper')
+  plt.show()
