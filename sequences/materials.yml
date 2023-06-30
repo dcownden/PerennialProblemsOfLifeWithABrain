@@ -1,0 +1,39 @@
+- chapter: P1C1
+  category: Behaviour, Environments and Optimization: Evolution and Learning 
+  #intro: https://www.youtube.com/watch?v=KxldhMR5PxA
+  #intro_bilibili: https://www.bilibili.com/video/BV1HT4y1E7U4/
+  name: Behaviour As Policy
+  # outro: https://www.youtube.com/watch?v=KZQXfQL1SH4
+  # playlist: https://www.youtube.com/playlist?list=PLkBQOLLbi18ObAiSOZ42YBwOQIKNvspeI
+  # qa:
+  # - https://www.youtube.com/watch?v=FwsKmunwzUA
+  # - https://www.youtube.com/watch?v=h63bKG0-h_w
+  # - https://www.youtube.com/watch?v=8h0X9lxY8Bs
+  # slides:
+  # - link: https://mfr.ca-1.osf.io/render?url=https://osf.io/rbx2a/?direct%26mode=render%26action=download%26mode=render
+  #   title: Intro
+  sequences: 2
+- chapter: P1C2
+  category: Behaviour, Environments and Optimization: Evolution and Learning
+  #intro: https://www.youtube.com/watch?v=yTQNqYCvoZ0
+  #intro_bilibili: https://www.bilibili.com/video/BV1Wf4y1R75n
+  name: Optimal Behaviour is Relative to the Environment 
+  #outro: https://www.youtube.com/watch?v=cUAUL3efqpY
+  #outro_bilibili: https://www.bilibili.com/video/BV1vK4y1s7CR
+  #playlist: https://www.youtube.com/playlist?list=PLkBQOLLbi18MqTMnc_mMiuawnczEa8xm9
+  #qa:
+  #- https://www.youtube.com/watch?v=lYLa6zgqByw
+  #- https://www.youtube.com/watch?v=LtR2rWiF7Mk
+  #- https://www.youtube.com/watch?v=JhRqg3BAXlI
+  #slides:
+  #- link: https://mfr.ca-1.osf.io/render?url=https://osf.io/sqcvz/?direct%26mode=render%26action=download%26mode=render
+  #  title: Intro
+  #- link: https://mfr.ca-1.osf.io/render?url=https://osf.io/2mkq4/?direct%26mode=render%26action=download%26mode=render
+  #  title: Tutorials
+  #- link: https://mfr.ca-1.osf.io/render?url=https://osf.io/xq4av/?direct%26mode=render%26action=download%26mode=render
+  #  title: Outro
+  #- link: https://mfr.ca-1.osf.io/render?url=https://osf.io/bea9f/?direct%26mode=render%26action=download%26mode=render
+  #  title: Reading
+  #- link: https://mfr.ca-1.osf.io/render?url=https://osf.io/8d29m/?direct%26mode=render%26action=download%26mode=render
+  #  title: DaySummary
+  tutorials: 0
