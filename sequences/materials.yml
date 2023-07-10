@@ -13,11 +13,11 @@
   # - link: https://mfr.ca-1.osf.io/render?url=https://osf.io/rbx2a/?direct%26mode=render%26action=download%26mode=render
   #   title: Intro
   sequences: 1
-- chapter: P1C2
-  category: Behaviour, Environments and Optimization, Evolution and Learning
+#- chapter: P1C2
+#  category: Behaviour, Environments and Optimization, Evolution and Learning
   #intro: https://www.youtube.com/watch?v=yTQNqYCvoZ0
   #intro_bilibili: https://www.bilibili.com/video/BV1Wf4y1R75n
-  name: Optimal Behaviour is Relative to the Environment 
+#  name: Optimal Behaviour is Relative to the Environment 
   #outro: https://www.youtube.com/watch?v=cUAUL3efqpY
   #outro_bilibili: https://www.bilibili.com/video/BV1vK4y1s7CR
   #playlist: https://www.youtube.com/playlist?list=PLkBQOLLbi18MqTMnc_mMiuawnczEa8xm9
@@ -36,4 +36,4 @@
   #  title: Reading
   #- link: https://mfr.ca-1.osf.io/render?url=https://osf.io/8d29m/?direct%26mode=render%26action=download%26mode=render
   #  title: DaySummary
-  sequences: 0
+#  sequences: 0
