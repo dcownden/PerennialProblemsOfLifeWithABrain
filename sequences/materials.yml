@@ -1,5 +1,5 @@
 - chapter: P1C1
-  category: Behaviour, Environments and Optimization: Evolution and Learning 
+  category: Behaviour, Environments and Optimization, Evolution and Learning 
   #intro: https://www.youtube.com/watch?v=KxldhMR5PxA
   #intro_bilibili: https://www.bilibili.com/video/BV1HT4y1E7U4/
   name: Behaviour As Policy
@@ -14,7 +14,7 @@
   #   title: Intro
   sequences: 2
 - chapter: P1C2
-  category: Behaviour, Environments and Optimization: Evolution and Learning
+  category: Behaviour, Environments and Optimization, Evolution and Learning
   #intro: https://www.youtube.com/watch?v=yTQNqYCvoZ0
   #intro_bilibili: https://www.bilibili.com/video/BV1Wf4y1R75n
   name: Optimal Behaviour is Relative to the Environment 
