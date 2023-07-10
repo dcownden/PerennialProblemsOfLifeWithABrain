@@ -31,7 +31,7 @@ def main():
         with open(f"sequences/{directory}/chapter_title.md",
                   "w+") as title_file:
             title_page = f"# {m['name']}"
-            art_file = [fname for fname in art_file_list if m['day'] in fname]
+            art_file = [fname for fname in art_file_list if m['chapter'] in fname]
             if len(art_file) == 1:
                 artist = art_file[0].split('-')[1].split('.')[0]
                 artist = artist.replace('_', ' ')
@@ -39,7 +39,7 @@ def main():
             title_file.write(title_page)
 
         chapter = {'file': f"sequences/{directory}/chapter_title.md",
-                   'title': f"{m['name']} ({m['day']})",
+                   'title': f"{m['name']} ({m['chapter']})",
                    'sections': []}
         print(m['chapter'])
         part = m['category']
@@ -47,9 +47,9 @@ def main():
 
         # Make list of notebook sections
         notebook_list = []
-        # notebook_list += [f"{directory}/{ARG}/{m['chapter']}_Intro.ipynb"] if os.path.exists(f"{directory}/{m['day']}_Intro.ipynb") else []
+        # notebook_list += [f"{directory}/{ARG}/{m['chapter']}_Intro.ipynb"] if os.path.exists(f"{directory}/{m['chapter']}_Intro.ipynb") else []
         notebook_list += [f"{directory}/{ARG}/{m['chapter']}_Sequence{i + 1}.ipynb" for i in range(m['sequences'])]
-        # notebook_list += [f"{directory}/{ARG}/{m['day']}_Outro.ipynb"] if os.path.exists(f"{directory}/{m['day']}_Outro.ipynb") else []
+        # notebook_list += [f"{directory}/{ARG}/{m['chapter']}_Outro.ipynb"] if os.path.exists(f"{directory}/{m['chapter']}_Outro.ipynb") else []
 
         # Add and process all notebooks
         for notebook_file_path in notebook_list:
@@ -59,8 +59,8 @@ def main():
         # Add further reading page
         chapter['sections'].append({'file': f"{directory}/further_reading.md"})
 
-        # Add day summary page
-        # notebook_file_path = f"{directory}/{ARG}/{m['day']}_DaySummary.ipynb"
+        # Add chapter summary page
+        # notebook_file_path = f"{directory}/{ARG}/{m['chapter']}_chapterSummary.ipynb"
         if os.path.exists(notebook_file_path):
             chapter['sections'].append({'file': notebook_file_path})
             pre_process_notebook(notebook_file_path)
