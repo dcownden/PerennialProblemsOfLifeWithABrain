@@ -152,6 +152,7 @@ def main():
     #chapter = {'chapters': [{'file': 'prereqs/ComputationalNeuroscience.md'}]}
     #toc_list += [chapter]
 
+    os.makedirs('book', exist_ok=True)
     with open('book/_toc.yml', 'w') as fh:
         yaml.dump(toc_list, fh)
 
