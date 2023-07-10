@@ -121,9 +121,10 @@ def main():
 #                                              ]})
 
     # Turn toc into list
-    toc_list = [{'file': f"sequences/intro.ipynb"}]
-    if os.path.exists(f"sequences/intro.ipynb"):
-        pre_process_notebook(f"sequences/intro.ipynb")
+    toc_list = []
+    #toc_list += [{'file': f"sequences/intro.ipynb"}]
+    #if os.path.exists(f"sequences/intro.ipynb"):
+    #    pre_process_notebook(f"sequences/intro.ipynb")
 
     # Schedule chapter
     #chapter = {'chapters': [{'file': 'tutorials/Schedule/schedule_intro.md',
