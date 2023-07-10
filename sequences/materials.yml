@@ -12,7 +12,7 @@
   # slides:
   # - link: https://mfr.ca-1.osf.io/render?url=https://osf.io/rbx2a/?direct%26mode=render%26action=download%26mode=render
   #   title: Intro
-  sequences: 2
+  sequences: 1
 - chapter: P1C2
   category: Behaviour, Environments and Optimization, Evolution and Learning
   #intro: https://www.youtube.com/watch?v=yTQNqYCvoZ0
@@ -36,4 +36,4 @@
   #  title: Reading
   #- link: https://mfr.ca-1.osf.io/render?url=https://osf.io/8d29m/?direct%26mode=render%26action=download%26mode=render
   #  title: DaySummary
-  tutorials: 0
+  sequences: 0
