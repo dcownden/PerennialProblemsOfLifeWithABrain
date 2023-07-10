@@ -69,8 +69,8 @@ def main():
         toc[part]['chapters'].append(chapter)
 
     # Project chapter -- based on the repo
-    with open('projects/project_materials.yml') as fh:
-        project_materials = yaml.load(fh, Loader=yaml.FullLoader)
+    #with open('projects/project_materials.yml') as fh:
+    #   project_materials = yaml.load(fh, Loader=yaml.FullLoader)
 
     #part = 'Project Booklet'
     #toc[part]['chapters'].append({'file': 'projects/README.md', 'title': 'Introduction'})
