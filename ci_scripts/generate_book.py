@@ -153,6 +153,14 @@ def main():
     #chapter = {'chapters': [{'file': 'prereqs/ComputationalNeuroscience.md'}]}
     #toc_list += [chapter]
 
+    # finally add all the bits from toc up above
+    for key in toc.keys():
+        # Add wrap-up if it exists
+        wrapup_name = f'tutorials/Module_WrapUps/{key.replace(" ", "")}.ipynb'
+        if os.path.exists(wrapup_name):
+            toc[key]['chapters'].append({'file': wrapup_name})
+        toc_list.append(toc[key])
+
     os.makedirs('book', exist_ok=True)
     with open('book/_toc.yml', 'w') as fh:
         yaml.dump(toc_list, fh)
