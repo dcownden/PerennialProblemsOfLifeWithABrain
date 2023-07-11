@@ -120,8 +120,8 @@ def main():
 #                                               {'file': 'projects/docs/projects_2020/eeg.md'}
 #                                              ]})
 
-    # Turn toc into list
-    toc_list = []
+    # Turn toc into list... or not???
+    #toc_list = []
     #toc_list += [{'file': f"sequences/intro.ipynb"}]
     #if os.path.exists(f"sequences/intro.ipynb"):
     #    pre_process_notebook(f"sequences/intro.ipynb")
@@ -154,16 +154,16 @@ def main():
     #toc_list += [chapter]
 
     # finally add all the bits from toc up above
-    for key in toc.keys():
+    #for key in toc.keys():
         # Add wrap-up if it exists
-        wrapup_name = f'tutorials/Module_WrapUps/{key.replace(" ", "")}.ipynb'
-        if os.path.exists(wrapup_name):
-            toc[key]['chapters'].append({'file': wrapup_name})
-        toc_list.append(toc[key])
+    #    wrapup_name = f'tutorials/Module_WrapUps/{key.replace(" ", "")}.ipynb'
+    #    if os.path.exists(wrapup_name):
+    #        toc[key]['chapters'].append({'file': wrapup_name})
+    #    toc_list.append(toc[key])
 
     os.makedirs('book', exist_ok=True)
     with open('book/_toc.yml', 'w') as fh:
-        yaml.dump(toc_list, fh)
+        yaml.dump(toc, fh)
 
 
 def pre_process_notebook(file_path):
