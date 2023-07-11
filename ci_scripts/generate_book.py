@@ -16,6 +16,7 @@ def main():
 
     # Make the dictionary that contains the chapters
     toc = {}
+    toc['root'] = 'sequences/README.md'  # Replace 'index.md' with the path to your actual landing page.
     for m in materials:
         if m['category'] not in toc.keys():
             toc[m['category']] = {'part': m['category'], 'chapters': []}
