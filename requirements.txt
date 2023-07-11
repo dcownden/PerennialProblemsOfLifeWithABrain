@@ -20,4 +20,3 @@ pyyaml
 beautifulsoup4
 Jinja2==3.0.0
 jupyter-client
-jupyter-book
