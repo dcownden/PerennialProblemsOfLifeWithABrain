@@ -2,10 +2,6 @@
 # @markdown You don't need to worry about how this code works – but you do need to **run the cell**
 
 
-# pip install dependencies
-!pip install ipympl vibecheck datatops jupyterquiz > /dev/null 2> /dev/null #google.colab
-
-
 # import modules
 import ipywidgets as widgets
 import functools
