@@ -57,7 +57,7 @@ jobs:
           cat book/_toc.yml
           ln -s ../sequences book/sequences
           jupyter-book build book
-          python ci/parse_html_for_errors.py student
+          python ci_scripts/parse_html_for_errors.py student
 
       - name: Commit book
         run: |
