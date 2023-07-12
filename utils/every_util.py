@@ -1,6 +1,4 @@
-# @title Dependencies, Imports and Setup
-# @markdown You don't need to worry about how this code works – but you do need to **run the cell**
-
+# a giant mess of setup to be run at the beginning of every notebook
 
 # import modules
 import ipywidgets as widgets
@@ -120,9 +118,6 @@ plt.ioff()
 
 
 # Plotting Functions and Setup
-%matplotlib inline
-%config InlineBackend.figure_format = 'retina'
-%matplotlib widget
 plt.style.use("https://raw.githubusercontent.com/dcownden/PerennialProblemsOfLifeWithABrain/main/pplb.mplstyle")
 plt.ioff() #need to use plt.show() or display explicitly
 logging.getLogger('matplotlib.font_manager').setLevel(logging.ERROR)
