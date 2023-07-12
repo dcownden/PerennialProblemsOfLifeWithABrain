@@ -11,7 +11,7 @@ ARG = sys.argv[1]
 
 
 def main():
-    with open('tutorials/materials.yml') as fh:
+    with open('sequences/materials.yml') as fh:
         materials = yaml.load(fh, Loader=yaml.FullLoader)
 
     # Make the dictionary that contains the chapters
@@ -22,34 +22,34 @@ def main():
     # Add the project booklet
     toc['Project Booklet'] = {'part': 'Project Booklet', 'chapters': []}
 
-    art_file_list = os.listdir('tutorials/Art/')
+    art_file_list = os.listdir('sequences/Art/')
 
     for m in materials:
-        directory = f"{m['day']}_{''.join(m['name'].split())}"
+        directory = f"{m['chapter']}_{''.join(m['name'].split())}"
 
         # Make temporary chapter title file
-        with open(f"tutorials/{directory}/chapter_title.md",
+        with open(f"sequences/{directory}/chapter_title.md",
                   "w+") as title_file:
             title_page = f"# {m['name']}"
-            art_file = [fname for fname in art_file_list if m['day'] in fname]
+            art_file = [fname for fname in art_file_list if m['chapter'] in fname]
             if len(art_file) == 1:
                 artist = art_file[0].split('-')[1].split('.')[0]
                 artist = artist.replace('_', ' ')
                 title_page += f"\n\n ````{{div}} full-width \n <img src='../Art/{art_file[0]}' alt='art relevant to chapter contents' width='100%'> \n```` \n\n*Artwork by {artist}*"
             title_file.write(title_page)
 
-        chapter = {'file': f"tutorials/{directory}/chapter_title.md",
-                   'title': f"{m['name']} ({m['day']})",
+        chapter = {'file': f"sequences/{directory}/chapter_title.md",
+                   'title': f"{m['name']} ({m['chapter']})",
                    'sections': []}
-        print(m['day'])
+        print(m['chapter'])
         part = m['category']
-        directory = f"tutorials/{m['day']}_{''.join(m['name'].split())}"
+        directory = f"sequences/{m['chapter']}_{''.join(m['name'].split())}"
 
         # Make list of notebook sections
         notebook_list = []
-        notebook_list += [f"{directory}/{ARG}/{m['day']}_Intro.ipynb"] if os.path.exists(f"{directory}/{m['day']}_Intro.ipynb") else []
-        notebook_list += [f"{directory}/{ARG}/{m['day']}_Tutorial{i + 1}.ipynb" for i in range(m['tutorials'])]
-        notebook_list += [f"{directory}/{ARG}/{m['day']}_Outro.ipynb"] if os.path.exists(f"{directory}/{m['day']}_Outro.ipynb") else []
+        notebook_list += [f"{directory}/{ARG}/{m['chapter']}_Intro.ipynb"] if os.path.exists(f"{directory}/{m['chapter']}_Intro.ipynb") else []
+        notebook_list += [f"{directory}/{ARG}/{m['chapter']}_Sequence{i + 1}.ipynb" for i in range(m['sequences'])]
+        notebook_list += [f"{directory}/{ARG}/{m['chapter']}_Outro.ipynb"] if os.path.exists(f"{directory}/{m['chapter']}_Outro.ipynb") else []
 
         # Add and process all notebooks
         for notebook_file_path in notebook_list:
@@ -57,113 +57,116 @@ def main():
             pre_process_notebook(notebook_file_path)
 
         # Add further reading page
-        chapter['sections'].append({'file': f"{directory}/further_reading.md"})
+        # chapter['sections'].append({'file': f"{directory}/further_reading.md"})
 
-        # Add day summary page
-        notebook_file_path = f"{directory}/{ARG}/{m['day']}_DaySummary.ipynb"
-        if os.path.exists(notebook_file_path):
-            chapter['sections'].append({'file': notebook_file_path})
-            pre_process_notebook(notebook_file_path)
+        # Add chapter summary page
+        # notebook_file_path = f"{directory}/{ARG}/{m['chapter']}_ChapterSummary.ipynb"
+        # if os.path.exists(notebook_file_path):
+            # chapter['sections'].append({'file': notebook_file_path})
+            # pre_process_notebook(notebook_file_path)
 
         # Add chapter
         toc[part]['chapters'].append(chapter)
 
     # Project chapter -- based on the repo
-    with open('projects/project_materials.yml') as fh:
-        project_materials = yaml.load(fh, Loader=yaml.FullLoader)
+    #with open('projects/project_materials.yml') as fh:
+    #    project_materials = yaml.load(fh, Loader=yaml.FullLoader)
 
-    part = 'Project Booklet'
-    toc[part]['chapters'].append({'file': 'projects/README.md', 'title': 'Introduction'})
-    toc[part]['chapters'].append({'file': 'projects/docs/project_guidance.md'})
+    #part = 'Project Booklet'
+    #toc[part]['chapters'].append({'file': 'projects/README.md', 'title': 'Introduction'})
+    #toc[part]['chapters'].append({'file': 'projects/docs/project_guidance.md'})
 
     # Add Modeling Steps
-    toc[part]['chapters'].append({'file': 'projects/modelingsteps/intro.md',
-                                  'sections': [{'file': 'projects/modelingsteps/ModelingSteps_1through4.ipynb'},
-                                               {'file': 'projects/modelingsteps/ModelingSteps_5through10.ipynb'},
-                                               {'file': 'projects/modelingsteps/TrainIllusionModel.ipynb'},
-                                               {'file': 'projects/modelingsteps/TrainIllusionDataProject.ipynb'}
-                                              ]})
-    pre_process_notebook('projects/modelingsteps/ModelingSteps_1through4.ipynb')
-    pre_process_notebook('projects/modelingsteps/ModelingSteps_5through10.ipynb')
-    pre_process_notebook('projects/modelingsteps/TrainIllusionModel.ipynb')
-    pre_process_notebook('projects/modelingsteps/TrainIllusionDataProject.ipynb')
+    #toc[part]['chapters'].append({'file': 'projects/modelingsteps/intro.md',
+    #                              'sections': [{'file': 'projects/modelingsteps/ModelingSteps_1through4.ipynb'},
+    #                                           {'file': 'projects/modelingsteps/ModelingSteps_5through10.ipynb'},
+    #                                           {'file': 'projects/modelingsteps/TrainIllusionModel.ipynb'},
+    #                                           {'file': 'projects/modelingsteps/TrainIllusionDataProject.ipynb'}
+    #                                          ]})
+    #pre_process_notebook('projects/modelingsteps/ModelingSteps_1through4.ipynb')
+    #pre_process_notebook('projects/modelingsteps/ModelingSteps_5through10.ipynb')
+    #pre_process_notebook('projects/modelingsteps/TrainIllusionModel.ipynb')
+    #pre_process_notebook('projects/modelingsteps/TrainIllusionDataProject.ipynb')
 
     # Loop over dataset types
-    project_datasets = {'file': 'projects/docs/datasets_overview.md', 'sections': []}
+    #project_datasets = {'file': 'projects/docs/datasets_overview.md', 'sections': []}
 
-    for category in ['neurons', 'fMRI', 'ECoG', 'behavior', 'theory']:
-        this_section = {'file': f'projects/docs/{category}.md', 'sections': []}
+    #for category in ['neurons', 'fMRI', 'ECoG', 'behavior', 'theory']:
+    #    this_section = {'file': f'projects/docs/{category}.md', 'sections': []}
 
         # Add README guide
-        this_section['sections'].append({'file': f"projects/{category}/README.md", 'title': 'Guide'})
+        #this_section['sections'].append({'file': f"projects/{category}/README.md", 'title': 'Guide'})
 
         # Add and process all notebooks
-        try:
-            this_section['sections'].append({'file': f"projects/{category}/{category}_videos.ipynb"})
-            pre_process_notebook(f"projects/{category}/{category}_videos.ipynb")
-        except:
-            pass
+        #try:
+        #    this_section['sections'].append({'file': f"projects/{category}/{category}_videos.ipynb"})
+        #    pre_process_notebook(f"projects/{category}/{category}_videos.ipynb")
+        #except:
+        #    pass
 #         dataset_loaders = [entry for entry in project_materials if entry['category'] == category]
 #         for notebook in dataset_loaders:
 #             this_section['sections'].append({'file': notebook['link'], 'title': notebook['title']})
 #             pre_process_notebook(notebook['link'])
-        project_datasets['sections'].append(this_section)
-    toc[part]['chapters'].append(project_datasets)
-    toc[part]['chapters'].append({'file': 'projects/docs/project_templates.md'})
+#        project_datasets['sections'].append(this_section)
+#    toc[part]['chapters'].append(project_datasets)
+#    toc[part]['chapters'].append({'file': 'projects/docs/project_templates.md'})
 
     # Projects 2020
-    toc[part]['chapters'].append({'file': 'projects/docs/project_2020_highlights.md',
-                                  'sections': [{'file': 'projects/docs/projects_2020/neurons.md'},
-                                               {'file': 'projects/docs/projects_2020/theory.md'},
-                                               {'file': 'projects/docs/projects_2020/behavior.md'},
-                                               {'file': 'projects/docs/projects_2020/fMRI.md'},
-                                               {'file': 'projects/docs/projects_2020/eeg.md'}
-                                              ]})
+    #toc[part]['chapters'].append({'file': 'projects/docs/project_2020_highlights.md',
+    #                              'sections': [{'file': 'projects/docs/projects_2020/neurons.md'},
+    #                                           {'file': 'projects/docs/projects_2020/theory.md'},
+    #                                           {'file': 'projects/docs/projects_2020/behavior.md'},
+    #                                           {'file': 'projects/docs/projects_2020/fMRI.md'},
+    #                                           {'file': 'projects/docs/projects_2020/eeg.md'}
+    #                                          ]})
 
     # Turn toc into list
-    toc_list = [{'file': f"tutorials/intro.ipynb"}]
-    if os.path.exists(f"tutorials/intro.ipynb"):
-        pre_process_notebook(f"tutorials/intro.ipynb")
+    # there needs to be something with file as a key that is the intro
+    toc_list = [{'file': f"sequences/intro.ipynb"}]
+    #if os.path.exists(f"sequences/intro.ipynb"):
+    #    pre_process_notebook(f"sequences/intro.ipynb")
 
+    # TA training file
+    #if ARG == "instructor":
+    #    chapter = {'chapters': [{'file': 'tatraining/TA_Training_CN.ipynb'}]}
+    #    pre_process_notebook('tatraining/TA_Training_CN.ipynb')
+    #    toc_list += [chapter]
     # Schedule chapter
-    chapter = {'chapters': [{'file': 'tutorials/Schedule/schedule_intro.md',
-                             'sections': [{'file': 'tutorials/Schedule/daily_schedules.md'},
-                                          {'file': 'tutorials/Schedule/shared_calendars.md'},
-                                          {'file': 'tutorials/Schedule/timezone_widget.md'}
-                                         ]}]}
-    toc_list += [chapter]
+    #chapter = {'chapters': [{'file': 'sequences/Schedule/schedule_intro.md',
+    #                         'sections': [{'file': 'sequences/Schedule/daily_schedules.md'},
+    #                                      {'file': 'sequences/Schedule/shared_calendars.md'},
+    #                                      {'file': 'sequences/Schedule/timezone_widget.md'}
+    #                                     ]}]}
+    #toc_list += [chapter]
 
     # Technical help chapter
-    chapter = {'chapters': [{'file': 'tutorials/TechnicalHelp/tech_intro.md', 
-                             'sections': [{'file': 'tutorials/TechnicalHelp/Jupyterbook.md',
-                                           'sections': [{'file': 'tutorials/TechnicalHelp/Tutorial_colab.md'},
-                                                        {'file': 'tutorials/TechnicalHelp/Tutorial_kaggle.md'}
-                                                       ]
-                                          },
-                                          {'file': 'tutorials/TechnicalHelp/Discord.md'}
-                                         ]}]}
-    toc_list += [chapter]
+    #chapter = {'chapters': [{'file': 'sequences/TechnicalHelp/tech_intro.md', 
+    #                         'sections': [{'file': 'sequences/TechnicalHelp/Jupyterbook.md',
+    #                                       'sections': [{'file': 'sequences/TechnicalHelp/Sequence_colab.md'},
+    #                                                    {'file': 'sequences/TechnicalHelp/Sequence_kaggle.md'}
+    #                                                   ]
+    #                                      },
+    #                                      {'file': 'sequences/TechnicalHelp/Discord.md'}
+    #                                     ]}]}
+    #toc_list += [chapter]
 
     # Links and Policy file
-    chapter = {'chapters': [{'file': 'tutorials/TechnicalHelp/Links_Policy.md'}]}
-    toc_list += [chapter]
+    #chapter = {'chapters': [{'file': 'sequences/TechnicalHelp/Links_Policy.md'}]}
+    #toc_list += [chapter]
 
     # Pre-reqs file
-    chapter = {'chapters': [{'file': 'prereqs/ComputationalNeuroscience.md'}]}
-    toc_list += [chapter]
+    #chapter = {'chapters': [{'file': 'prereqs/ComputationalNeuroscience.md'}]}
+    #toc_list += [chapter]
 
     for key in toc.keys():
-        
         # Add wrap-up if it exists
-        wrapup_name = f'tutorials/Module_WrapUps/{key.replace(" ", "")}.ipynb'
-        if os.path.exists(wrapup_name):
-            toc[key]['chapters'].append({'file': wrapup_name})
-        
+        #wrapup_name = f'sequences/Module_WrapUps/{key.replace(" ", "")}.ipynb'
+        #if os.path.exists(wrapup_name):
+        #    toc[key]['chapters'].append({'file': wrapup_name})
         toc_list.append(toc[key])
 
     with open('book/_toc.yml', 'w') as fh:
         yaml.dump(toc_list, fh)
-
 
 def pre_process_notebook(file_path):
 

@@ -37,6 +37,7 @@ jobs:
 
       - name: Install dependencies
         run: |
+          pip install --upgrade pip
           pip install -r requirements.txt
           pip install jupyter-book==0.10.2 ghp-import
           pip install jupyter_client==7.3.5  # downgrade jupyter-client to fix hangs
@@ -53,7 +54,7 @@ jobs:
       - name: Build student book
         run: |
           python ci_scripts/generate_book.py student
-          ln -s ./sequences book/sequences
+          ln -s ../sequences book/sequences
           jupyter-book build book
           python ci/parse_html_for_errors.py student
 
