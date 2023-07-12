@@ -121,8 +121,8 @@ def main():
     #                                          ]})
 
     # Turn toc into list
-    toc_list = []
-    #toc_list = [{'file': f"sequences/intro.ipynb"}]
+    # there needs to be something with file as a key that is the intro
+    toc_list = [{'file': f"sequences/intro.ipynb"}]
     #if os.path.exists(f"sequences/intro.ipynb"):
     #    pre_process_notebook(f"sequences/intro.ipynb")
 
