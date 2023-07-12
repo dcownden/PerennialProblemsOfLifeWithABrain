@@ -54,6 +54,7 @@ jobs:
       - name: Build student book
         run: |
           python ci_scripts/generate_book.py student
+          cat book/_toc.yml
           ln -s ../sequences book/sequences
           jupyter-book build book
           python ci/parse_html_for_errors.py student
