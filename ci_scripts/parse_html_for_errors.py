@@ -5,20 +5,20 @@ from bs4 import BeautifulSoup
 ARG = sys.argv[1]
 
 def main():
-    with open('tutorials/materials.yml') as fh:
+    with open('sequences/materials.yml') as fh:
         materials = yaml.load(fh, Loader=yaml.FullLoader)
 
     html_directory = 'book/_build/html/'
 
-    # Loop over days
+    # Loop over chapters
     for m in materials:
-        name = f"{m['day']}_{''.join(m['name'].split())}"
+        name = f"{m['chapter']}_{''.join(m['name'].split())}"
 
-        # Loop over tutorials
-        for i in range(m['tutorials']):
+        # Loop over sequences
+        for i in range(m['sequences']):
 
             # Load html file
-            notebook_file_path = f"{html_directory}/tutorials/{name}/{ARG}/{m['day']}_Tutorial{i + 1}.html"
+            notebook_file_path = f"{html_directory}/sequences/{name}/{ARG}/{m['chapter']}_Sequence{i + 1}.html"
             with open(notebook_file_path, 'r') as f:
                 contents = f.read()
             parsed_html = BeautifulSoup(contents, features="html.parser")

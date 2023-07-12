@@ -20,7 +20,7 @@ def main():
         if m['category'] not in toc.keys():
             toc[m['category']] = {'part': m['category'], 'chapters': []}
     # Add the project booklet
-    toc['Project Booklet'] = {'part': 'Project Booklet', 'chapters': []}
+    #toc['Project Booklet'] = {'part': 'Project Booklet', 'chapters': []}
 
     art_file_list = os.listdir('sequences/Art/')
 
@@ -123,8 +123,8 @@ def main():
     # Turn toc into list
     # there needs to be something with file as a key that is the intro
     toc_list = [{'file': f"sequences/intro.ipynb"}]
-    #if os.path.exists(f"sequences/intro.ipynb"):
-    #    pre_process_notebook(f"sequences/intro.ipynb")
+    if os.path.exists(f"sequences/intro.ipynb"):
+        pre_process_notebook(f"sequences/intro.ipynb")
 
     # TA training file
     #if ARG == "instructor":
