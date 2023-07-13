@@ -1,4 +1,10 @@
-# a giant mess of setup to be run at the beginning of every notebook
+# @title Dependencies, Imports and Setup
+# @markdown You don't need to worry about how this code works – but you do need to **run the cell**
+
+
+# pip install dependencies not in the script though
+# !pip install ipympl vibecheck datatops jupyterquiz > /dev/null 2> /dev/null #google.colab
+
 
 # import modules
 import ipywidgets as widgets
@@ -118,12 +124,15 @@ plt.ioff()
 
 
 # Plotting Functions and Setup
+# %matplotlib inline
+# %config InlineBackend.figure_format = 'retina'
+# %matplotlib widget
 plt.style.use("https://raw.githubusercontent.com/dcownden/PerennialProblemsOfLifeWithABrain/main/pplb.mplstyle")
 plt.ioff() #need to use plt.show() or display explicitly
 logging.getLogger('matplotlib.font_manager').setLevel(logging.ERROR)
 
 
-def make_grid(num_rows, num_cols, figsize=(7,6)):
+def make_grid(num_rows, num_cols, figsize=(5,4)):
   """Plots an n_rows by n_cols grid with cells centered on integer indices and
   returns fig and ax handles for futher use
   Args:
@@ -532,7 +541,7 @@ class GridworldGame():
   def plot_board(self, board, g,
                  fig=None, ax=None, critter=None, food=None,
                  legend_type='included',
-                 figsize=(7,6)):
+                 figsize=(5,4)):
     """Uses plotting functions to make picture of the current board state"""
     batch_size, n_rows, n_cols = board[0].shape
     plt.ioff()
@@ -833,13 +842,15 @@ class InteractiveGridworld():
     plt.ioff()
     (self.b_fig, self.b_ax,
      self.b_critter, self.b_food) = self.gwg.plot_board(self.board_state, 0)
-    self.board_and_output = widgets.VBox([self.b_fig.canvas, self.output])
-    self.board_and_buttons = widgets.VBox([self.board_and_output,
+    self.output_and_score = widgets.HBox([self.scoreboard, self.output])
+    self.board_and_buttons = widgets.VBox([self.b_fig.canvas,
                                             self.buttons])
-    self.board_output_and_score = widgets.HBox([self.board_and_output,
-                                                self.scoreboard])
-    self.boards_buttons_and_score = widgets.HBox([self.board_and_buttons,
-                                                  self.scoreboard])
+    self.board_output_and_score = widgets.VBox(
+        [self.b_fig.canvas, self.output_and_score],
+        layout=widgets.Layout(justify_content='flex-start'))
+    self.board_buttons_and_score = widgets.VBox(
+        [self.board_and_buttons, self.output_and_score],
+        layout=widgets.Layout(justify_content='flex-start'))
 
     # Sometimes use timer
     # self.click_timer = Timer(5.0, self.random_click)
@@ -850,6 +861,8 @@ class InteractiveGridworld():
                ['Last Score:', '--'],
                ['Average Score:', '--']]
       print(tabulate(table))
+    with self.output:
+      print('\tRun the cell below to start the simulation')
 
 
   def button_output_update(self, which_button):
@@ -873,8 +886,8 @@ class InteractiveGridworld():
       clear_output()
       print("\tThe critter (tried) to move " + which_button +
             " and is now at ({}, {}).".format(row,col))
-      print("\t"+eating_string)
-      print("\tRounds Left: {} \tFood Eaten: {} \tFood Per Move: {:.2f}".format(
+      print("\t" + eating_string)
+      print("\tRounds Left: {}\n\tFood Eaten: {}\n\tFood Per Move: {:.2f}".format(
           rounds_left, new_score, new_score / num_moves))
     if rounds_left == 0:
       self.final_scores.append(new_score)
@@ -990,11 +1003,11 @@ class Head2HeadGridworld():
     (self.b_fig0, self.b_ax0,
      self.b_critter0, self.b_food0,
      self.b_fig_legend, self.b_ax_legend) = self.gwg.plot_board(
-        self.board_state, 0, legend_type='separate', figsize=(6,5))
+        self.board_state, 0, legend_type='separate', figsize=(5,4))
     (self.b_fig1, self.b_ax1,
      self.b_critter1, self.b_food1) = self.gwg.plot_board(self.board_state, 1,
                                                           legend_type=None,
-                                                          figsize=(6,5))
+                                                          figsize=(5,4))
     self.board_buttons_and_output0 = widgets.VBox([self.b_fig0.canvas,
                                                    self.buttons,
                                                    self.output0])
