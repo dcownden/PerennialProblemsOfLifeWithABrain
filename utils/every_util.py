@@ -1779,9 +1779,7 @@ class MonteCarloBasedPlayer():
 # Content review setup
 
 
-def content_review(notebook_section: str)
-
-:
+def content_review(notebook_section: str):
   return DatatopsContentReviewContainer(
     "",  # No text prompt
     notebook_section,
