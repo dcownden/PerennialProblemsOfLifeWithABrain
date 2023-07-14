@@ -17,6 +17,7 @@ scikit-learn
 torch
 ipywidgets
 tqdm
+tabulate
 pathlib
 pandas
 xkcd
