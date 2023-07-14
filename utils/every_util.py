@@ -1,11 +1,3 @@
-# @title Dependencies, Imports and Setup
-# @markdown You don't need to worry about how this code works – but you do need to **run the cell**
-
-
-# pip install dependencies not in the script though
-# !pip install ipympl vibecheck datatops jupyterquiz > /dev/null 2> /dev/null #google.colab
-
-
 # import modules
 import ipywidgets as widgets
 import functools
@@ -884,8 +876,8 @@ class InteractiveGridworld():
         self.board_state, 0, self.b_fig, self.b_ax, self.b_critter, self.b_food)
     with self.output:
       clear_output()
-      print("\tThe critter (tried) to move " + which_button +
-            " and is now at ({}, {}).".format(row,col))
+      print("\tThe critter (tried) to move " + which_button)
+      print("\tand is now at ({}, {}).".format(row,col))
       print("\t" + eating_string)
       print("\tRounds Left: {}\n\tFood Eaten: {}\n\tFood Per Move: {:.2f}".format(
           rounds_left, new_score, new_score / num_moves))
@@ -973,6 +965,7 @@ class Head2HeadGridworld():
     self.rng = np.random.default_rng(seed=random_seed)
     self.final_scores = []
     self.player = player
+    self.player_next_move = None
     if init_board is None:
       self.board_state = self.gwg.get_init_board()
     else:
@@ -1042,9 +1035,14 @@ class Head2HeadGridworld():
       elif move == 2: a_player = 'right'
       elif move == 3: a_player = 'left'
     else:
-      a_player, _, _ = self.player.play(old_board)
+      if self.player_next_move is not None:
+        a_player = self.ai_next_move
+        self.ai_next_move = None  # reset for next round
+      else:  # fallback to synchronous computation if no precomputed move available
+        a_player, _, _ = self.player.play(old_board)
       a_player = self.gwg.action_to_critter_direction(old_board, a_player)
       a_player = a_player[1]
+
     self.board_state = self.gwg.critter_oriented_get_next_state(
         self.board_state, [which_button, a_player])
     new_scores = self.board_state[1]
@@ -1067,8 +1065,8 @@ class Head2HeadGridworld():
         self.b_critter0, self.b_food0, legend_type=None)
     with self.output0:
       clear_output()
-      print("\tYou clicked the " + which_button +
-            " button and your critter is now at ({}, {}).".format(row0,col0))
+      print("\tYou clicked the " + which_button + "button")
+      print("\tand your critter is now at ({}, {}).".format(row0,col0))
       print("\t"+eating_string0)
       print("\tRounds Left: {} \tFood Eaten: {} \tFood Per Move: {:.2f}".format(
           rounds_left, new_scores[0], new_scores[0] / num_moves))
@@ -1079,8 +1077,8 @@ class Head2HeadGridworld():
         self.b_critter1, self.b_food1, legend_type=None)
     with self.output1:
       clear_output()
-      print("\tThe other player (tried) to move " + a_player +
-            " and is now at ({}, {}).".format(row1,col1))
+      print("\tThe other player (tried) to move " + a_player)
+      print("\tand is now at ({}, {}).".format(row1,col1))
       print("\t"+eating_string1)
       print("\tRounds Left: {} \tFood Eaten: {} \tFood Per Move: {:.2f}".format(
           rounds_left, new_scores[1], new_scores[1] / num_moves))
@@ -1127,6 +1125,11 @@ class Head2HeadGridworld():
           ['Last Score:', '--', '--'],
           ['Average Score:', '--', '--']]
       print(tabulate(table))
+
+    # Try to precompute next AI player move
+    if self.player is not None:
+      new_board = tuple([self.board_state[ii].copy() for ii in range(3)])
+      self.ai_next_move, _, _ = self.player.play(new_board)
 
   def on_up_button_clicked(self, *args):
     self.button_output_update('up')
@@ -1638,10 +1641,10 @@ class MonteCarloBasedPlayer():
   """
 
   def __init__(self, game, nnet,
-               default_depth=1,
-               default_rollouts=1,
-               default_K=4,
-               default_temp=1.0,
+               default_depth = 1,
+               default_rollouts = 1,
+               default_K = 4,
+               default_temp = 1.0,
                random_seed=None):
     """
     Initialize Monte Carlo Parameters
@@ -1688,7 +1691,7 @@ class MonteCarloBasedPlayer():
         (avg_value, action) i.e., Average value associated with corresponding action
         i.e., Action with the highest topK probability
     """
-    batch_size, x_size, y_size = board[0].shape
+    batch_size, n_rows, n_cols = board[0].shape
     if num_rollouts is None:
       num_rollouts = self.default_rollouts
     if rollout_depth is None:
@@ -1724,19 +1727,47 @@ class MonteCarloBasedPlayer():
                                          depth=rollout_depth)
     values = values / num_rollouts
 
-    value_expand = np.zeros((batch_size, x_size*y_size))
+    value_expand = np.zeros((batch_size, n_rows*n_cols))
     value_expand[(topk_actions_index, topk_actions)] = values
+    value_expand_shift = value_expand - np.max(value_expand, axis=1, keepdims=True)
+    value_expand_scale = value_expand_shift/softmax_temp
     #softmax_normalize those values into a selection prob
-    v_probs = np.exp(value_expand/softmax_temp) / np.sum(
-        np.exp(value_expand/softmax_temp), axis=1, keepdims=True)
+    v_probs = np.exp(value_expand_scale) / np.sum(
+        np.exp(value_expand_scale), axis=1, keepdims=True)
     v_probs = v_probs * valids
     v_probs = v_probs / np.sum(v_probs, axis=1, keepdims=True)
     samp = self.rng.uniform(size = batch_size).reshape((batch_size,1))
     #print(samp)
     #print(v_probs.cumsum(axis=1))
     sampled_actions = np.argmax(v_probs.cumsum(axis=1) > samp, axis=1)
-    a_1Hots = np.zeros((batch_size, x_size*y_size))
+    a_1Hots = np.zeros((batch_size, n_rows*n_cols))
     a_1Hots[(range(batch_size), sampled_actions)] = 1.0
+    #rollout_pieces = np.repeat(board[0], repeats=num_rollouts, axis=0)
+    #rollout_scores = np.repeat(board[1], repeats=num_rollouts, axis=0)
+    #rollout_rounds_left = np.repeat(board[2], repeats=num_rollouts,axis=0)
+    #rollout_board = (rollout_pieces, rollout_scores, rollout_rounds_left)
+    #rollout_topk_actions = list(np.repeat(np.array(topk_actions),
+    #                                      repeats=num_rollouts, axis=0))
+    #rollout_topk_actions_index = list(np.repeat(np.array(topk_actions_index),
+    #                                            repeats=num_rollouts, axis=0))
+    #rollout_values = self.mc.simulate(rollout_board, rollout_topk_actions,
+    #                                  rollout_topk_actions_index,
+    #                                  depth=rollout_depth)
+    # Taking advantage implicit structure from repeats to collapse each
+    # rollout back to its game and action using a list comprehension.
+    # Be careful when using implicit order based information!
+    #values = [np.mean(rollout_values[i*num_rollouts:(i+1)*num_rollouts])
+    #          for i in range(len(topk_actions))]
+    #values = np.array(values)
+
+    #best_actions = np.zeros(batch_size, dtype= int)
+    #best_a_1hots = np.zeros((batch_size, self.game.get_action_size()))
+    #for g in range(batch_size):
+    #  g_index = np.array(topk_actions_index, dtype=int) == g
+    #  qsa_g = values[g_index].copy()
+    #  g_actions = np.array(topk_actions)[g_index].copy()
+    #  best_actions[g] = g_actions[np.argmax(qsa_g)]
+    #  best_a_1hots[g][best_actions[g]] = 1
     #print(topk_actions)
     #print(topk_actions_index)
     #print(values)
@@ -1748,7 +1779,9 @@ class MonteCarloBasedPlayer():
 # Content review setup
 
 
-def content_review(notebook_section: str):
+def content_review(notebook_section: str)
+
+:
   return DatatopsContentReviewContainer(
     "",  # No text prompt
     notebook_section,
