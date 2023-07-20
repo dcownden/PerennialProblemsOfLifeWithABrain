@@ -7,10 +7,10 @@ def init_loc(n_rows, n_cols, num, rng=None):
   Args:
     n_rows: int
     n_cols: int
-    num:    int, wnumber of samples to generate, should
+    num:    int, number of samples to generate, should
             throw an error ifnum <= n_rows x n_cols
   Optional Keyword Args
-    rng:    instance of numpy.random's default rng (reproducability)
+    rng:    instance of numpy.random's default rng (reproducibility)
 
   Returns:
     int_loc: ndarray(int) of flat indices for a grid
