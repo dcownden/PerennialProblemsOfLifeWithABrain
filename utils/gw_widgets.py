@@ -344,6 +344,8 @@ class Head2HeadGridworld():
     if self.player1 == 'human':
       assert self.player0 != 'human'
       self.no_human = False
+    self.p0_next_move = None
+    self.p1_next_move = None
     self.has_fov = has_fov
     self.radius = radius
     self.percept_len = 2*self.radius*(self.radius+1)
@@ -492,26 +494,58 @@ class Head2HeadGridworld():
   def button_output_update(self, which_button):
     old_board = self.board_state.copy()
     old_scores = old_board['scores']
+    self.disable_buttons()
     if self.player0 == 'human':
       a_player0 = which_button
     else:
-      if self.p0_uses_temp:
-        a_player0_, _, _ = self.player0.play(old_board,
-                                             temp=self.sft_slider.value)
+      if self.p0_next_move is not None:
+        a_player0_ = self.p0_next_move
+        self.p0_next_move = None
       else:
-        a_player0_, _, _ = self.player0.play(old_board)
+        with self.output0:
+          print("AI is thinking...")
+        if self.p0_uses_temp:
+          a_player0_, _, _ = self.player0.play(old_board,
+                                               temp=self.sft_slider.value)
+        else:
+          a_player0_, _, _ = self.player0.play(old_board)
       a_player0_ = self.gwg.action_to_critter_direction(old_board, a_player0_)
       a_player0 = a_player0_[0]
     if self.player1 == 'human':
       a_player1 = which_button
     else:
-      if self.p1_uses_temp:
-        a_player1_, _, _ = self.player1.play(old_board,
-                                             temp=self.sft_slider.value)
+      if self.p1_next_move is not None:
+        a_player1_ = self.p1_next_move
+        self.p1_next_move = None
       else:
-        a_player1_, _, _ = self.player1.play(old_board)
+        with self.output1:
+          print("AI is thinking...")
+        if self.p1_uses_temp:
+          a_player1_, _, _ = self.player1.play(old_board,
+                                               temp=self.sft_slider.value)
+        else:
+          a_player1_, _, _ = self.player1.play(old_board)
       a_player1_ = self.gwg.action_to_critter_direction(old_board, a_player1_)
       a_player1 = a_player1_[1]
+    self.enable_buttons()
+
+    self.board_state = self.gwg.critter_oriented_get_next_state(
+        self.board_state, [a_player0, a_player1])
+
+    # Try to precompute next AI player move(s) if there are any rounds left
+    if self.board_state['rounds_left'][0] > 0:
+      if self.player0 != 'human':
+        if self.p0_uses_temp:
+          self.p0_next_move, _, _ = self.player0.play(
+            self.board_state, temp=self.sft_slider.value)
+        else:
+          self.p0_next_move, _, _ = self.player0.play(self.board_state)
+      if self.player1 != 'human':
+        if self.p1_uses_temp:
+          self.p1_next_move, _, _ = self.player1.play(
+            self.board_state, temp=self.sft_slider.value)
+        else:
+          self.p1_next_move, _, _ = self.player1.play(self.board_state)
 
     if self.collect_fov_data is True:
       batch_size, n_rows, n_cols = old_board['pieces'].shape
@@ -520,12 +554,11 @@ class Head2HeadGridworld():
                          rng=self.gwg.rng)
       b.set_state(old_board)
       percept = b.get_perceptions(self.radius)
-    self.board_state = self.gwg.critter_oriented_get_next_state(
-        self.board_state, [a_player0, a_player1])
+
     new_scores = self.board_state['scores']
     rounds_left = self.board_state['rounds_left'][0]
     num_moves = self.gwg.lifetime - rounds_left
-
+        
     if new_scores[0] > old_scores[0]:
       eating_string0 = "They ate the food there!"
     else:
@@ -642,3 +675,15 @@ class Head2HeadGridworld():
     self.start_button.disabled = False
     if self.has_temp_slider:
       self.softmax_temp_slider.disabled = False
+
+  def disable_buttons(self):
+    self.up_button.disabled = True
+    self.down_button.disabled = True
+    self.left_button.disabled = True
+    self.right_button.disabled = True
+
+  def enable_buttons(self):
+    self.up_button.disabled = False
+    self.down_button_.disabled = False
+    self.left_button.disabled = False
+    self.right_button.disabled = False

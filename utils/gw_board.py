@@ -56,9 +56,9 @@ class GridworldBoard():
       rc_plotting: ndarray(int) of shape (num, 2), 2D coordinates suitable for matplotlib plotting
     """
 
-    # Set up default random generator, use a predefined global seed if rng is None
+    # Set up default random generator, use the boards default if none explicitly given
     if rng is None:
-      rng = np.random.default_rng(seed=SEED)
+      rng = self.rng
     # Choose 'num' unique random indices from a flat 1D array of size n_rows*n_cols
     int_loc = rng.choice(n_rows * n_cols, num, replace=False)
     # Convert the flat indices to 2D indices based on the original shape (n_rows, n_cols)
