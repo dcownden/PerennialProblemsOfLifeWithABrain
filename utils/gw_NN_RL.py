@@ -406,7 +406,7 @@ class MonteCarlo():
       temp_v:
         Terminal State
     """
-    batch_size, x_size, y_size = board[0].shape
+    batch_size, x_size, y_size = board['pieces'].shape
     next_board = self.game.get_next_state(board, actions, action_indexes)
     if depth is None:
       depth = self.default_depth
@@ -417,14 +417,14 @@ class MonteCarlo():
     expand_bs, _, _ = next_board[0].shape
 
     for i in range(depth):  # maxDepth
-      if next_board[2][0] <= 0:
+      if next_board['rounds_left'][0] <= 0:
         # check that game isn't over
         # assumes all boards have the same rounds left
         # no rounds left return scores as true values
-        terminal_vs = next_board[1].copy()
+        terminal_vs = next_board['scores'].copy()
         return terminal_vs
       else:
-        pis, vs = self.nnet.predict(next_board[0], next_board[1], next_board[2])
+        pis, vs = self.nnet.predict(next_board['pieces'], next_board['scores'], next_board['rounds_left'])
         valids = self.game.get_valid_actions(next_board)
         masked_pis = pis * valids
         sum_pis = np.sum(masked_pis, axis=1)
@@ -436,7 +436,7 @@ class MonteCarlo():
         sampled_actions = np.argmax(probs.cumsum(axis=1) > samp, axis=1)
       next_board = self.game.get_next_state(next_board, sampled_actions)
 
-    pis, vs = self.nnet.predict(next_board[0], next_board[1], next_board[2])
+    pis, vs = self.nnet.predict(next_board['pieces'], next_board['scores'], next_board['rounds_left'])
     return vs
 
 
@@ -498,7 +498,7 @@ class MonteCarloBasedPlayer():
         (avg_value, action) i.e., Average value associated with corresponding action
         i.e., Action with the highest topK probability
     """
-    batch_size, n_rows, n_cols = board[0].shape
+    batch_size, n_rows, n_cols = board['pieces'].shape
     if num_rollouts is None:
       num_rollouts = self.default_rollouts
     if rollout_depth is None:
@@ -510,7 +510,7 @@ class MonteCarloBasedPlayer():
 
     # figure out top k actions according to normalize action probability
     # given by our policy network prediction
-    pis, vs = self.nnet.predict(board[0], board[1], board[2])
+    pis, vs = self.nnet.predict(board['pieces'], board['scores'], board['rounds left'])
     valids = self.game.get_valid_actions(board)
     masked_pis = pis * valids  # Masking invalid moves
     sum_pis = np.sum(masked_pis, axis=1)
