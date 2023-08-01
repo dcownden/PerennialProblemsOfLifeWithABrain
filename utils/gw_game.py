@@ -29,7 +29,7 @@ class GridworldGame():
     """
     
     # Check for positive integer inputs
-    assert all(isinstance(i, int) and i > 0 for i in [batch_size, n_rows, n_cols, num_food, lifetime]), "All inputs must be positive integers."
+    assert all(isinstance(i, int) and i >= 0 for i in [batch_size, n_rows, n_cols, num_food, lifetime]), "All inputs must be non-negative integers."
     self.batch_size = batch_size
     self.n_rows = n_rows
     self.n_cols = n_cols
