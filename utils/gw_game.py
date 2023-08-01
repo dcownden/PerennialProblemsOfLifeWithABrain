@@ -282,10 +282,13 @@ class GridworldGame():
       else:
         # potentially multiple moves on each board, expand the batch
         assert len(actions) == len(a_indx)
-        newPieces = np.array([board['pieces'][ai].copy() for ai in a_indx])
-        newScores = np.array([board['scores'][ai].copy() for ai in a_indx])
-        newrounds_left = np.array([board['rounds_left'][ai].copy() for ai in a_indx])
-        b.set_state((newPieces, newScores, newrounds_left))
+        new_pieces = np.array([board['pieces'][ai].copy() for ai in a_indx])
+        new_scores = np.array([board['scores'][ai].copy() for ai in a_indx])
+        new_rounds_left = np.array([board['rounds_left'][ai].copy() for ai in a_indx])
+        new_state = {'pieces': new_pieces,
+                     'scores': new_scores,
+                     'rounds_left': new_rounds_left}
+        b.set_state(new_state)
       b.execute_moves(moves)
       return b.get_state()
 

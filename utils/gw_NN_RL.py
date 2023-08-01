@@ -414,7 +414,7 @@ class MonteCarlo():
     # but just do straight rollouts after this
     # doesn't expand to deal with all random food generation possibilities
     # just expands based on the actions given
-    expand_bs, _, _ = next_board[0].shape
+    expand_bs, _, _ = next_board['pieces'].shape
 
     for i in range(depth):  # maxDepth
       if next_board['rounds_left'][0] <= 0:
@@ -510,7 +510,7 @@ class MonteCarloBasedPlayer():
 
     # figure out top k actions according to normalize action probability
     # given by our policy network prediction
-    pis, vs = self.nnet.predict(board['pieces'], board['scores'], board['rounds left'])
+    pis, vs = self.nnet.predict(board['pieces'], board['scores'], board['rounds_left'])
     valids = self.game.get_valid_actions(board)
     masked_pis = pis * valids  # Masking invalid moves
     sum_pis = np.sum(masked_pis, axis=1)
