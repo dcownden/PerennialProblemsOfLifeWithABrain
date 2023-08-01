@@ -21,3 +21,4 @@ tabulate
 pathlib
 pandas
 xkcd
+seaborn
