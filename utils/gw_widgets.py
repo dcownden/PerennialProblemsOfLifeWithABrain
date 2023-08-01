@@ -91,7 +91,7 @@ class InteractiveGridworld():
       self.fov_eat_table_data = np.zeros((2, self.percept_len+1))
     # Initialize widgets and buttons
     self.output = widgets.Output(layout=widgets.Layout(
-      width = '14.4em', min_width='14.4em', max_width='15.6em',
+      width = '17.0em', min_width='17.0em', max_width='20.0em',
       min_height='10.0em', overflow='auto'))
     self.scoreboard = widgets.Output(layout=widgets.Layout(
       min_width='12.5em', max_width='13.1em',
@@ -379,8 +379,12 @@ class Head2HeadGridworld():
                                             max=5.0, step=0.05)
       self.softmax_temp_slider = widgets.VBox([self.sft_slider_label,
                                                self.sft_slider])
-    self.output0 = widgets.Output(layout=widgets.Layout(width='15.7em', height='10em'))
-    self.output1 = widgets.Output(layout=widgets.Layout(width='15.7em', height='10em'))
+    self.output0 = widgets.Output(layout=widgets.Layout(
+      width = '17.0em', min_width='17.0em', max_width='20.0em',
+      min_height='10.0em', overflow='auto'))
+    self.output1 = widgets.Output(layout=widgets.Layout(
+      width = '17.0em', min_width='17.0em', max_width='20.0em',
+      min_height='10.0em', overflow='auto'))
     self.scoreboard = widgets.Output(layout=widgets.Layout(
       min_width='18.8em', max_width='19.4em', min_height='6.3em', overflow='auto'))
     self.up_button = widgets.Button(description="Up", 
