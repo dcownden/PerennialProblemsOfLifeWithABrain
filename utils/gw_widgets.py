@@ -379,19 +379,20 @@ class Head2HeadGridworld():
                                             max=5.0, step=0.05)
       self.softmax_temp_slider = widgets.VBox([self.sft_slider_label,
                                                self.sft_slider])
-    self.output0 = widgets.Output(layout=widgets.Layout(
-        width='250px', height='160px'))
-    self.output1 = widgets.Output(layout=widgets.Layout(
-        width='250px', height='160px'))
+    self.output0 = widgets.Output(layout=widgets.Layout(width='15.7em', height='10em'))
+    self.output1 = widgets.Output(layout=widgets.Layout(width='15.7em', height='10em'))
     self.scoreboard = widgets.Output(layout=widgets.Layout(
-        min_width='300px', max_width='310px',
-        min_height='100px', overflow='auto'))
-    self.up_button = widgets.Button(description="Up")
-    self.down_button = widgets.Button(description="Down")
-    self.left_button = widgets.Button(description="Left")
-    self.right_button = widgets.Button(description="Right")
-    self.start_button = widgets.Button(description="Start",
-      layout=widgets.Layout(margin='10px 0 0 0'))  # 10px top margin cludge
+      min_width='18.8em', max_width='19.4em', min_height='6.3em', overflow='auto'))
+    self.up_button = widgets.Button(description="Up", 
+                                    layout=widgets.Layout(width='6.3em'))
+    self.down_button = widgets.Button(description="Down", 
+                                      layout=widgets.Layout(width='6.3em'))
+    self.left_button = widgets.Button(description="Left", 
+                                      layout=widgets.Layout(width='6.3em'))
+    self.right_button = widgets.Button(description="Right", 
+                                       layout=widgets.Layout(width='6.3em'))
+    self.start_button = widgets.Button(description="Start", 
+      layout=widgets.Layout(width='6.3em', margin='0.6em 0 0 0'))  # 0.6em top margin
 
     #set up buttons and outputs and layouts
     self.buttons = widgets.HBox([self.left_button,
