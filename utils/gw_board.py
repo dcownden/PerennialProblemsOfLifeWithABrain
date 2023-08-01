@@ -43,28 +43,29 @@ class GridworldBoard():
     Samples random 2d grid locations without replacement
 
     Args:
-      n_rows: int
-      n_cols: int
-      num:    int, number of samples to generate, should
-              throw an error ifnum <= n_rows x n_cols
-
-    Optional Keyword Args
-      rng:    instance of numpy.random's default random number generator
-              (to enable reproducibility)
+      n_rows: int, number of rows in the grid
+      n_cols: int, number of columns in the grid
+      num:    int, number of samples to generate. Should throw an error if num > n_rows x n_cols
+      rng:    instance of numpy.random's default rng. Used for reproducibility.
 
     Returns:
-      int_loc:  ndarray(int) of flat indices for the grid
-      rc_index: (ndarray(int), ndarray(int)) a pair of arrays the first
-        giving the row indices, the second giving the col indices, useful
-        for indexing an n_rows by n_cols numpy array
-      rc_plotting: ndarray(int) num x 2, same rc coordinates but structured
-        in a way that matplotlib likes
+      int_loc: ndarray(int) of shape (num,), flat indices for a 2D grid flattened into 1D
+      rc_index: tuple(ndarray(int), ndarray(int)), a pair of arrays with the first giving 
+        the row indices and the second giving the col indices. Useful for indexing into 
+        an n_rows by n_cols numpy array.
+      rc_plotting: ndarray(int) of shape (num, 2), 2D coordinates suitable for matplotlib plotting
     """
+
+    # Set up default random generator, use a predefined global seed if rng is None
     if rng is None:
-      rng = self.rng
+      rng = np.random.default_rng(seed=SEED)
+    # Choose 'num' unique random indices from a flat 1D array of size n_rows*n_cols
     int_loc = rng.choice(n_rows * n_cols, num, replace=False)
+    # Convert the flat indices to 2D indices based on the original shape (n_rows, n_cols)
     rc_index = np.unravel_index(int_loc, (n_rows, n_cols))
+    # Transpose indices to get num x 2 array for easy plotting with matplotlib
     rc_plotting = np.array(rc_index).T
+    # Return 1D flat indices, 2D indices for numpy array indexing and 2D indices for plotting
     return int_loc, rc_index, rc_plotting
 
 
