@@ -39,33 +39,33 @@ class GridworldBoard():
 
 
   def init_loc(self, n_rows, n_cols, num, rng=None):
-  """
-  Samples random 2d grid locations without replacement
+    """
+    Samples random 2d grid locations without replacement
 
-  Args:
-    n_rows: int
-    n_cols: int
-    num:    int, number of samples to generate, should
-            throw an error ifnum <= n_rows x n_cols
+    Args:
+      n_rows: int
+      n_cols: int
+      num:    int, number of samples to generate, should
+              throw an error ifnum <= n_rows x n_cols
 
-  Optional Keyword Args
-    rng:    instance of numpy.random's default random number generator
-            (to enable reproducibility)
+    Optional Keyword Args
+      rng:    instance of numpy.random's default random number generator
+              (to enable reproducibility)
 
-  Returns:
-    int_loc:  ndarray(int) of flat indices for the grid
-    rc_index: (ndarray(int), ndarray(int)) a pair of arrays the first
-      giving the row indices, the second giving the col indices, useful
-      for indexing an n_rows by n_cols numpy array
-    rc_plotting: ndarray(int) num x 2, same rc coordinates but structured
-      in a way that matplotlib likes
-  """
-  if rng is None:
-    rng = self.rng
-  int_loc = rng.choice(n_rows * n_cols, num, replace=False)
-  rc_index = np.unravel_index(int_loc, (n_rows, n_cols))
-  rc_plotting = np.array(rc_index).T
-  return int_loc, rc_index, rc_plotting
+    Returns:
+      int_loc:  ndarray(int) of flat indices for the grid
+      rc_index: (ndarray(int), ndarray(int)) a pair of arrays the first
+        giving the row indices, the second giving the col indices, useful
+        for indexing an n_rows by n_cols numpy array
+      rc_plotting: ndarray(int) num x 2, same rc coordinates but structured
+        in a way that matplotlib likes
+    """
+    if rng is None:
+      rng = self.rng
+    int_loc = rng.choice(n_rows * n_cols, num, replace=False)
+    rc_index = np.unravel_index(int_loc, (n_rows, n_cols))
+    rc_plotting = np.array(rc_index).T
+    return int_loc, rc_index, rc_plotting
 
 
   def get_init_board_state(self):
