@@ -91,18 +91,23 @@ class InteractiveGridworld():
       self.fov_eat_table_data = np.zeros((2, self.percept_len+1))
     # Initialize widgets and buttons
     self.output = widgets.Output(layout=widgets.Layout(
-        width = '230px', min_width='230px', max_width='250px',
-        min_height='160px', overflow='auto'))
+      width = '14.4em', min_width='14.4em', max_width='15.6em',
+      min_height='10.0em', overflow='auto'))
     self.scoreboard = widgets.Output(layout=widgets.Layout(
-        min_width='200px', max_width='210px',
-        min_height='100px', overflow='auto'))
+      min_width='12.5em', max_width='13.1em',
+      min_height='6.3em', overflow='auto'))
     self.fov_eat_table_display = widgets.Output(layout=widgets.Layout(
-        min_width='400px', min_height='300px', overflow='auto'))
-    self.up_button = widgets.Button(description="Up")
-    self.down_button = widgets.Button(description="Down")
-    self.left_button = widgets.Button(description="Left")
-    self.right_button = widgets.Button(description="Right")
-    self.start_button = widgets.Button(description="Start")
+      min_width='25.0em', min_height='18.8em', overflow='auto'))
+    self.up_button = widgets.Button(description="Up", 
+      layout=widgets.Layout(width='6.3em'))
+    self.down_button = widgets.Button(description="Down", 
+      layout=widgets.Layout(width='6.3em'))
+    self.left_button = widgets.Button(description="Left", 
+      layout=widgets.Layout(width='6.3em'))
+    self.right_button = widgets.Button(description="Right", 
+      layout=widgets.Layout(width='6.3em'))
+    self.start_button = widgets.Button(description="Start", 
+      layout=widgets.Layout(width='6.3em'))
 
     # get plot canvas widgets and other plotting objects
     plt.ioff()
