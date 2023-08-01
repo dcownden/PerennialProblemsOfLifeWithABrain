@@ -14,13 +14,33 @@ class GridworldGame():
     return GridworldGame.square_content[piece]
 
 
-  def __init__(self, batch_size, n_rows, n_cols,
-               num_food, lifetime, rng=None):
+  def __init__(self, batch_size=1, n_rows=7, n_cols=7,
+               num_food=10, lifetime=30, rng=None):
+    """
+    Initializes an instance of the class with the specified parameters.
+
+    Args:
+        batch_size (int, optional): Number of instances in a batch. Default is 1.
+        n_rows (int, optional): Number of rows in the grid. Default is 7.
+        n_cols (int, optional): Number of columns in the grid. Default is 7.
+        num_food (int, optional): Number of food items. Default is 10.
+        lifetime (int, optional): Time before critter's life ends, in terms of time steps. Default is 30.
+        rng (numpy random number generator, optional): Random number generator for reproducibility. If None, uses default RNG with a preset seed.
+    """
+    
+    # Check for positive integer inputs
+    assert all(isinstance(i, int) and i > 0 for i in [batch_size, n_rows, n_cols, num_food, lifetime]), "All inputs must be positive integers."
     self.batch_size = batch_size
     self.n_rows = n_rows
     self.n_cols = n_cols
+    # Check for num_food exceeding maximum possible value
+    max_food = n_rows * n_cols - 1
+    if num_food > max_food:
+      print(f'num_food is too large, setting it to maximum possible value: {max_food}')
+      num_food = max_food
     self.num_food = num_food
     self.lifetime = lifetime
+    # Set up random number generator
     if rng is None:
       self.rng = np.random.default_rng(seed=SEED)
     else:
