@@ -684,6 +684,6 @@ class Head2HeadGridworld():
 
   def enable_buttons(self):
     self.up_button.disabled = False
-    self.down_button_.disabled = False
+    self.down_button.disabled = False
     self.left_button.disabled = False
     self.right_button.disabled = False
