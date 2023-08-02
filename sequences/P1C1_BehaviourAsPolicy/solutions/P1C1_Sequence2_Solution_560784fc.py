@@ -11,9 +11,10 @@ W_student = np.array(
 # W values and you'd rather just enter them manually above
 for i, output in enumerate(output_struct):
   for j, input in enumerate(percept_struct):
-    if input == 'near ' + output:
+    if (input == 'near ' + output):
       W_student[i,j] = 4.0
-    elif output in input:
+    elif (output in input):
       W_student[i,j] = 1.0
+    # more elif logic here maybe
 
 display(W_student)
