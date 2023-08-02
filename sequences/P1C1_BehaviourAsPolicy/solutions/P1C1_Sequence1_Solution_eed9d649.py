@@ -1,5 +1,0 @@
-gwg = GridworldGame(1, 2, 2, 0, 30)
-random_igwg_0 = InteractiveGridworld(gwg)
-display(random_igwg_0.b_fig.canvas)
-clear_output()
-display(random_igwg_0.board_output_score_start)
