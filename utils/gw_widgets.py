@@ -388,7 +388,7 @@ class Head2HeadGridworld():
       width = '20.0em', min_width='20.0em', max_width='21.0em',
       min_height='10.0em', overflow='auto'))
     self.scoreboard = widgets.Output(layout=widgets.Layout(
-      min_width='18.8em', max_width='19.4em', min_height='6.3em', overflow='auto'))
+      min_width='20em', max_width='21em', min_height='6.3em', overflow='auto'))
     self.up_button = widgets.Button(description="Up", 
                                     layout=widgets.Layout(width='6.3em'))
     self.down_button = widgets.Button(description="Down", 
