@@ -2,7 +2,7 @@
 
 def make_grid(num_rows, num_cols, figsize=(7,6), title=None):
   """Plots an n_rows by n_cols grid with cells centered on integer indices and
-  returns fig and ax handles for futher use
+  returns fig and ax handles for further use
   Args:
     num_rows (int): number of rows in the grid (vertical dimension)
     num_cols (int): number of cols in the grid (horizontal dimension)
