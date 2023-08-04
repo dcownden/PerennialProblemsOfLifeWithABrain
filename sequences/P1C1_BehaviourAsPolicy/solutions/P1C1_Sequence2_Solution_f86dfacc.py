@@ -8,7 +8,7 @@ def parameterized_policy(percept, rng=None, W=W, softmax_temp=None):
     percept: A 1D len 12 array representing the perception of the organism.
       Indices correspond to spaces around the organism. The values in the array
       can be -2 (out-of-bounds), 0 (empty space), or -1 (food).
-    W: a 4 x 12 weight matrix parameter representing the connection strenghts
+    W: a 4 x 12 weight matrix parameter representing the connection strengths
       between the 12 perceptions inputs and the 4 possible output actions.
 
   Returns:
@@ -27,7 +27,7 @@ def parameterized_policy(percept, rng=None, W=W, softmax_temp=None):
   'far up', 'left up', 'near up', 'right up',
   'far left', 'near left', 'near right', 'far right',
   'left down', 'near down', 'right down', 'far down']
-  # a human iterpretable overview of the out structure
+  # a human interpretable overview of the out structure
   output_struct = ['up', 'down', 'left', 'right']
   # boolean representation of percept, no edges, just 1's where food is
   # zero otherwise
