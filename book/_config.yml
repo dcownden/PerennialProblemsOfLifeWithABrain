@@ -5,7 +5,7 @@
 
 #######################################################################################
 # Book settings
-title                       : "Foundations of Neuroscience"  # The title of the book. Will be placed in the left navbar.
+title                       : "Modern Foundations of Neuroscience"  # The title of the book. Will be placed in the left navbar.
 author                      : ""  # The author of the book
 copyright                   : ""  # Copyright year to be placed in the footer
 #logo                        :   # A path to the book logo
