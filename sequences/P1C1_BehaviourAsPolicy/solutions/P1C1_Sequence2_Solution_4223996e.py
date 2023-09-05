@@ -25,7 +25,7 @@ def simple_action_from_percept(percept, rng=None):
     'None', 'None', 'up', 'None',
     'None', 'left', 'right', 'None',
     'None', 'down', 'None', 'None']
-  # these are what count as nearby in the percpt
+  # these are what count as nearby in the percept
   nearby_directions = ['near up', 'near down', 'near left', 'near right']
   # Get the corresponding indices in the percept array
   nearby_indices = [percept_struct.index(dir_) for dir_ in nearby_directions]
