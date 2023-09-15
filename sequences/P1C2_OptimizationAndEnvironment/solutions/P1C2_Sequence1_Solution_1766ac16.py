@@ -16,7 +16,7 @@ def convert_symmetry_to_weights(symmetry_params):
   for i, direction in enumerate(['Up', 'Down', 'Left', 'Right']):
     for j, idx in enumerate(symmetry_indices[direction]):
       weights[i, j] = symmetry_params[idx]
-    return weights
+  return weights
 
 # Loop through each combination
 for params in tqdm(param_combinations):
