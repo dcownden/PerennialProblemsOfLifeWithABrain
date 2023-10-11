@@ -18,7 +18,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           persist-credentials: false
-          fetch-depth: 0
+          fetch-depth: 2
           ref: ${{ github.head_ref }}
 
       - name: Get commit message
@@ -34,11 +34,12 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: 3.9
+          cache: pip
 
       - name: Install dependencies
         run: |
           pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install -r CI_requirements.txt
           pip install jupyter-book==0.10.2 ghp-import
           pip install jupyter_client==7.3.5  # downgrade jupyter-client to fix hangs
 
