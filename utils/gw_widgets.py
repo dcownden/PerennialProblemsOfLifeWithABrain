@@ -113,7 +113,7 @@ class InteractiveGridworld():
     plt.ioff()
     if self.collect_fov_data == True and self.player != 'human':
       self.legend_type = None
-      # do legend seperately if showing observations and no human player
+      # do legend separately if showing observations and no human player
       (self.b_fig, self.b_ax, self.b_critter, self.b_food, self.b_fov,
        self.b_fig_legend, self.b_ax_legend) = self.gwg.plot_board(
           self.board_state, 0, legend_type='separate', figsize=self.figsize,
@@ -146,7 +146,7 @@ class InteractiveGridworld():
     else: # player is some kind of ai
       if self.collect_fov_data == True:
         # an ai player with recording
-        # in this case legend is seperate
+        # in this case legend is separate
         self.V_score_start_output_legend = widgets.VBox([self.scoreboard,
           self.start_button,  self.output, self.b_fig_legend.canvas])
         self.V_board_table = widgets.VBox([self.b_fig.canvas,
