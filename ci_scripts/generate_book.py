@@ -26,30 +26,34 @@ def main():
 
     for m in materials:
         directory = f"{m['chapter']}_{''.join(m['name'].split())}"
+        chapter_notebook_name = f"{m['chapter']}_{''.join(m['name'].split())}_Title.ipynb"
+        chapter_notebook_path = f"{directory}/{ARG}/{chapter_notebook_name}"
 
         # Make temporary chapter title file
-        with open(f"sequences/{directory}/chapter_title.md",
-                  "w+") as title_file:
-            title_page = f"# {m['name']}"
-            art_file = [fname for fname in art_file_list if m['chapter'] in fname]
-            if len(art_file) == 1:
-                artist = art_file[0].split('-')[1].split('.')[0]
-                artist = artist.replace('_', ' ')
-                title_page += f"\n\n ````{{div}} full-width \n <img src='../Art/{art_file[0]}' alt='art relevant to chapter contents' width='100%'> \n```` \n\n*Artwork by {artist}*"
-            title_file.write(title_page)
+        if os.path.exists(chapter_notebook_path):
+            chapter_content_path = chapter_notebook_path
+        else:
+            placeholder_content = f"# {m['name']}\n\nChapter overview to go here."
+            with open(f"sequences/{directory}/chapter_title.md", "w+") as title_file:
+                title_file.write(placeholder_content)
+            chapter_content_path = f"sequences/{directory}/chapter_title.md"
 
-        chapter = {'file': f"sequences/{directory}/chapter_title.md",
-                   'title': f"{m['name']} ({m['chapter']})",
-                   'sections': []}
+
+        chapter = {
+            'file': chapter_content_path,
+            'title': f"{m['name']} ({m['chapter']})",
+            'sections': []
+        }
+
         print(m['chapter'])
         part = m['category']
-        directory = f"sequences/{m['chapter']}_{''.join(m['name'].split())}"
-
+        
         # Make list of notebook sections
         notebook_list = []
-        notebook_list += [f"{directory}/{ARG}/{m['chapter']}_Intro.ipynb"] if os.path.exists(f"{directory}/{m['chapter']}_Intro.ipynb") else []
-        notebook_list += [f"{directory}/{ARG}/{m['chapter']}_Sequence{i + 1}.ipynb" for i in range(m['sequences'])]
-        notebook_list += [f"{directory}/{ARG}/{m['chapter']}_Outro.ipynb"] if os.path.exists(f"{directory}/{m['chapter']}_Outro.ipynb") else []
+        # intro and outro stuff moved into _Title.ipynb files for nicer toc
+        # notebook_list += [f"{directory}/{ARG}/{m['chapter']}_Intro.ipynb"] if os.path.exists(f"{directory}/{m['chapter']}_Intro.ipynb") else []
+        notebook_list += [f"{directory}/{ARG}/{m['chapter']}_Sequence{i + 1}.ipynb" for i m['sequences']]
+        # notebook_list += [f"{directory}/{ARG}/{m['chapter']}_Outro.ipynb"] if os.path.exists(f"{directory}/{m['chapter']}_Outro.ipynb") else []
 
         # Add and process all notebooks
         for notebook_file_path in notebook_list:
@@ -68,95 +72,13 @@ def main():
         # Add chapter
         toc[part]['chapters'].append(chapter)
 
-    # Project chapter -- based on the repo
-    #with open('projects/project_materials.yml') as fh:
-    #    project_materials = yaml.load(fh, Loader=yaml.FullLoader)
-
-    #part = 'Project Booklet'
-    #toc[part]['chapters'].append({'file': 'projects/README.md', 'title': 'Introduction'})
-    #toc[part]['chapters'].append({'file': 'projects/docs/project_guidance.md'})
-
-    # Add Modeling Steps
-    #toc[part]['chapters'].append({'file': 'projects/modelingsteps/intro.md',
-    #                              'sections': [{'file': 'projects/modelingsteps/ModelingSteps_1through4.ipynb'},
-    #                                           {'file': 'projects/modelingsteps/ModelingSteps_5through10.ipynb'},
-    #                                           {'file': 'projects/modelingsteps/TrainIllusionModel.ipynb'},
-    #                                           {'file': 'projects/modelingsteps/TrainIllusionDataProject.ipynb'}
-    #                                          ]})
-    #pre_process_notebook('projects/modelingsteps/ModelingSteps_1through4.ipynb')
-    #pre_process_notebook('projects/modelingsteps/ModelingSteps_5through10.ipynb')
-    #pre_process_notebook('projects/modelingsteps/TrainIllusionModel.ipynb')
-    #pre_process_notebook('projects/modelingsteps/TrainIllusionDataProject.ipynb')
-
-    # Loop over dataset types
-    #project_datasets = {'file': 'projects/docs/datasets_overview.md', 'sections': []}
-
-    #for category in ['neurons', 'fMRI', 'ECoG', 'behavior', 'theory']:
-    #    this_section = {'file': f'projects/docs/{category}.md', 'sections': []}
-
-        # Add README guide
-        #this_section['sections'].append({'file': f"projects/{category}/README.md", 'title': 'Guide'})
-
-        # Add and process all notebooks
-        #try:
-        #    this_section['sections'].append({'file': f"projects/{category}/{category}_videos.ipynb"})
-        #    pre_process_notebook(f"projects/{category}/{category}_videos.ipynb")
-        #except:
-        #    pass
-#         dataset_loaders = [entry for entry in project_materials if entry['category'] == category]
-#         for notebook in dataset_loaders:
-#             this_section['sections'].append({'file': notebook['link'], 'title': notebook['title']})
-#             pre_process_notebook(notebook['link'])
-#        project_datasets['sections'].append(this_section)
-#    toc[part]['chapters'].append(project_datasets)
-#    toc[part]['chapters'].append({'file': 'projects/docs/project_templates.md'})
-
-    # Projects 2020
-    #toc[part]['chapters'].append({'file': 'projects/docs/project_2020_highlights.md',
-    #                              'sections': [{'file': 'projects/docs/projects_2020/neurons.md'},
-    #                                           {'file': 'projects/docs/projects_2020/theory.md'},
-    #                                           {'file': 'projects/docs/projects_2020/behavior.md'},
-    #                                           {'file': 'projects/docs/projects_2020/fMRI.md'},
-    #                                           {'file': 'projects/docs/projects_2020/eeg.md'}
-    #                                          ]})
-
+    
     # Turn toc into list
     # there needs to be something with file as a key that is the intro
+    # this is an esoteric requirement of the current juptyer-book setup, but we can live with it
     toc_list = [{'file': f"sequences/intro.ipynb"}]
     if os.path.exists(f"sequences/intro.ipynb"):
         pre_process_notebook(f"sequences/intro.ipynb")
-
-    # TA training file
-    #if ARG == "instructor":
-    #    chapter = {'chapters': [{'file': 'tatraining/TA_Training_CN.ipynb'}]}
-    #    pre_process_notebook('tatraining/TA_Training_CN.ipynb')
-    #    toc_list += [chapter]
-    # Schedule chapter
-    #chapter = {'chapters': [{'file': 'sequences/Schedule/schedule_intro.md',
-    #                         'sections': [{'file': 'sequences/Schedule/daily_schedules.md'},
-    #                                      {'file': 'sequences/Schedule/shared_calendars.md'},
-    #                                      {'file': 'sequences/Schedule/timezone_widget.md'}
-    #                                     ]}]}
-    #toc_list += [chapter]
-
-    # Technical help chapter
-    #chapter = {'chapters': [{'file': 'sequences/TechnicalHelp/tech_intro.md', 
-    #                         'sections': [{'file': 'sequences/TechnicalHelp/Jupyterbook.md',
-    #                                       'sections': [{'file': 'sequences/TechnicalHelp/Sequence_colab.md'},
-    #                                                    {'file': 'sequences/TechnicalHelp/Sequence_kaggle.md'}
-    #                                                   ]
-    #                                      },
-    #                                      {'file': 'sequences/TechnicalHelp/Discord.md'}
-    #                                     ]}]}
-    #toc_list += [chapter]
-
-    # Links and Policy file
-    #chapter = {'chapters': [{'file': 'sequences/TechnicalHelp/Links_Policy.md'}]}
-    #toc_list += [chapter]
-
-    # Pre-reqs file
-    #chapter = {'chapters': [{'file': 'prereqs/ComputationalNeuroscience.md'}]}
-    #toc_list += [chapter]
 
     for key in toc.keys():
         # Add wrap-up if it exists
