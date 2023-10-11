@@ -28,8 +28,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
+          clean: true
           persist-credentials: false
-          fetch-depth: 50
+          fetch-depth: 20
           ref: ${{ github.head_ref }}
 
       - name: Get commit message
@@ -46,7 +47,15 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: 3.9
-
+      
+      - name: Cache Pip Dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+      
       - name: Install dependencies
         if: "!contains(env.COMMIT_MESSAGE, 'skip ci')"
         run: |
