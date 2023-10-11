@@ -128,7 +128,7 @@ logging.getLogger('matplotlib.font_manager').setLevel(logging.ERROR)
 
 def make_grid(num_rows, num_cols, figsize=(5,4)):
   """Plots an n_rows by n_cols grid with cells centered on integer indices and
-  returns fig and ax handles for further use
+  returns fig and ax handles for futher use
   Args:
     num_rows (int): number of rows in the grid (vertical dimension)
     num_cols (int): number of cols in the grid (horizontal dimension)
@@ -175,7 +175,7 @@ def plot_food(fig, ax, rc_food_loc, food=None):
   Args:
     fig, ax: matplotlib figure and axes objects
     rc_food_loc: ndarry(int) of shape (N:num_food x 2:row,col)
-    food: a handle for the existing food matplotlib PatchCollection object
+    food: a handle for the existing food matplotlib PatchCollenction object
     if one exists
   Returns:
     a handle for matplotlib PathCollection object of food scatter plot, either
@@ -198,7 +198,7 @@ def plot_critter(fig, ax, rc_critter_loc, critter=None):
   Args:
     fig, ax: matplotlib figure and axes objects
     rc_critter_loc: ndarry(int) of shape (N:num_critters x 2:row,col)
-    critter: a handle for the existing food matplotlib PatchCollection object
+    critter: a handle for the existing food matplotlib PatchCollenction object
     if one exists
   Returns:
     a handle for matplotlib PathCollection object of critter scatter plot,
@@ -396,7 +396,7 @@ class GridworldBoard():
 
     Note:
       moves[0,1,3] is the x coordinate of the move corresponding to the
-      fourth offset on the first board.
+      fourth offstet on the first board.
       moves[1,:,1] will give the g,x,y triple corresponding to the
       move on the second board and the second offset, actions are integers
     """

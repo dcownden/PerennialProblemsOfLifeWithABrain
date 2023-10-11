@@ -182,7 +182,7 @@ class GridworldBoard():
 
     Note:
       moves[0,1,3] is the x coordinate of the move corresponding to the
-      fourth offset on the first board.
+      fourth offstet on the first board.
       moves[1,:,1] will give the g,x,y triple corresponding to the
       move on the second board and the second offset, actions are integers
     """
