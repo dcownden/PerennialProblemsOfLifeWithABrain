@@ -1,12 +1,12 @@
 - chapter: P1C1
   category: Behaviour, Environments and Optimization, Evolution and Learning 
   name: Behaviour As Policy
-  sequences: 3
+  sequences: [1,2,3]
 - chapter: P1C2
   category: Behaviour, Environments and Optimization, Evolution and Learning
   name: Optimizatal is Relative to the Environment 
-  sequences: 3
+  sequences: [1,2,3]
 #- chapter: P1C3
 #  category: Behaviour, Environments and Optimization, Evolution and Learning
 #  name: Real Evolution 
-#  sequences: 3
+#  sequences: [3]
