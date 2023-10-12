@@ -39,9 +39,11 @@ jobs:
       - name: Install dependencies
         run: |
           pip install --upgrade pip
-          pip install -r CI_requirements.txt
+          pip install -r BOOK_requirements.txt
           pip install jupyter-book==0.10.2 ghp-import
           pip install jupyter_client==7.3.5  # downgrade jupyter-client to fix hangs
+          echo "Installed packages:"
+          pip freeze
 
       - name: Install XKCD fonts
         if: "!contains(env.COMMIT_MESSAGE, 'skip ci')"
