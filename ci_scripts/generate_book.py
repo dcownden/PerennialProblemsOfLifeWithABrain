@@ -36,7 +36,7 @@ def main():
             #placeholder_content
             markdown_content = f"# {m['chapter']}_{''.join(m['name'].split())}\n\nChapter overview to go here."
         with open(chapter_md_path, "w+") as md_file:
-            md_file.write(placeholder_content)
+            md_file.write(markdown_content)
 
         chapter = {
             'file': chapter_content_path,
