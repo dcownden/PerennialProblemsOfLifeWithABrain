@@ -25,7 +25,7 @@ def main():
     art_file_list = os.listdir('sequences/Art/')
 
     for m in materials:
-        directory = f"{m['chapter']}_{''.join(m['name'].split())}"
+        directory = f"{sequences/m['chapter']}_{''.join(m['name'].split())}"
         chapter_notebook_name = f"{m['chapter']}_{''.join(m['name'].split())}_Title.ipynb"
         chapter_notebook_path = f"{directory}/{ARG}/{chapter_notebook_name}"
 
@@ -33,11 +33,10 @@ def main():
         if os.path.exists(chapter_notebook_path):
             chapter_content_path = chapter_notebook_path
         else:
-            placeholder_content = f"# {m['name']}\n\nChapter overview to go here."
-            with open(f"sequences/{directory}/chapter_title.md", "w+") as title_file:
+            placeholder_content = f"# {m['chapter']}_{''.join(m['name'].split())}\n\nChapter overview to go here."
+            with open(f"{directory}/chapter_title.md", "w+") as title_file:
                 title_file.write(placeholder_content)
-            chapter_content_path = f"sequences/{directory}/chapter_title.md"
-
+            chapter_content_path = f"{directory}/chapter_title.md"
 
         chapter = {
             'file': chapter_content_path,
@@ -47,7 +46,6 @@ def main():
 
         print(m['chapter'])
         part = m['category']
-        
         # Make list of notebook sections
         notebook_list = []
         # intro and outro stuff moved into _Title.ipynb files for nicer toc
