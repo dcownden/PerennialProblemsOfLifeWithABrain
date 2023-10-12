@@ -44,9 +44,6 @@ jobs:
           python-version: 3.9
           cache: 'pip'
 
-      - name: Check disk space 1
-        run: df -h
-
       - name: Install dependencies
         if: "!contains(env.COMMIT_MESSAGE, 'skip ci')"
         run: |
@@ -54,19 +51,6 @@ jobs:
           pip install -r CI_requirements.txt
           echo "Installed packages:"
           pip freeze
-
-      - name: Check disk space 2
-        run: df -h
-
-      - name: Clean up pip
-        run: |
-          sudo rm -rf /tmp/*
-
-      - name: Check disk space 3
-        run: df -h
-
-      - name: Install torch
-        run: pip install torch      
 
       - name: Install XKCD fonts
         if: "!contains(env.COMMIT_MESSAGE, 'skip ci')"
