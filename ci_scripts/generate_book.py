@@ -39,7 +39,7 @@ def main():
             md_file.write(markdown_content)
 
         chapter = {
-            'file': chapter_content_path,
+            'file': chapter_md_path,
             'title': f"{m['name']} ({m['chapter']})",
             'sections': []
         }
