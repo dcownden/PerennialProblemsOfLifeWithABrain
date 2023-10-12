@@ -33,9 +33,9 @@ def main():
             chapter_content_path = chapter_title_path
         else:
             placeholder_content = f"# {m['chapter']}_{''.join(m['name'].split())}\n\nChapter overview to go here."
-            with open(f"{directory}/{ARG}/{m['chapter'}_Title.md", "w+") as title_file:
+            with open(f"{directory}/{ARG}/{m['chapter']}_Title.md", "w+") as title_file:
                 title_file.write(placeholder_content)
-            chapter_content_path = f"{directory}/{ARG}/{m['chapter'}_Title.md"
+            chapter_content_path = f"{directory}/{ARG}/{m['chapter']}_Title.md"
 
         chapter = {
             'file': chapter_content_path,
