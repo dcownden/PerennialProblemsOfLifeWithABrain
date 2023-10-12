@@ -4,6 +4,7 @@ import yaml
 from jinja2 import Template
 import traceback
 import json
+import nbformat
 from bs4 import BeautifulSoup
 
 REPO = os.environ.get("PPLWB_REPO", "PerennialProblemsOfLifeWithABrain")
@@ -27,15 +28,15 @@ def main():
     for m in materials:
         directory = f"sequences/{m['chapter']}_{''.join(m['name'].split())}"
         chapter_title_path = f"{directory}/{ARG}/{m['chapter']}_Title.ipynb"
+        chapter_md_path = f"{directory}/{ARG}/{m['chapter']}_Title.md"
 
-        # Make temporary chapter title file
         if os.path.exists(chapter_title_path):
-            chapter_content_path = chapter_title_path
+            markdown_content = extract_markdown_from_notebook(chapter_title_path)
         else:
-            placeholder_content = f"# {m['chapter']}_{''.join(m['name'].split())}\n\nChapter overview to go here."
-            with open(f"{directory}/{ARG}/{m['chapter']}_Title.md", "w+") as title_file:
-                title_file.write(placeholder_content)
-            chapter_content_path = f"{directory}/{ARG}/{m['chapter']}_Title.md"
+            #placeholder_content
+            markdown_content = f"# {m['chapter']}_{''.join(m['name'].split())}\n\nChapter overview to go here."
+        with open(chapter_md_path, "w+") as md_file:
+            md_file.write(placeholder_content)
 
         chapter = {
             'file': chapter_content_path,
@@ -88,6 +89,7 @@ def main():
     with open('book/_toc.yml', 'w') as fh:
         yaml.dump(toc_list, fh)
 
+
 def pre_process_notebook(file_path):
 
     with open(file_path, encoding="utf-8") as read_notebook:
@@ -107,6 +109,7 @@ def open_in_colab_new_tab(content):
         anchor['target'] = '_blank'
     cells[0]['source'][0] = str(parsed_html)
     return content
+
 
 def link_hidden_cells(content):
     cells = content['cells']
@@ -166,6 +169,7 @@ def link_hidden_cells(content):
     content['cells'] = updated_cells
     return content
 
+
 def change_video_widths(content):
 
     for cell in content['cells']:
@@ -187,6 +191,18 @@ def change_video_widths(content):
                               f'    display(IFrame(src=f"{slide_link}", width=730, height=410))\n',
                               'display(out)']
     return content
+
+
+def extract_markdown_from_notebook(ipynb_path):
+    """Extracts markdown content from a Jupyter notebook."""
+    with open(ipynb_path, "r") as f:
+        notebook = nbformat.read(f, as_version=4)
+    
+    markdown_content = ""
+    for cell in notebook.cells:
+        if cell.cell_type == "markdown":
+            markdown_content += cell.source + "\n\n"
+    return markdown_content
 
 if __name__ == '__main__':
     main()
