@@ -26,17 +26,16 @@ def main():
 
     for m in materials:
         directory = f"sequences/{m['chapter']}_{''.join(m['name'].split())}"
-        chapter_notebook_name = f"{m['chapter']}_{''.join(m['name'].split())}_Title.ipynb"
-        chapter_notebook_path = f"{directory}/{ARG}/{chapter_notebook_name}"
+        chapter_title_path = f"{directory}/{ARG}/{m['chapter'}_Title.ipynb"
 
         # Make temporary chapter title file
-        if os.path.exists(chapter_notebook_path):
-            chapter_content_path = chapter_notebook_path
+        if os.path.exists(chapter_title_path):
+            chapter_content_path = chapter_title_path
         else:
             placeholder_content = f"# {m['chapter']}_{''.join(m['name'].split())}\n\nChapter overview to go here."
-            with open(f"{directory}/chapter_title.md", "w+") as title_file:
+            with open(f"{directory}/{ARG}/{m['chapter'}_Title.md", "w+") as title_file:
                 title_file.write(placeholder_content)
-            chapter_content_path = f"{directory}/chapter_title.md"
+            chapter_content_path = f"{directory}/{ARG}/{m['chapter'}_Title.md"
 
         chapter = {
             'file': chapter_content_path,
@@ -74,7 +73,8 @@ def main():
     # Turn toc into list
     # there needs to be something with file as a key that is the intro
     # this is an esoteric requirement of the current juptyer-book setup, but we can live with it
-    toc_list = [{'file': f"sequences/intro.ipynb"}]
+    toc_list = [{'file': f"sequences/intro.ipynb",
+                 'title': "Introduction"}]
     if os.path.exists(f"sequences/intro.ipynb"):
         pre_process_notebook(f"sequences/intro.ipynb")
 
