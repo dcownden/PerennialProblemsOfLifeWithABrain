@@ -25,7 +25,7 @@ def main():
     art_file_list = os.listdir('sequences/Art/')
 
     for m in materials:
-        directory = f"{sequences/m['chapter']}_{''.join(m['name'].split())}"
+        directory = f"sequences/{m['chapter']}_{''.join(m['name'].split())}"
         chapter_notebook_name = f"{m['chapter']}_{''.join(m['name'].split())}_Title.ipynb"
         chapter_notebook_path = f"{directory}/{ARG}/{chapter_notebook_name}"
 
