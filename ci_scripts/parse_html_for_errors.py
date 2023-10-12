@@ -15,10 +15,10 @@ def main():
         name = f"{m['chapter']}_{''.join(m['name'].split())}"
 
         # Loop over sequences
-        for i in range(m['sequences']):
+        for i in m['sequences']:
 
             # Load html file
-            notebook_file_path = f"{html_directory}/sequences/{name}/{ARG}/{m['chapter']}_Sequence{i + 1}.html"
+            notebook_file_path = f"{html_directory}/sequences/{name}/{ARG}/{m['chapter']}_Sequence{i}.html"
             with open(notebook_file_path, 'r') as f:
                 contents = f.read()
             parsed_html = BeautifulSoup(contents, features="html.parser")
