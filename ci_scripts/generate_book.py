@@ -52,7 +52,7 @@ def main():
         notebook_list = []
         # intro and outro stuff moved into _Title.ipynb files for nicer toc
         # notebook_list += [f"{directory}/{ARG}/{m['chapter']}_Intro.ipynb"] if os.path.exists(f"{directory}/{m['chapter']}_Intro.ipynb") else []
-        notebook_list += [f"{directory}/{ARG}/{m['chapter']}_Sequence{i + 1}.ipynb" for i m['sequences']]
+        notebook_list += [f"{directory}/{ARG}/{m['chapter']}_Sequence{i + 1}.ipynb" for i in m['sequences']]
         # notebook_list += [f"{directory}/{ARG}/{m['chapter']}_Outro.ipynb"] if os.path.exists(f"{directory}/{m['chapter']}_Outro.ipynb") else []
 
         # Add and process all notebooks
