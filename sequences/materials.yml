@@ -6,7 +6,7 @@
   category: Behaviour, Environments and Optimization, Evolution and Learning
   name: Optimization And Environment 
   sequences: [1,2,3]
-#- chapter: P1C3
-#  category: Behaviour, Environments and Optimization, Evolution and Learning
-#  name: Real Evolution 
-#  sequences: [3]
+- chapter: P1C3
+  category: Behaviour, Environments and Optimization, Evolution and Learning
+  name: Real Evolution 
+  sequences: [3]
