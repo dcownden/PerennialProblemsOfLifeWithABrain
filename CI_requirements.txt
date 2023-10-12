@@ -12,7 +12,7 @@ jupyter-client==6.1.12
 requests==2.31.0
 numpy==1.23.5
 scipy==1.11.3
-torch==2.0.1+cpu
+# torch==2.0.1 handled seperately in CI workflows
 matplotlib==3.71
 scikit-learn==1.2.2
 ipywidgets==7.7.1
