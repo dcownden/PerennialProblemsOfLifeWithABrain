@@ -26,7 +26,7 @@ def main():
 
     for m in materials:
         directory = f"sequences/{m['chapter']}_{''.join(m['name'].split())}"
-        chapter_title_path = f"{directory}/{ARG}/{m['chapter'}_Title.ipynb"
+        chapter_title_path = f"{directory}/{ARG}/{m['chapter']}_Title.ipynb"
 
         # Make temporary chapter title file
         if os.path.exists(chapter_title_path):
