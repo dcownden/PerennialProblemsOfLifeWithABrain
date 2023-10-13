@@ -34,14 +34,18 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: 3.9
-          cache: pip
+          cache: 'pip'
 
       - name: Install dependencies
         run: |
-          pip install --upgrade pip
+          python -m pip install --upgrade pip wheel
           pip install -r BOOK_requirements.txt
           pip install jupyter-book==0.10.2 ghp-import
           pip install jupyter_client==7.3.5  # downgrade jupyter-client to fix hangs
+
+      - name: Install CPU-only PyTorch
+        run: |
+          pip install torch==2.0.1 -f https://download.pytorch.org/whl/cpu/torch_stable.html
           echo "Installed packages:"
           pip freeze
 
