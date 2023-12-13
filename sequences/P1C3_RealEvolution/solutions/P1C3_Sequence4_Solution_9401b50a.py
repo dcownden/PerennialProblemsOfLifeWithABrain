@@ -49,7 +49,7 @@ def evo_learning_simulation(
     # with only one trial there is no learning
     n_learning_trials = 1
 
-  # intialize the target connection pattern and how it changes each generation
+  # initialize the target connection pattern and how it changes each generation
   base_genome_shape = (num_blocks, block_size)
   if has_changing_environment:
     env_target = rng.integers(0, 2, size=base_genome_shape, dtype=np.bool_)
@@ -66,7 +66,7 @@ def evo_learning_simulation(
   genome_shape = (pop_size,) + base_genome_shape + (2,)
   # the two in the last dim is for preset and flexible
 
-  # intialize the population genotypes
+  # initialize the population genotypes
   if init_pop == 'simple':
     g_presets = rng.integers(0, 2, size=genome_shape[:-1], dtype=np.bool_)
     g_flexible = rng.integers(0, 2, size=genome_shape[:-1], dtype=np.bool_)
@@ -132,7 +132,7 @@ def evo_learning_simulation(
         # Generate new samples only for the part of composite_params to be updated
         update_param_samples = rng.integers(0, 2, size=to_update.sum(), dtype=np.bool_)
         composite_params[to_update] = update_param_samples
-        # trial scores are computed for everyhone
+        # trial scores are computed for everyone
         trial_scores = score_calc(composite_params, env_target)
         # but only learners should improve of decline
         improved = trial_scores > best_scores
