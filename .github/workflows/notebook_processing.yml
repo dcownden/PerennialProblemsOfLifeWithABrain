@@ -91,13 +91,24 @@ jobs:
           python ci_scripts/verify_exercises.py $nbs --c "$COMMIT_MESSAGE"
           python ci_scripts/make_pr_comment.py $nbs --branch $branch --o comment.txt
 
-      - name: Add PR/Push comment
-        if: ${{ !contains(env.COMMIT_MESSAGE, 'skip ci') && (github.event_name == 'pull_request' || github.event_name == 'pull_request') }}
-        uses: machine-learning-apps/pr-comment@1.0.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Add PR comment
+        if: ${{ !contains(env.COMMIT_MESSAGE, 'skip ci') && github.event_name == 'pull_request' }}
+        uses: actions/github-script@v5
         with:
-          path: comment.txt
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            // Read the comment content from a file
+            const commentFilePath = path.join(process.env.GITHUB_WORKSPACE, 'comment.txt');
+            const comment = fs.readFileSync(commentFilePath, 'utf8');
+            // Post the comment to the pull request
+            await github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
 
       - name: Update READMEs
         if: "!contains(env.COMMIT_MESSAGE, 'skip ci')"
