@@ -2,7 +2,7 @@
 learn_rng = np.random.default_rng(0)
 num_learning_episodes = 100000
 alpha = 100 #learning rate / step size
-perturbation_scale = 0.01 # std of guassian parameter perturbations
+perturbation_scale = 0.01 # std of Gaussian parameter perturbations
 w_init = 1
 b_init = 0
 w = w_init
