@@ -12,5 +12,5 @@
   sequences: [1,2,3,4]
 - chapter: P2C1
   name: Optimization Through Perturbation
-  category: Supervised Learning
+  category: Curve Fitting
   sequences: [1]
