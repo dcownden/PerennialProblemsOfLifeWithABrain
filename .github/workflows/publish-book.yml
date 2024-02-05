@@ -58,6 +58,10 @@ jobs:
           sudo apt install -fy
           rm -f $HOME/.matplotlib/fontList.cache
 
+      - name: Patch Sphinx Config to Remove applehelp Extension Version Compatability Issue
+        run: |
+          find . -name conf.py -exec python -c "import re; conf_path = '{}'; conf_text = open(conf_path).read(); conf_text = re.sub(r"'sphinxcontrib.applehelp',", "", conf_text); open(conf_path, 'w').write(conf_text)" \;
+      
       - name: Build student book
         run: |
           python ci_scripts/generate_book.py student
