@@ -41,6 +41,7 @@ jobs:
           python -m pip install --upgrade pip wheel
           pip install -r BOOK_requirements.txt
           pip install jupyter-book==0.10.2 ghp-import
+          pip install sphinxcontrib-applehelp==1.0.7 # downgrade this to prevent req explosion
           pip install jupyter_client==7.3.5  # downgrade jupyter-client to fix hangs
 
       - name: Install CPU-only PyTorch
@@ -57,10 +58,6 @@ jobs:
           sudo dpkg -i --force-all fonts-humor-sans_1.0-4_all.deb <<< 'yes'
           sudo apt install -fy
           rm -f $HOME/.matplotlib/fontList.cache
-
-      - name: Patch Sphinx Config to Remove applehelp Extension Version Compatability Issue
-        run: |
-          find . -name conf.py -exec python -c "import re; conf_path = '{}'; conf_text = open(conf_path).read(); conf_text = re.sub(r"'sphinxcontrib.applehelp',", "", conf_text); open(conf_path, 'w').write(conf_text)" \;
       
       - name: Build student book
         run: |
