@@ -41,8 +41,8 @@ jobs:
           python -m pip install --upgrade pip wheel
           pip install -r BOOK_requirements.txt
           pip install jupyter-book==0.10.2 ghp-import
-          pip install sphinxcontrib-applehelp==1.0.7 # downgrade this to prevent req explosion
           pip install jupyter_client==7.3.5  # downgrade jupyter-client to fix hangs
+          pip install sphinxcontrib-applehelp==1.0.4 # downgrade this to prevent req explosion
 
       - name: Install CPU-only PyTorch
         run: |
