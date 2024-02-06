@@ -1,0 +1,1712 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>1.2.3: Normative Thinking — Modern Foundations of Neuroscience</title>
+<!-- Loaded before other Sphinx assets -->
+<link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
+<link href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../../_static/pygments.css" rel="stylesheet" type="text/css">
+<link href="../../../_static/styles/sphinx-book-theme.css" rel="stylesheet" type="text/css">
+<link href="../../../_static/togglebutton.css" rel="stylesheet" type="text/css">
+<link href="../../../_static/copybutton.css" rel="stylesheet" type="text/css">
+<link href="../../../_static/mystnb.css" rel="stylesheet" type="text/css">
+<link href="../../../_static/sphinx-thebe.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" rel="stylesheet" type="text/css"/>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf" rel="preload"/>
+<script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+<script src="../../../_static/jquery.js"></script>
+<script src="../../../_static/underscore.js"></script>
+<script src="../../../_static/doctools.js"></script>
+<script src="../../../_static/togglebutton.js"></script>
+<script src="../../../_static/clipboard.min.js"></script>
+<script src="../../../_static/copybutton.js"></script>
+<script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+<script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+<script async="async" src="../../../_static/sphinx-thebe.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+<script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+<script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+<link href="../../../genindex.html" rel="index" title="Index">
+<link href="../../../search.html" rel="search" title="Search"/>
+<link href="../../P1C3_RealEvolution/student/P1C3_Title.html" rel="next" title="Chapter 1.3 Real Evolution"/>
+<link href="P1C2_Sequence2.html" rel="prev" title="Sequence 1.2.2: What’s Good Depends on the Niche"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="None" name="docsearch:language"/>
+<!-- Google Analytics -->
+</link></link></link></link></link></link></head>
+<body data-offset="60" data-spy="scroll" data-target="#bd-toc-nav">
+<!-- Checkboxes to toggle the left sidebar -->
+<input aria-label="Toggle navigation sidebar" class="sidebar-toggle" id="__navigation" name="__navigation" type="checkbox"/>
+<label class="overlay overlay-navbar" for="__navigation">
+<div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input aria-label="Toggle in-page Table of Contents" class="sidebar-toggle" id="__page-toc" name="__page-toc" type="checkbox"/>
+<label class="overlay overlay-pagetoc" for="__page-toc">
+<div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+<div class="container-fluid" id="banner"></div>
+<div class="container-xl">
+<div class="row">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+<div class="bd-sidebar__content">
+<div class="bd-sidebar__top"><div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../../index.html">
+<h1 class="site-logo" id="site-title">Modern Foundations of Neuroscience</h1>
+</a>
+</div><form action="../../../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="icon fas fa-search"></i>
+<input aria-label="Search this book..." autocomplete="off" class="form-control" id="search-input" name="q" placeholder="Search this book..." type="search"/>
+</form><nav aria-label="Main" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+<ul class="nav bd-sidenav bd-sidenav__home-link">
+<li class="toctree-l1">
+<a class="reference internal" href="../../intro.html">
+                    Introduction
+                </a>
+</li>
+</ul>
+<p class="caption">
+<span class="caption-text">
+  Behaviour, Environments and Optimization, Evolution and Learning
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../P1C1_BehaviourAsPolicy/student/P1C1_Title.html">
+   Behaviour As Policy (P1C1)
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox">
+<label for="toctree-checkbox-1">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../P1C1_BehaviourAsPolicy/student/P1C1_Sequence1.html">
+<strong>
+      Sequence 1.1.1: Gridworld Introduction
+     </strong>
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../P1C1_BehaviourAsPolicy/student/P1C1_Sequence2.html">
+<strong>
+      Sequence 1.1.2: Thinking of What Receptors and Muscles Do as a Policy
+     </strong>
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../P1C1_BehaviourAsPolicy/student/P1C1_Sequence3.html">
+<strong>
+      Sequence 1.1.3: Abstraction and Reasoning with Policies
+     </strong>
+</a>
+</li>
+</ul>
+</input></li>
+<li class="toctree-l1 current active has-children">
+<a class="reference internal" href="P1C2_Title.html">
+   Optimization And Environment (P1C2)
+  </a>
+<input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox">
+<label for="toctree-checkbox-2">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul class="current">
+<li class="toctree-l2">
+<a class="reference internal" href="P1C2_Sequence1.html">
+<strong>
+      Sequence 1.2.1: Optimization Makes you Better
+     </strong>
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="P1C2_Sequence2.html">
+<strong>
+      Sequence 1.2.2: What’s Good Depends on the Niche
+     </strong>
+</a>
+</li>
+<li class="toctree-l2 current active">
+<a class="current reference internal" href="#">
+<strong>
+      1.2.3: Normative Thinking
+     </strong>
+</a>
+</li>
+</ul>
+</input></li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../P1C3_RealEvolution/student/P1C3_Title.html">
+   Real Evolution (P1C3)
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox">
+<label for="toctree-checkbox-3">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../P1C3_RealEvolution/student/P1C3_Sequence1.html">
+<strong>
+      1.3.1: Populations and Inheritance
+     </strong>
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../P1C3_RealEvolution/student/P1C3_Sequence2.html">
+<strong>
+      1.3.2: Why Sex
+     </strong>
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../P1C3_RealEvolution/student/P1C3_Sequence3.html">
+<strong>
+      1.3.3: Competition and Interaction Transform Optimization into Game Theory
+     </strong>
+</a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../P1C3_RealEvolution/student/P1C3_Sequence4.html">
+<strong>
+      1.3.4: Learning and Evolution
+     </strong>
+</a>
+</li>
+</ul>
+</input></li>
+</ul>
+<p class="caption">
+<span class="caption-text">
+  Supervised Learning
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../P2C1_CurveFitting/student/P2C1_Title.html">
+   Curve Fitting (P2C1)
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+<label for="toctree-checkbox-4">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../P2C1_CurveFitting/student/P2C1_Sequence1.html">
+<strong>
+      2.1.1: Curve Fitting Through Perturbation
+     </strong>
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+<div class="bd-sidebar__bottom">
+<!-- To handle the deprecated key -->
+<div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+</div>
+</div>
+<div id="rtd-footer-container"></div>
+</div>
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+<div class="header-article row sticky-top noprint">
+<div class="col py-1 d-flex header-article-main">
+<div class="header-article__left">
+<label class="headerbtn" data-placement="right" data-toggle="tooltip" for="__navigation" title="Toggle navigation">
+<span class="headerbtn__icon-container">
+<i class="fas fa-bars"></i>
+</span>
+</label>
+</div>
+<div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+<button aria-label="Launch interactive content" class="headerbtn menu-dropdown__trigger">
+<i class="fas fa-rocket"></i>
+</button>
+<div class="menu-dropdown__content">
+<ul>
+</ul>
+</div>
+</div>
+<button class="headerbtn" data-placement="bottom" data-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
+<span class="headerbtn__icon-container">
+<i class="fas fa-expand"></i>
+</span>
+</button>
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+<button aria-label="Source repositories" class="headerbtn menu-dropdown__trigger">
+<i class="fab fa-github"></i>
+</button>
+<div class="menu-dropdown__content">
+<ul>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/dcownden/PerennialProblemsOfLifeWithABrain" title="Source repository">
+<span class="headerbtn__icon-container">
+<i class="fab fa-github"></i>
+</span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+</li>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/dcownden/PerennialProblemsOfLifeWithABrain/issues/new?title=Issue%20on%20page%20%2Fsequences/P1C2_OptimizationAndEnvironment/student/P1C2_Sequence3.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
+<span class="headerbtn__icon-container">
+<i class="fas fa-lightbulb"></i>
+</span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="menu-dropdown menu-dropdown-download-buttons">
+<button aria-label="Download this page" class="headerbtn menu-dropdown__trigger">
+<i class="fas fa-download"></i>
+</button>
+<div class="menu-dropdown__content">
+<ul>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../../../_sources/sequences/P1C2_OptimizationAndEnvironment/student/P1C2_Sequence3.ipynb" title="Download source file">
+<span class="headerbtn__icon-container">
+<i class="fas fa-file"></i>
+</span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+</li>
+<li>
+<button class="headerbtn" data-placement="left" data-toggle="tooltip" onclick="printPdf(this)" title="Print to PDF">
+<span class="headerbtn__icon-container">
+<i class="fas fa-file-pdf"></i>
+</span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+</li>
+</ul>
+</div>
+</div>
+<label class="headerbtn headerbtn-page-toc" for="__page-toc">
+<span class="headerbtn__icon-container">
+<i class="fas fa-list"></i>
+</span>
+</label>
+</div>
+</div>
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+<div class="tocsection onthispage pt-5 pb-3">
+<i class="fas fa-list"></i> Contents
+    </div>
+<nav aria-label="Page" id="bd-toc-nav">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry">
+<a class="reference internal nav-link" href="#">
+<strong>
+    1.2.3: Normative Thinking
+   </strong>
+</a>
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#objective-up-until-this-point-we-have-predominantly-viewed-optimization-as-a-tool-for-policy-improvement-adapting-behavior-to-better-suit-a-particular-environmental-niche-this-is-a-prescriptive-view-of-optimization-to-improve-the-policy-implement-these-steps-however-optimization-isn-t-solely-prescriptive-it-can-also-be-used-descriptively-and-predicatively-in-this-sequence-we-will-learn-about-using-optimization-predictively-we-call-this-normative-thinking">
+<strong>
+      Objective:
+     </strong>
+     Up until this point, we have predominantly viewed optimization as a tool for policy improvement, adapting behavior to better suit a particular environmental niche. This is a prescriptive view of optimization: “To improve the policy, implement these steps.” However, optimization isn’t solely prescriptive. It can also be used descriptively and predicatively. In this sequence we will learn about using optimization predictively. We call this ‘Normative Thinking’.
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry">
+<a class="reference internal nav-link" href="#setup">
+   Setup
+  </a>
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#dependencies-imports-and-setup">
+     Dependencies, Imports and Setup
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry">
+<a class="reference internal nav-link" href="#foraging-in-patchy-environment">
+<strong>
+    1.2.3.1 Foraging in Patchy Environment
+   </strong>
+</a>
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#omniscient-patchy-foraging">
+     Omniscient Patchy Foraging
+    </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#cryptic-patchy-foraging">
+     Cryptic Patchy Foraging
+    </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#threshold-foraging">
+     Threshold Foraging
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry">
+<a class="reference internal nav-link" href="#deductive-reasoning-about-policy-performance">
+<strong>
+    1.2.3.2 Deductive Reasoning About Policy Performance
+   </strong>
+</a>
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#defining-the-problem">
+<strong>
+      Defining the Problem
+     </strong>
+</a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#bayes-rule">
+<strong>
+      Bayes’ Rule
+     </strong>
+</a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#what-to-do-after-a-failed-foraging-attempt-at-a-new-patch">
+     What to do after a failed foraging attempt at a new patch
+    </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#what-to-do-after-succesful-foraging">
+     What to do after succesful foraging
+    </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#what-to-do-after-one-failed-foraging-attempt-following-successful-foraging">
+     What to do after one failed foraging attempt following successful foraging
+    </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#what-to-do-after-n-failed-foraging-attempts-following-successful-foraging">
+     What to do after
+     <span class="math notranslate nohighlight">
+      \(n\)
+     </span>
+     failed foraging attempts following successful foraging
+    </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#optimal-thresholds">
+     Optimal Thresholds
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry">
+<a class="reference internal nav-link" href="#propose-and-test-versus-reasoning">
+<strong>
+    1.2.3.3 Propose and Test versus Reasoning
+   </strong>
+</a>
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#propose-and-test">
+     Propose and Test
+    </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#multiple-perspectives-on-optima">
+<strong>
+      Multiple Perspectives on Optima
+     </strong>
+</a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#different-kinds-of-understanding-tinbergen-s-four-questions">
+<strong>
+      Different Kinds of Understanding: Tinbergen’s Four Questions
+     </strong>
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="article row">
+<div class="col pl-md-3 pl-lg-5 content-container">
+<!-- Table of contents that is only displayed when printing the page -->
+<div class="onlyprint" id="jb-print-docs-body">
+<h1>1.2.3: Normative Thinking</h1>
+<!-- Table of contents -->
+<div id="print-main-content">
+<div id="jb-print-toc">
+<div>
+<h2> Contents </h2>
+</div>
+<nav aria-label="Page">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry">
+<a class="reference internal nav-link" href="#">
+<strong>
+    1.2.3: Normative Thinking
+   </strong>
+</a>
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#objective-up-until-this-point-we-have-predominantly-viewed-optimization-as-a-tool-for-policy-improvement-adapting-behavior-to-better-suit-a-particular-environmental-niche-this-is-a-prescriptive-view-of-optimization-to-improve-the-policy-implement-these-steps-however-optimization-isn-t-solely-prescriptive-it-can-also-be-used-descriptively-and-predicatively-in-this-sequence-we-will-learn-about-using-optimization-predictively-we-call-this-normative-thinking">
+<strong>
+      Objective:
+     </strong>
+     Up until this point, we have predominantly viewed optimization as a tool for policy improvement, adapting behavior to better suit a particular environmental niche. This is a prescriptive view of optimization: “To improve the policy, implement these steps.” However, optimization isn’t solely prescriptive. It can also be used descriptively and predicatively. In this sequence we will learn about using optimization predictively. We call this ‘Normative Thinking’.
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry">
+<a class="reference internal nav-link" href="#setup">
+   Setup
+  </a>
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#dependencies-imports-and-setup">
+     Dependencies, Imports and Setup
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry">
+<a class="reference internal nav-link" href="#foraging-in-patchy-environment">
+<strong>
+    1.2.3.1 Foraging in Patchy Environment
+   </strong>
+</a>
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#omniscient-patchy-foraging">
+     Omniscient Patchy Foraging
+    </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#cryptic-patchy-foraging">
+     Cryptic Patchy Foraging
+    </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#threshold-foraging">
+     Threshold Foraging
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry">
+<a class="reference internal nav-link" href="#deductive-reasoning-about-policy-performance">
+<strong>
+    1.2.3.2 Deductive Reasoning About Policy Performance
+   </strong>
+</a>
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#defining-the-problem">
+<strong>
+      Defining the Problem
+     </strong>
+</a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#bayes-rule">
+<strong>
+      Bayes’ Rule
+     </strong>
+</a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#what-to-do-after-a-failed-foraging-attempt-at-a-new-patch">
+     What to do after a failed foraging attempt at a new patch
+    </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#what-to-do-after-succesful-foraging">
+     What to do after succesful foraging
+    </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#what-to-do-after-one-failed-foraging-attempt-following-successful-foraging">
+     What to do after one failed foraging attempt following successful foraging
+    </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#what-to-do-after-n-failed-foraging-attempts-following-successful-foraging">
+     What to do after
+     <span class="math notranslate nohighlight">
+      \(n\)
+     </span>
+     failed foraging attempts following successful foraging
+    </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#optimal-thresholds">
+     Optimal Thresholds
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry">
+<a class="reference internal nav-link" href="#propose-and-test-versus-reasoning">
+<strong>
+    1.2.3.3 Propose and Test versus Reasoning
+   </strong>
+</a>
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#propose-and-test">
+     Propose and Test
+    </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#multiple-perspectives-on-optima">
+<strong>
+      Multiple Perspectives on Optima
+     </strong>
+</a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#different-kinds-of-understanding-tinbergen-s-four-questions">
+<strong>
+      Different Kinds of Understanding: Tinbergen’s Four Questions
+     </strong>
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<main id="main-content" role="main">
+<div>
+<p><a href="https://colab.research.google.com/github/dcownden/PerennialProblemsOfLifeWithABrain/blob/main/sequences/P1C2_OptimizationAndEnvironment/student/P1C2_Sequence3.ipynb" target="_blank"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a>   <a href="https://kaggle.com/kernels/welcome?src=https://raw.githubusercontent.com/dcownden/PerennialProblemsOfLifeWithABrain/main/sequences/P1C2_OptimizationAndEnvironment/student/P1C2_Sequence3.ipynb" target="_blank"><img alt="Open in Kaggle" src="https://kaggle.com/static/images/open-in-kaggle.svg"/></a></p>
+<p>The following is part of a test for an upcoming text book on computational neuroscience from an optimization and learning perspective. The book will start with evolution because ultimately, all aspects of the brain are shaped by evolution and, as we will see, evolution can also be seen as an optimization algorithm. We are sharing it now to get feedback on what works and what does not and the developments we should do.</p>
+<hr class="docutils"/>
+<div class="section" id="normative-thinking">
+<h1><strong>1.2.3: Normative Thinking</strong><a class="headerlink" href="#normative-thinking" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="objective-up-until-this-point-we-have-predominantly-viewed-optimization-as-a-tool-for-policy-improvement-adapting-behavior-to-better-suit-a-particular-environmental-niche-this-is-a-prescriptive-view-of-optimization-to-improve-the-policy-implement-these-steps-however-optimization-isn-t-solely-prescriptive-it-can-also-be-used-descriptively-and-predicatively-in-this-sequence-we-will-learn-about-using-optimization-predictively-we-call-this-normative-thinking">
+<h2><strong>Objective:</strong> Up until this point, we have predominantly viewed optimization as a tool for policy improvement, adapting behavior to better suit a particular environmental niche. This is a prescriptive view of optimization: “To improve the policy, implement these steps.” However, optimization isn’t solely prescriptive. It can also be used descriptively and predicatively. In this sequence we will learn about using optimization predictively. We call this ‘Normative Thinking’.<a class="headerlink" href="#objective-up-until-this-point-we-have-predominantly-viewed-optimization-as-a-tool-for-policy-improvement-adapting-behavior-to-better-suit-a-particular-environmental-niche-this-is-a-prescriptive-view-of-optimization-to-improve-the-policy-implement-these-steps-however-optimization-isn-t-solely-prescriptive-it-can-also-be-used-descriptively-and-predicatively-in-this-sequence-we-will-learn-about-using-optimization-predictively-we-call-this-normative-thinking" title="Permalink to this headline">¶</a></h2>
+<p>If we make a series of reasonable assumptions—like behaviour being the result of learning processes which in turn are shaped by evolutionary forces, both of which adapt according to environmental demands—we can posit that the optimal behavior predicted by a model will align with the behaviour exhibited by real-world organisms. Crucially though, the validity of such predictions hinges on the extent to which the <em><strong>relevant</strong></em> intricacies of the evolutionary organism-environment dynamic are captured by the model.</p>
+<p>In this sequence, we will:</p>
+<ul class="simple">
+<li><p>Investigate a new foraging scenario where policy performance can be mathematically-derived.</p></li>
+<li><p>Use deduction and reasoning to derive policy performance and determine the optimal policy.</p></li>
+<li><p>Observe how a simple propose-and-test algorithm, unaware of the structure of the problem, converges on the same optimal outcome as our analytical approach.</p></li>
+<li><p>Ponder the beauty and potential power of this connection between deductive reasoning about policies and ‘empirical’ observation. There are many different optimization methods and approaches, but all effective optimization approaches will lead to -mostly- the same place.</p></li>
+<li><p>Look at how optimization approaches fit within a broader framework of scientific understanding generally and what the means for neuroscientific understanding more generally.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="setup">
+<h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h1>
+<p>Run the following cell to setup and install the various dependencies and helper functions for this .</p>
+<div class="section" id="dependencies-imports-and-setup">
+<h2>Dependencies, Imports and Setup<a class="headerlink" href="#dependencies-imports-and-setup" title="Permalink to this headline">¶</a></h2>
+<p>You don’t need to worry about how this code works – but you do need to <strong>run the cell</strong></p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">16</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="ne">---&gt; </span><span class="mi">16</span> <span class="kn">import</span> <span class="nn">pygraphviz</span> <span class="k">as</span> <span class="nn">pgv</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="kn">import</span> <span class="nn">time</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named 'pygraphviz'
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="foraging-in-patchy-environment">
+<h1><strong>1.2.3.1 Foraging in Patchy Environment</strong><a class="headerlink" href="#foraging-in-patchy-environment" title="Permalink to this headline">¶</a></h1>
+<p>Optimal foraging theory posits that organisms forage to maximize their net energy intake per unit time. We’re going to explore the implications of that idea using a highly simplified model of foraging. The scenario is defined as follows:</p>
+<ul class="simple">
+<li><p>The goal is to collect food as efficiently as possible, i.e. have the highest possible food per move.</p></li>
+<li><p>The environment is made up of patches(grid cells). Each patch may or may not contain food.</p></li>
+<li><p>Foraging on a patch with food is usually, but not always successful, whereas foraging on a patch with no food is never successful.</p></li>
+<li><p>Every turn the organism can either 1) try to forage on its current patch or 2) move on to a new patch.</p></li>
+<li><p>Food patches can become exhausted after successful foraging, so the organism needs to be aware of when to move on to a fresh patch</p></li>
+<li><p>The number of moves before the foraging session ends is limited, so efficiency is key.</p></li>
+</ul>
+<p>To get a sense of the problem run the cell below to play through a version of this problem where you have complete knowledge, i.e. you can see all the patches, which ones have food, and when they become exhausted.</p>
+<div class="section" id="omniscient-patchy-foraging">
+<h2>Omniscient Patchy Foraging<a class="headerlink" href="#omniscient-patchy-foraging" title="Permalink to this headline">¶</a></h2>
+<p><strong>Run this cell</strong> to play the patchy foraging game.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Omniscient Patchy Foraging</span>
+<span class="c1"># @markdown **Run this cell** to play the patchy foraging game.</span>
+
+<span class="n">pfg</span> <span class="o">=</span> <span class="n">PatchyForagingGame</span><span class="p">(</span><span class="n">max_foraging_attempts</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">food_patch_prob</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span>
+                         <span class="n">forage_success_prob</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">food_extinct_prob</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="n">omni_ipfg</span> <span class="o">=</span> <span class="n">InteractivePatchyForage</span><span class="p">(</span><span class="n">pfg</span><span class="p">,</span> <span class="n">show_food</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show_misses</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">omni_ipfg</span><span class="o">.</span><span class="n">b_fig</span><span class="o">.</span><span class="n">canvas</span><span class="p">)</span>
+<span class="n">clear_output</span><span class="p">()</span>
+<span class="n">display</span><span class="p">(</span><span class="n">omni_ipfg</span><span class="o">.</span><span class="n">final_display</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+
+</div>
+<p>When you can see where the patches are and can tell when they run out, this scenario isn’t too difficult. Now let’s look at this same scenario but where the food patches are hidden (cryptic). In this case, a forager has to make guesses about whether food is present based on the past success (or failure) of their foraging attempts. How well can you do in this ‘cryptic patches’ scenario?</p>
+</div>
+<div class="section" id="cryptic-patchy-foraging">
+<h2>Cryptic Patchy Foraging<a class="headerlink" href="#cryptic-patchy-foraging" title="Permalink to this headline">¶</a></h2>
+<p><strong>Run this cell</strong> to play the patchy foraging game with cryptic patches.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Cryptic Patchy Foraging</span>
+<span class="c1"># @markdown **Run this cell** to play the patchy foraging game with cryptic patches.</span>
+
+<span class="n">pfg</span> <span class="o">=</span> <span class="n">PatchyForagingGame</span><span class="p">(</span><span class="n">max_foraging_attempts</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">food_patch_prob</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span>
+                         <span class="n">forage_success_prob</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">food_extinct_prob</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="n">cryptic_ipfg</span> <span class="o">=</span> <span class="n">InteractivePatchyForage</span><span class="p">(</span><span class="n">pfg</span><span class="p">,</span> <span class="n">show_food</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                                       <span class="n">show_misses</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                       <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">cryptic_ipfg</span><span class="o">.</span><span class="n">b_fig</span><span class="o">.</span><span class="n">canvas</span><span class="p">)</span>
+<span class="n">clear_output</span><span class="p">()</span>
+<span class="n">display</span><span class="p">(</span><span class="n">cryptic_ipfg</span><span class="o">.</span><span class="n">final_display</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+
+</div>
+<p>Was the cryptic scenario harder? Hopefully your score was higher when you had full visibility of the food patches and their exhaustion status. Yet, without this visibility, how does a forager make the best decision? Our game display hints at two critical pieces of information for the forager:</p>
+<ol class="simple">
+<li><p>The number of unsuccessful foraging attempts at a new patch</p></li>
+<li><p>The number of unsuccessful foraging attempts since the last successful foraging attempt at that same patch.</p></li>
+</ol>
+<p>If the organism can’t directly detect food patches or tell when they’ve become exhausted these metrics are crucial for inference.
+A simple ‘threshold’ policy can be defined using these metrics:</p>
+<ul class="simple">
+<li><p>Move to a new patch after <span class="math notranslate nohighlight">\(\tau_{new}\)</span> failed foraging attempts at a fresh patch.</p></li>
+<li><p>Move to a new patch after <span class="math notranslate nohighlight">\(\tau_{eat}\)</span> consecutive failed foraging attempts at a patch where there has been successful foraging previously.</p></li>
+</ul>
+<p>Interestingly, given the particular details of this problem, such a threshold is provably optimal, assuming that the organism is able to avoid revisiting patches it has already been too and that fresh patches are always available throughout the foraging session.</p>
+<p>Now, let’s implement this threshold policy and observe its performance in our foraging scenario.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">###############################################################################</span>
+<span class="c1"># TODO for students: Replace the ...'s in the play method to implement a</span>
+<span class="c1"># a simple threshold policy</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">"Exercise: implement threshold policy"</span><span class="p">)</span>
+<span class="c1">################################################################################</span>
+
+
+<span class="k">class</span> <span class="nc">SimpleThresholdPlayer</span><span class="p">():</span>
+<span class="w">  </span><span class="sd">"""</span>
+<span class="sd">  Player that moves in a sweeping pattern and decides whether to forage</span>
+<span class="sd">  or move to a new patch based on threshold number of failed foraging attempts.</span>
+<span class="sd">  """</span>
+
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">game</span><span class="p">,</span> <span class="n">critter_index</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">threshold_new</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">threshold_known</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+               <span class="n">return_direction</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">game</span> <span class="o">=</span> <span class="n">game</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">critter_index</span> <span class="o">=</span> <span class="n">critter_index</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">threshold_new</span> <span class="o">=</span> <span class="n">threshold_new</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">threshold_known</span> <span class="o">=</span> <span class="n">threshold_known</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">last_direction</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'right'</span><span class="p">]</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">game</span><span class="o">.</span><span class="n">batch_size</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">return_direction</span> <span class="o">=</span> <span class="n">return_direction</span>
+
+  <span class="k">def</span> <span class="nf">play</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">board</span><span class="p">):</span>
+    <span class="n">batch_size</span> <span class="o">=</span> <span class="n">board</span><span class="p">[</span><span class="s1">'pieces'</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">chosen_directions</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">valid_directions_batch</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">game</span><span class="o">.</span><span class="n">get_valid_directions</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">critter_index</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">batch_size</span><span class="p">):</span>
+      <span class="n">valid_directions_for_this_board</span> <span class="o">=</span> <span class="n">valid_directions_batch</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+      <span class="n">is_at_new_patch</span> <span class="o">=</span> <span class="n">board</span><span class="p">[</span><span class="s1">'at_new_patch'</span><span class="p">][</span><span class="n">i</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">critter_index</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+      <span class="c1"># Decide to forage or move</span>
+      <span class="k">if</span> <span class="n">is_at_new_patch</span><span class="p">:</span>
+        <span class="c1"># print('at new patch')</span>
+        <span class="n">misses</span> <span class="o">=</span> <span class="n">board</span><span class="p">[</span><span class="s1">'misses_new_patch'</span><span class="p">][</span><span class="n">i</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">critter_index</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="c1"># print('misses:', misses)</span>
+        <span class="n">threshold</span> <span class="o">=</span> <span class="o">...</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># print('at known patch')</span>
+        <span class="n">misses</span> <span class="o">=</span> <span class="n">board</span><span class="p">[</span><span class="s1">'misses_known_patch'</span><span class="p">][</span><span class="n">i</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">critter_index</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="c1"># print('misses:', misses)</span>
+        <span class="n">threshold</span> <span class="o">=</span> <span class="o">...</span>
+
+      <span class="k">if</span> <span class="o">...</span><span class="p">:</span>
+        <span class="c1"># print('move to new patch')</span>
+        <span class="n">chosen_directions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_next_direction</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">valid_directions_for_this_board</span><span class="p">))</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># print('forage at current patch')</span>
+        <span class="n">chosen_directions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'still'</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">return_direction</span><span class="p">:</span>
+      <span class="k">return</span> <span class="n">chosen_directions</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="c1"># Convert chosen directions to actions</span>
+      <span class="n">actions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">game</span><span class="o">.</span><span class="n">critter_directions_to_actions</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">chosen_directions</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">critter_index</span><span class="p">)</span>
+      <span class="n">action_size</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">game</span><span class="o">.</span><span class="n">get_action_size</span><span class="p">()</span>
+      <span class="n">a_1hots</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">action_size</span><span class="p">))</span>
+      <span class="n">a_1hots</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">batch_size</span><span class="p">),</span> <span class="n">actions</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>
+      <span class="k">return</span> <span class="n">actions</span><span class="p">,</span> <span class="n">a_1hots</span><span class="p">,</span> <span class="n">a_1hots</span>
+
+  <span class="k">def</span> <span class="nf">_get_next_direction</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">board_idx</span><span class="p">,</span> <span class="n">valid_directions_for_this_board</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Get the next direction based on left-right-down sweeping pattern.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">last_direction</span><span class="p">[</span><span class="n">board_idx</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'right'</span><span class="p">:</span>
+      <span class="k">if</span> <span class="s1">'right'</span> <span class="ow">in</span> <span class="n">valid_directions_for_this_board</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">'right'</span>
+      <span class="k">elif</span> <span class="s1">'down'</span> <span class="ow">in</span> <span class="n">valid_directions_for_this_board</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">last_direction</span><span class="p">[</span><span class="n">board_idx</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'left'</span>
+        <span class="k">return</span> <span class="s1">'down'</span>
+
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">last_direction</span><span class="p">[</span><span class="n">board_idx</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'left'</span><span class="p">:</span>
+      <span class="k">if</span> <span class="s1">'left'</span> <span class="ow">in</span> <span class="n">valid_directions_for_this_board</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">'left'</span>
+      <span class="k">elif</span> <span class="s1">'down'</span> <span class="ow">in</span> <span class="n">valid_directions_for_this_board</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">last_direction</span><span class="p">[</span><span class="n">board_idx</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'right'</span>
+        <span class="k">return</span> <span class="s1">'down'</span>
+
+    <span class="k">return</span> <span class="s1">'still'</span>  <span class="c1"># Default to 'still' if none of the conditions are met</span>
+</pre></div>
+</div>
+</div>
+
+</div>
+<p><a class="reference external" href="https://github.com/dcownden/PerennialProblemsOfLifeWithABrain/tree/main//sequences/P1C2_OptimizationAndEnvironment/solutions/P1C2_Sequence3_Solution_9ad1e7db.py"><em>Click for solution</em></a></p>
+<p>Now that we have a forager, run the cell below to watch them forage.</p>
+</div>
+<div class="section" id="threshold-foraging">
+<h2>Threshold Foraging<a class="headerlink" href="#threshold-foraging" title="Permalink to this headline">¶</a></h2>
+<p><strong>Run this cell</strong> to watch our simple threshold forager play.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Threshold Foraging</span>
+<span class="c1"># @markdown **Run this cell** to watch our simple threshold forager play.</span>
+
+<span class="c1"># to_remove solution</span>
+
+<span class="k">class</span> <span class="nc">SimpleThresholdPlayer</span><span class="p">():</span>
+<span class="w">  </span><span class="sd">"""</span>
+<span class="sd">  Player that moves in a sweeping pattern and decides whether to forages</span>
+<span class="sd">  or move to a new patch based on threshold number of failed foraging attempts.</span>
+<span class="sd">  """</span>
+
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">game</span><span class="p">,</span> <span class="n">critter_index</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">threshold_new</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">threshold_known</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+               <span class="n">return_direction</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">game</span> <span class="o">=</span> <span class="n">game</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">critter_index</span> <span class="o">=</span> <span class="n">critter_index</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">threshold_new</span> <span class="o">=</span> <span class="n">threshold_new</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">threshold_known</span> <span class="o">=</span> <span class="n">threshold_known</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">last_direction</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'right'</span><span class="p">]</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">game</span><span class="o">.</span><span class="n">batch_size</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">return_direction</span> <span class="o">=</span> <span class="n">return_direction</span>
+
+  <span class="k">def</span> <span class="nf">play</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">board</span><span class="p">):</span>
+    <span class="n">batch_size</span> <span class="o">=</span> <span class="n">board</span><span class="p">[</span><span class="s1">'pieces'</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">chosen_directions</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="n">valid_directions_batch</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">game</span><span class="o">.</span><span class="n">get_valid_directions</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">critter_index</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">batch_size</span><span class="p">):</span>
+      <span class="n">valid_directions_for_this_board</span> <span class="o">=</span> <span class="n">valid_directions_batch</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+      <span class="n">is_at_new_patch</span> <span class="o">=</span> <span class="n">board</span><span class="p">[</span><span class="s1">'at_new_patch'</span><span class="p">][</span><span class="n">i</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">critter_index</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+      <span class="c1"># Decide to forage or move</span>
+      <span class="k">if</span> <span class="n">is_at_new_patch</span><span class="p">:</span>
+        <span class="c1"># print('at new patch')</span>
+        <span class="n">misses</span> <span class="o">=</span> <span class="n">board</span><span class="p">[</span><span class="s1">'misses_new_patch'</span><span class="p">][</span><span class="n">i</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">critter_index</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="c1"># print('misses:', misses)</span>
+        <span class="n">threshold</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">threshold_new</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># print('at known patch')</span>
+        <span class="n">misses</span> <span class="o">=</span> <span class="n">board</span><span class="p">[</span><span class="s1">'misses_known_patch'</span><span class="p">][</span><span class="n">i</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">critter_index</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="c1"># print('misses:', misses)</span>
+        <span class="n">threshold</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">threshold_known</span>
+
+      <span class="k">if</span> <span class="n">misses</span> <span class="o">&gt;</span> <span class="n">threshold</span><span class="p">:</span>
+        <span class="c1"># print('move to new patch')</span>
+        <span class="n">chosen_directions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_next_direction</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">valid_directions_for_this_board</span><span class="p">))</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># print('forage at current patch')</span>
+        <span class="n">chosen_directions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'still'</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">return_direction</span><span class="p">:</span>
+      <span class="k">return</span> <span class="n">chosen_directions</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="c1"># Convert chosen directions to actions</span>
+      <span class="n">actions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">game</span><span class="o">.</span><span class="n">critter_directions_to_actions</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">chosen_directions</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">critter_index</span><span class="p">)</span>
+      <span class="n">action_size</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">game</span><span class="o">.</span><span class="n">get_action_size</span><span class="p">()</span>
+      <span class="n">a_1hots</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">action_size</span><span class="p">))</span>
+      <span class="n">a_1hots</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">batch_size</span><span class="p">),</span> <span class="n">actions</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>
+      <span class="k">return</span> <span class="n">actions</span><span class="p">,</span> <span class="n">a_1hots</span><span class="p">,</span> <span class="n">a_1hots</span>
+
+  <span class="k">def</span> <span class="nf">_get_next_direction</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">board_idx</span><span class="p">,</span> <span class="n">valid_directions_for_this_board</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Get the next direction based on left-right-down sweeping pattern.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">last_direction</span><span class="p">[</span><span class="n">board_idx</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'right'</span><span class="p">:</span>
+      <span class="k">if</span> <span class="s1">'right'</span> <span class="ow">in</span> <span class="n">valid_directions_for_this_board</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">'right'</span>
+      <span class="k">elif</span> <span class="s1">'down'</span> <span class="ow">in</span> <span class="n">valid_directions_for_this_board</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">last_direction</span><span class="p">[</span><span class="n">board_idx</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'left'</span>
+        <span class="k">return</span> <span class="s1">'down'</span>
+
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">last_direction</span><span class="p">[</span><span class="n">board_idx</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'left'</span><span class="p">:</span>
+      <span class="k">if</span> <span class="s1">'left'</span> <span class="ow">in</span> <span class="n">valid_directions_for_this_board</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">'left'</span>
+      <span class="k">elif</span> <span class="s1">'down'</span> <span class="ow">in</span> <span class="n">valid_directions_for_this_board</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">last_direction</span><span class="p">[</span><span class="n">board_idx</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'right'</span>
+        <span class="k">return</span> <span class="s1">'down'</span>
+
+    <span class="k">return</span> <span class="s1">'still'</span>  <span class="c1"># Default to 'still' if none of the conditions are met</span>
+
+<span class="n">pfg</span> <span class="o">=</span> <span class="n">PatchyForagingGame</span><span class="p">(</span><span class="n">max_foraging_attempts</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">food_patch_prob</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span>
+                         <span class="n">forage_success_prob</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">food_extinct_prob</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,)</span>
+<span class="n">stp</span> <span class="o">=</span> <span class="n">SimpleThresholdPlayer</span><span class="p">(</span><span class="n">pfg</span><span class="p">,</span> <span class="n">critter_index</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">threshold_new</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">threshold_known</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">stp_ipfg</span> <span class="o">=</span> <span class="n">InteractivePatchyForage</span><span class="p">(</span><span class="n">pfg</span><span class="p">,</span> <span class="n">players</span><span class="o">=</span><span class="p">[</span><span class="n">stp</span><span class="p">],</span>
+                                   <span class="n">show_food</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                   <span class="n">show_misses</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                   <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">stp_ipfg</span><span class="o">.</span><span class="n">b_fig</span><span class="o">.</span><span class="n">canvas</span><span class="p">)</span>
+<span class="n">clear_output</span><span class="p">()</span>
+<span class="n">display</span><span class="p">(</span><span class="n">stp_ipfg</span><span class="o">.</span><span class="n">final_display</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+
+</div>
+<p>How did our simple threshold policy compare to your performance when playing with cryptic patches?</p>
+<p>Submit your feedback</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown Submit your feedback</span>
+<span class="n">content_review</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">feedback_prefix</span><span class="si">}</span><span class="s2">_M1"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+<div class="section" id="deductive-reasoning-about-policy-performance">
+<h1><strong>1.2.3.2 Deductive Reasoning About Policy Performance</strong><a class="headerlink" href="#deductive-reasoning-about-policy-performance" title="Permalink to this headline">¶</a></h1>
+<p>Now that we have had some ‘hands-on’ experience with this foraging problem, we’re going to dig into the detailed mechanics of this model scenario, and see what we can deduce about policy performance and the optimal policy. In doing this we will introduce <strong>Bayes’ rule</strong>, the cornerstone of inference, and an indispensable tool for reasoning about uncertainty.</p>
+<div class="section" id="defining-the-problem">
+<h2><strong>Defining the Problem</strong><a class="headerlink" href="#defining-the-problem" title="Permalink to this headline">¶</a></h2>
+<p>First we need define our model problem precisely.</p>
+<ul class="simple">
+<li><p><strong>Patchy Environment</strong>: The foraging environment consists of discrete patches (represented as grid cells). At the start of the simulation each patch has a probability <span class="math notranslate nohighlight">\(p_e \in (0,1)\)</span> of containing food. The forager starts at a fresh patch.</p></li>
+<li><p><strong>Possible Actions</strong>: In each turn, the organism has two options:</p>
+<ul>
+<li><p>Try to forage at its current patch.</p></li>
+<li><p>Move to a new patch.</p></li>
+</ul>
+</li>
+<li><p><strong>Foraging Success</strong>: When a patch contains food, foraging is often successful but not always guaranteed. In this model, foraging at a patch with food is successful with probability <span class="math notranslate nohighlight">\(p_s \in (0,1)\)</span>. Conversely, foraging on a food-less patch is certain to be unsuccessful.</p></li>
+<li><p><strong>Patch Exhaustion</strong>: After each foraging success, there is a probability <span class="math notranslate nohighlight">\(p_x \in (0,1)\)</span> that the patch becomes exhausted. In such cases, the patch won’t provide any more food.</p></li>
+<li><p><strong>Session Limit</strong>: There is a fixed number of foraging attempts, <span class="math notranslate nohighlight">\(T\)</span>, before the session end.</p></li>
+<li><p><strong>Rewards</strong>: Every successful foraging attempt gives the organism a reward of 1 point. If the foraging attempt is unsuccessful, no points are awarded for that round. We denote the reward received on round <span class="math notranslate nohighlight">\(t\)</span> as <span class="math notranslate nohighlight">\(R_t\)</span>.</p></li>
+<li><p><strong>Goal</strong>: The overarching objective for the organism is to maximize its <em>expected cumulative reward</em> over the entire session. Formally, the forager aims to maximize:
+$<span class="math notranslate nohighlight">\(
+\mathbb{E}\left[ \sum_{t=1}^{T} R_t \right] = \sum_{t=1}^{T} \mathbb{E}\left[ R_t \right]
+\)</span>$</p></li>
+</ul>
+<p>Those are the basic mechanics of this foraging problem. Now let’s visualize this stochastic process using a probability tree. This tree will help us track the different scenarios in the foraging process and their associated probabilities. Each node in this tree represents a state — for example, ‘being at a new patch’ or ‘being at new patch after an unsuccessful foraging attempt.’ The edges between nodes signify the transition from one state to another, with the probabilities on these edges indicating how likely each transition is. Importantly, the sum of the probabilities leading out of each node equals one, reflecting the complete set of possible outcomes at each decision point. To start we will just think about all the different possible scenarios that might occur after attempting to forage once at a new patch. Run the cell below to see what that looks like.</p>
+<p><strong>Run This Cell</strong> to visualize these probabilities</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown **Run This Cell** to visualize these probabilities</span>
+
+<span class="n">nodes_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"New Patch"</span><span class="p">,</span> <span class="s2">"Has Food"</span><span class="p">,</span> <span class="s2">"No Food"</span><span class="p">,</span> <span class="s2">"Didn't Find Food"</span><span class="p">,</span> <span class="s2">"Found the Food"</span><span class="p">,</span> <span class="s2">"No Food to Find"</span><span class="p">]</span>
+<span class="n">edges_list</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">"New Patch"</span><span class="p">,</span> <span class="s2">"Has Food"</span><span class="p">),</span> <span class="p">(</span><span class="s2">"New Patch"</span><span class="p">,</span> <span class="s2">"No Food"</span><span class="p">),</span> <span class="p">(</span><span class="s2">"Has Food"</span><span class="p">,</span> <span class="s2">"Found the Food"</span><span class="p">),</span>
+              <span class="p">(</span><span class="s2">"Has Food"</span><span class="p">,</span> <span class="s2">"Didn't Find Food"</span><span class="p">),</span> <span class="p">(</span><span class="s2">"No Food"</span><span class="p">,</span> <span class="s2">"No Food to Find"</span><span class="p">)]</span>
+
+<span class="n">latex_edge_labels</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s2">"New Patch"</span><span class="p">,</span> <span class="s2">"Has Food"</span><span class="p">,</span> <span class="s2">"p_e"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"New Patch"</span><span class="p">,</span> <span class="s2">"No Food"</span><span class="p">,</span> <span class="s2">"1-p_e"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"Has Food"</span><span class="p">,</span> <span class="s2">"Didn't Find Food"</span><span class="p">,</span> <span class="s2">"1-p_s"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"Has Food"</span><span class="p">,</span> <span class="s2">"Found the Food"</span><span class="p">,</span> <span class="s2">"p_s"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"No Food"</span><span class="p">,</span> <span class="s2">"No Food to Find"</span><span class="p">,</span> <span class="s2">"1"</span><span class="p">),</span>
+
+<span class="p">]</span>
+
+<span class="n">node_colors</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"New Patch"</span><span class="p">:</span> <span class="s2">"red"</span><span class="p">,</span>
+    <span class="s2">"Has Food"</span><span class="p">:</span> <span class="s2">"red"</span><span class="p">,</span>
+    <span class="s2">"No Food"</span><span class="p">:</span> <span class="s2">"red"</span><span class="p">,</span>
+    <span class="s2">"Didn't Find Food"</span><span class="p">:</span> <span class="s2">"blue"</span><span class="p">,</span>
+    <span class="s2">"Found the Food"</span><span class="p">:</span> <span class="s2">"green"</span><span class="p">,</span>
+    <span class="s2">"No Food to Find"</span><span class="p">:</span> <span class="s2">"blue"</span>
+<span class="p">}</span>
+
+<span class="n">node_labels</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"Didn't Find Food"</span><span class="p">:</span> <span class="s2">"No Food Found"</span><span class="p">,</span>
+    <span class="s2">"No Food to Find"</span><span class="p">:</span> <span class="s2">"No Food Found"</span>
+<span class="p">}</span>
+
+
+<span class="n">output_path</span> <span class="o">=</span> <span class="n">create_and_render_graph</span><span class="p">(</span><span class="n">nodes_list</span><span class="p">,</span> <span class="n">edges_list</span><span class="p">,</span> <span class="n">latex_edge_labels</span><span class="p">,</span>
+                                      <span class="n">node_colors</span><span class="o">=</span><span class="n">node_colors</span><span class="p">,</span>
+                                      <span class="n">node_labels</span><span class="o">=</span><span class="n">node_labels</span><span class="p">)</span>
+<span class="n">Image</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+
+</div>
+<p>As we trace a path from the root of the tree (<span class="math notranslate nohighlight">\(\text{New Patch}\)</span>) to any node, we multiply the probabilities along this path to calculate the likelihood of that specific scenario occurring. This multiplicative approach embodies the ‘and’ logic of sequential events in our stochastic process. Moreover, when we encounter situations that can arise from multiple paths — such as (<span class="math notranslate nohighlight">\(\text{No Food Found}\)</span>), which happens in two different scenarios — we sum the probabilities of these paths, employing an ‘or’ logic to encompass all routes leading to that outcome.</p>
+<p>In this visualization, nodes that have the same color are indistinguishable from the perspective of the forager. When a forager arrives at a new patch, maybe it has food, maybe it doesn’t, the forager doesn’t know. To indicate that forager can’t tell these situation apart, these nodes in the graph above are coloured red. Similarly if the forager fails to find food after one round of searching it doesn’t know if it failed because there was no food to find in the first place, or if there was actually food there, and it just didn’t get it. However, just because the forager can’t know with certainty which situation it is in, it is possible to assign probabilities of different situations being the case given knowledge of the underlying stochastic process.</p>
+<p>Correctly calculating these probabilities is exactly what we will need to do to figure out the optimal foraging policy. Recall that the goal of the forager is to maximize <span class="math notranslate nohighlight">\( \sum_{t=1}^{T} \mathbb{E}\left[ R_t \right] \)</span>, and
+$<span class="math notranslate nohighlight">\( \mathbb{E}\left[ R_t \right] = p_s \cdot P(\text{Food Present for Foraging Attempt } t)\)</span>$</p>
+<p>We know that the probability of food being present at fresh new patch is <span class="math notranslate nohighlight">\(p_e\)</span>, but what about patches where there has been some history of successful and/or unsucessful foraging? What is the correct way to compute the probability that food is present in these cases?</p>
+</div>
+<div class="section" id="bayes-rule">
+<h2><strong>Bayes’ Rule</strong><a class="headerlink" href="#bayes-rule" title="Permalink to this headline">¶</a></h2>
+<p>To start figuring out the probability that food is present at a patch, let’s first use the diagram above to just write out the different situations that the forager might find themselves in, and the probability that these situation occur.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>State</p></th>
+<th class="head"><p>Probability State Occurs</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Succesful foraging at new patch</p></td>
+<td><p><span class="math notranslate nohighlight">\(p_e \cdot p_s\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Failed foraging at new patch with food</p></td>
+<td><p><span class="math notranslate nohighlight">\( (1-p_s) \cdot p_e \)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Failed foraging at new patch with no food</p></td>
+<td><p><span class="math notranslate nohighlight">\(1-p_e\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>That’s good, but it doesn’t directly tell us what the probability of there being food at the forager’s current patch is. For the case where foraging was successful this is straightforward: Either the patch is exhausted and there is no food left with probability <span class="math notranslate nohighlight">\(p_x\)</span>, or it is not exhausted and food is still present with probability <span class="math notranslate nohighlight">\(1-p_x\)</span>. For the failed foraging case though the calculation is a little more involved. We derive this now.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Observable State</p></th>
+<th class="head"><p>Probability Observable State Occurs</p></th>
+<th class="head"><p>Probability of Food Given Observables of the State</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Succesful foraging at new patch</p></td>
+<td><p><span class="math notranslate nohighlight">\(p_e \cdot p_s\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(1-p_x\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Failed foraging at new patch</p></td>
+<td><p><span class="math notranslate nohighlight">\( (1-p_s) \cdot p_e  + (1-p_e)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{(1-p_s)\cdot p_e}{(1-p_s)\cdot p_e + (1-p_e)}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>It is intuitive (to us at least, hopefully to you too) that as the number of failed foraging attempts at a patch increases, the chance that there is no food at the patch also increases. Now obviously, failed foraging attempts do not have any causal impact on the presence or absence of food at the patch (at least not in this model). However, failed foraging attempts do provide <strong>evidence</strong> for the possibility of being at a patch with no food, and <strong>evidence</strong> against the possibility of being at a patch with food. This is because the presence or absence of food at the patch does have a causal impact on foraging success, with foraging success being more likely when food is present and less likely (impossible even in this model) when food is not present. Using this causal relation between the presense/absence of food and foraging success, we can use the observation of foraging success/failure to make an <strong>inference</strong> about whether or not food is present at the patch even though presence/absence is not directly observable.</p>
+<p>It turns out that there is one correct way, known as Bayes’ rule (or theorem), to make such inferences, i.e. to update beliefs about the world based on observed evidence. In it’s simplest form Bayes’ rule states</p>
+<div class="math notranslate nohighlight">
+\[ P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)} \]</div>
+<p>Here, <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are events and <span class="math notranslate nohighlight">\(P(A|B)\)</span> and <span class="math notranslate nohighlight">\(P(B|A)\)</span> are conditional probabilities. Specifically <span class="math notranslate nohighlight">\(P(A|B)\)</span> is the probaility of <span class="math notranslate nohighlight">\(A\)</span> being the case (or occuring) given that <span class="math notranslate nohighlight">\(B\)</span> has occured (or is the case) and <span class="math notranslate nohighlight">\(P(B|A)\)</span> is the probability of <span class="math notranslate nohighlight">\(B\)</span> being the case if <span class="math notranslate nohighlight">\(A\)</span> has occured. To apply Bayes’ rule to our situation we let <span class="math notranslate nohighlight">\(A\)</span> be the ‘event’ that food really is present at the new patch (which the forager can’t directly observe), and we let <span class="math notranslate nohighlight">\(B\)</span> be the ‘event’ that they don’t find any food on their first foraging attempt. This gives us</p>
+<div class="math notranslate nohighlight">
+\[ P(\text{Has Food}| \text{No Food Found}) = \frac{P(\text{No Food Found}|\text{Has Food}) \cdot P(\text{Has Food})}{P(\text{No Food Found})} \]</div>
+<p>These values can be read off of our probability tree diagram above giving:</p>
+<div class="math notranslate nohighlight">
+\[ P(\text{Has Food}| \text{No Food Found}) = \frac{(1-p_s) \cdot (p_e)}{(1-p_s) \cdot (p_e) + 1 \cdot (1-p_e)} \]</div>
+<p>Another perspective on where this probability is coming from is that we are only consdiering the pathways in the tree that are possible given the observation of no food found. Then, to figure out the probability of food being at the patch we look at total probability of the paths where there is actually food at the patch (there just one in this example), relative to the total probability of all paths that are possible given the observation.</p>
+<p>Run this cell to display the relevant paths through the probability tree. This is a rough place holder image.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown Run this cell to display the relevant paths through the probability tree. This is a rough place holder image.</span>
+
+<span class="n">main_url</span> <span class="o">=</span> <span class="s1">'https://raw.githubusercontent.com/dcownden/PerennialProblemsOfLifeWithABrain/main/sequences/P1C2_OptimizationAndEnvironment/static/marked_up_foraging_prob_tree1.png'</span>
+<span class="n">backup_url</span> <span class="o">=</span> <span class="s1">'https://raw.githubusercontent.com/dcownden/PerennialProblemsOfLifeWithABrain/book-review/sequences/P1C2_OptimizationAndEnvironment/static/marked_up_foraging_prob_tree1.png'</span>
+
+<span class="c1"># Function to check if URL is accessible</span>
+<span class="k">def</span> <span class="nf">is_url_accessible</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+  <span class="k">try</span><span class="p">:</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">allow_redirects</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span>
+  <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">RequestException</span><span class="p">:</span>
+    <span class="k">return</span> <span class="kc">False</span>
+
+<span class="c1"># Function to download the PDF</span>
+<span class="k">def</span> <span class="nf">download_image</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">local_filename</span><span class="p">):</span>
+  <span class="k">try</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">r</span><span class="p">:</span>
+      <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">local_filename</span><span class="p">,</span> <span class="s1">'wb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+          <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">r</span><span class="o">.</span><span class="n">iter_content</span><span class="p">(</span><span class="n">chunk_size</span><span class="o">=</span><span class="mi">8192</span><span class="p">):</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">True</span>
+  <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Error downloading file: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+  <span class="k">return</span> <span class="kc">False</span>
+
+<span class="c1"># Decide which URL to use and download the file</span>
+<span class="n">local_image_filename</span> <span class="o">=</span> <span class="s1">'local_marked_up_tree1.png'</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">local_image_filename</span><span class="p">):</span>
+  <span class="k">if</span> <span class="ow">not</span> <span class="n">download_image</span><span class="p">(</span><span class="n">main_url</span><span class="p">,</span> <span class="n">local_image_filename</span><span class="p">):</span>
+    <span class="n">download_image</span><span class="p">(</span><span class="n">backup_url</span><span class="p">,</span> <span class="n">local_image_filename</span><span class="p">)</span>
+
+<span class="c1"># Display the image</span>
+<span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">local_image_filename</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+
+</div>
+</div>
+<div class="section" id="what-to-do-after-a-failed-foraging-attempt-at-a-new-patch">
+<h2>What to do after a failed foraging attempt at a new patch<a class="headerlink" href="#what-to-do-after-a-failed-foraging-attempt-at-a-new-patch" title="Permalink to this headline">¶</a></h2>
+<p>Now that we have those probabilities computed we can ask, is it better for the forager to stay at a patch where it has just failed to forage, or is it better for it move on to a new patch?</p>
+<p>At a new patch the probability of finding food is $<span class="math notranslate nohighlight">\(p_e \cdot p_s\)</span>$</p>
+<p>At a new patch where a forager has been unsuccesful once, the probability of finding food is $<span class="math notranslate nohighlight">\(\frac{1-p_s}{(1-p_s) \cdot p_e + (1-p_e)}\cdot p_e \cdot p_s = \frac{1-p_s}{1-p_e \cdot p_s }\cdot p_e \cdot p_s\)</span>$</p>
+<p><strong>Quick Math Excercise:</strong></p>
+<p>Given that <span class="math notranslate nohighlight">\(0 &lt; p_s &lt; 1\)</span> and <span class="math notranslate nohighlight">\(0 &lt; p_e &lt; 1\)</span> convince yourself that $<span class="math notranslate nohighlight">\(0 &lt; \frac{1-p_s}{1-p_e \cdot p_s } &lt; 1\)</span>$
+<strong>Bonus:</strong> Prove this to yourself</p>
+<p>What this tells us is that the probability of finding food at a new patch where the forager has had a failure is always going to be less than the probability of finding food a fresh new patch. Therefore an optimal forager should always move on to a fresh new patch after an immediate failure at a new patch.</p>
+</div>
+<div class="section" id="what-to-do-after-succesful-foraging">
+<h2>What to do after succesful foraging<a class="headerlink" href="#what-to-do-after-succesful-foraging" title="Permalink to this headline">¶</a></h2>
+<p>In order to figure this out we’re going to have to expand our probability tree out one step.</p>
+<p>Run this cell to visualize the probability tree</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown Run this cell to visualize the probability tree</span>
+
+<span class="n">nodes_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"New0"</span><span class="p">,</span> <span class="s2">"Has Food0"</span><span class="p">,</span> <span class="s2">"No Food0"</span><span class="p">,</span>
+              <span class="s2">"Didn't Find Food"</span><span class="p">,</span> <span class="s2">"Found the Food"</span><span class="p">,</span>
+              <span class="s2">"No Food to Find"</span><span class="p">,</span>
+              <span class="s2">"New1"</span><span class="p">,</span> <span class="c1">#"Has Food1", "No Food1",</span>
+              <span class="s2">"New2"</span><span class="p">,</span> <span class="c1">#"Has Food2", "No Food2",</span>
+              <span class="s2">"Still Food"</span><span class="p">,</span> <span class="s2">"Food Ran Out"</span><span class="p">]</span>
+<span class="n">edges_list</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">"New0"</span><span class="p">,</span> <span class="s2">"Has Food0"</span><span class="p">),</span> <span class="p">(</span><span class="s2">"New0"</span><span class="p">,</span> <span class="s2">"No Food0"</span><span class="p">),</span> <span class="p">(</span><span class="s2">"Has Food0"</span><span class="p">,</span> <span class="s2">"Found the Food"</span><span class="p">),</span>
+              <span class="p">(</span><span class="s2">"Has Food0"</span><span class="p">,</span> <span class="s2">"Didn't Find Food"</span><span class="p">),</span> <span class="p">(</span><span class="s2">"No Food0"</span><span class="p">,</span> <span class="s2">"No Food to Find"</span><span class="p">),</span>
+              <span class="p">(</span><span class="s2">"Didn't Find Food"</span><span class="p">,</span> <span class="s2">"New1"</span><span class="p">),</span>
+              <span class="c1">#("New1", "Has Food1"), ("New1", "No Food1"),</span>
+              <span class="p">(</span><span class="s2">"Found the Food"</span><span class="p">,</span> <span class="s2">"Still Food"</span><span class="p">),</span> <span class="p">(</span><span class="s2">"Found the Food"</span><span class="p">,</span> <span class="s2">"Food Ran Out"</span><span class="p">),</span>
+              <span class="p">(</span><span class="s2">"No Food to Find"</span><span class="p">,</span> <span class="s2">"New2"</span><span class="p">),</span>
+              <span class="c1">#("New2", "Has Food2"), ("New2", "No Food2")</span>
+              <span class="p">]</span>
+
+
+<span class="n">latex_edge_labels</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s2">"New0"</span><span class="p">,</span> <span class="s2">"Has Food0"</span><span class="p">,</span> <span class="s2">"p_e"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"New0"</span><span class="p">,</span> <span class="s2">"No Food0"</span><span class="p">,</span> <span class="s2">"1-p_e"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"Has Food0"</span><span class="p">,</span> <span class="s2">"Didn't Find Food"</span><span class="p">,</span> <span class="s2">"1-p_s"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"Has Food0"</span><span class="p">,</span> <span class="s2">"Found the Food"</span><span class="p">,</span> <span class="s2">"p_s"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"No Food0"</span><span class="p">,</span> <span class="s2">"No Food to Find"</span><span class="p">,</span> <span class="s2">"1"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"No Food to Find"</span><span class="p">,</span> <span class="s2">"New2"</span><span class="p">,</span> <span class="s2">"1"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"Didn't Find Food"</span><span class="p">,</span> <span class="s2">"New1"</span><span class="p">,</span> <span class="s2">"1"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"Found the Food"</span><span class="p">,</span> <span class="s2">"Still Food"</span><span class="p">,</span> <span class="s2">"1-p_x"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"Found the Food"</span><span class="p">,</span> <span class="s2">"Food Ran Out"</span><span class="p">,</span> <span class="s2">"p_x"</span><span class="p">),</span>
+    <span class="c1">#("New1", "Has Food1", "p_e"),</span>
+    <span class="c1">#("New1", "No Food1", "1-p_e"),</span>
+    <span class="c1">#("New2", "Has Food2", "p_e"),</span>
+    <span class="c1">#("New2", "No Food2", "1-p_e")</span>
+<span class="p">]</span>
+
+<span class="n">node_colors</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"New0"</span><span class="p">:</span> <span class="s2">"red"</span><span class="p">,</span>
+    <span class="s2">"Has Food0"</span><span class="p">:</span> <span class="s2">"red"</span><span class="p">,</span>
+    <span class="s2">"No Food0"</span><span class="p">:</span> <span class="s2">"red"</span><span class="p">,</span>
+    <span class="s2">"New1"</span><span class="p">:</span> <span class="s2">"red"</span><span class="p">,</span>
+    <span class="s2">"Has Food1"</span><span class="p">:</span> <span class="s2">"red"</span><span class="p">,</span>
+    <span class="s2">"No Food1"</span><span class="p">:</span> <span class="s2">"red"</span><span class="p">,</span>
+    <span class="s2">"New2"</span><span class="p">:</span> <span class="s2">"red"</span><span class="p">,</span>
+    <span class="s2">"Has Food2"</span><span class="p">:</span> <span class="s2">"red"</span><span class="p">,</span>
+    <span class="s2">"No Food2"</span><span class="p">:</span> <span class="s2">"red"</span><span class="p">,</span>
+    <span class="s2">"Didn't Find Food"</span><span class="p">:</span> <span class="s2">"blue"</span><span class="p">,</span>
+    <span class="s2">"Found the Food"</span><span class="p">:</span> <span class="s2">"green"</span><span class="p">,</span>
+    <span class="s2">"No Food to Find"</span><span class="p">:</span> <span class="s2">"blue"</span><span class="p">,</span>
+    <span class="s2">"Still Food"</span><span class="p">:</span> <span class="s2">"green"</span><span class="p">,</span>
+    <span class="s2">"Food Ran Out"</span><span class="p">:</span> <span class="s2">"green"</span>
+<span class="p">}</span>
+
+<span class="n">node_labels</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"New0"</span><span class="p">:</span> <span class="s2">"New"</span><span class="p">,</span>
+    <span class="s2">"New1"</span><span class="p">:</span> <span class="s2">"New"</span><span class="p">,</span>
+    <span class="s2">"New2"</span><span class="p">:</span> <span class="s2">"New"</span><span class="p">,</span>
+    <span class="s2">"Has Food0"</span><span class="p">:</span> <span class="s2">"Has Food"</span><span class="p">,</span>
+    <span class="s2">"Has Food1"</span><span class="p">:</span> <span class="s2">"Has Food"</span><span class="p">,</span>
+    <span class="s2">"Has Food2"</span><span class="p">:</span> <span class="s2">"Has Food"</span><span class="p">,</span>
+    <span class="s2">"No Food0"</span><span class="p">:</span> <span class="s2">"No Food"</span><span class="p">,</span>
+    <span class="s2">"No Food1"</span><span class="p">:</span> <span class="s2">"No Food"</span><span class="p">,</span>
+    <span class="s2">"No Food2"</span><span class="p">:</span> <span class="s2">"No Food"</span><span class="p">,</span>
+    <span class="s2">"Didn't Find Food"</span><span class="p">:</span> <span class="s2">"No Food Found"</span><span class="p">,</span>
+    <span class="s2">"No Food to Find"</span><span class="p">:</span> <span class="s2">"No Food Found"</span><span class="p">,</span>
+    <span class="s2">"Finally Found Food"</span><span class="p">:</span> <span class="s2">"Found the Food"</span><span class="p">,</span>
+    <span class="s2">"Still Food"</span><span class="p">:</span> <span class="s2">"More Food There"</span><span class="p">,</span>
+    <span class="s2">"Still No Food to Find"</span><span class="p">:</span> <span class="s2">"Still No Food"</span>
+
+<span class="p">}</span>
+
+
+<span class="n">output_path</span> <span class="o">=</span> <span class="n">create_and_render_graph</span><span class="p">(</span><span class="n">nodes_list</span><span class="p">,</span> <span class="n">edges_list</span><span class="p">,</span> <span class="n">latex_edge_labels</span><span class="p">,</span>
+                                      <span class="n">node_colors</span><span class="o">=</span><span class="n">node_colors</span><span class="p">,</span>
+                                      <span class="n">node_labels</span><span class="o">=</span><span class="n">node_labels</span><span class="p">)</span>
+<span class="n">Image</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+
+</div>
+<p>So after successful foraging the probability that there is still food at the patch is <span class="math notranslate nohighlight">\(1-p_x\)</span>. Thus, after a succsfull forage at a new patch if <span class="math notranslate nohighlight">\(1-p_x &gt; p_e\)</span> it is better to stay and continue foraging, but if <span class="math notranslate nohighlight">\(1-p_x &lt; p_e\)</span> then it is better to move on to a fresh patch.</p>
+</div>
+<div class="section" id="what-to-do-after-one-failed-foraging-attempt-following-successful-foraging">
+<h2>What to do after one failed foraging attempt following successful foraging<a class="headerlink" href="#what-to-do-after-one-failed-foraging-attempt-following-successful-foraging" title="Permalink to this headline">¶</a></h2>
+<p>In cases where <span class="math notranslate nohighlight">\(1-p_x &gt; p_e\)</span>, i.e. food persisting at a patch is more likely than finding a new patch with food, and it makes sense for the forager to forage again at the same patch after a successful foraging attempt. In these cases, we then need to know what a forager should do if this subsequent attempt fails. Again, let’s expand the visualization to help us think this through. To focus in on our particular question we will use the “<span class="math notranslate nohighlight">\(\text{Found the Food}\)</span>” node as the root node of this next probability tree.</p>
+<p>Run this cell to visualize the probability tree</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown Run this cell to visualize the probability tree</span>
+
+<span class="n">nodes_list</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="s2">"Found the Food"</span><span class="p">,</span>
+  <span class="s2">"Still Food"</span><span class="p">,</span> <span class="s2">"Food Ran Out"</span><span class="p">,</span>
+  <span class="s2">"Found More Food"</span><span class="p">,</span> <span class="s2">"Didn't Find Food"</span><span class="p">,</span> <span class="s2">"No Food to Find"</span>
+<span class="p">]</span>
+<span class="n">edges_list</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">(</span><span class="s2">"Found the Food"</span><span class="p">,</span> <span class="s2">"Still Food"</span><span class="p">),</span>
+  <span class="p">(</span><span class="s2">"Found the Food"</span><span class="p">,</span> <span class="s2">"Food Ran Out"</span><span class="p">),</span>
+  <span class="p">(</span><span class="s2">"Still Food"</span><span class="p">,</span> <span class="s2">"Found More Food"</span><span class="p">),</span>
+  <span class="p">(</span><span class="s2">"Still Food"</span><span class="p">,</span> <span class="s2">"Didn't Find Food"</span><span class="p">),</span>
+  <span class="p">(</span><span class="s2">"Food Ran Out"</span><span class="p">,</span> <span class="s2">"No Food to Find"</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="n">latex_edge_labels</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">(</span><span class="s2">"Found the Food"</span><span class="p">,</span> <span class="s2">"Still Food"</span><span class="p">,</span> <span class="s2">"1-p_x"</span><span class="p">),</span>
+  <span class="p">(</span><span class="s2">"Found the Food"</span><span class="p">,</span> <span class="s2">"Food Ran Out"</span><span class="p">,</span> <span class="s2">"p_x"</span><span class="p">),</span>
+  <span class="p">(</span><span class="s2">"Still Food"</span><span class="p">,</span> <span class="s2">"Found More Food"</span><span class="p">,</span> <span class="s2">"p_s"</span><span class="p">),</span>
+  <span class="p">(</span><span class="s2">"Still Food"</span><span class="p">,</span> <span class="s2">"Didn't Find Food"</span><span class="p">,</span> <span class="s2">"1-p_s"</span><span class="p">),</span>
+  <span class="p">(</span><span class="s2">"Food Ran Out"</span><span class="p">,</span> <span class="s2">"No Food to Find"</span><span class="p">,</span> <span class="s2">"1"</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="n">node_colors</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"Found the Food"</span><span class="p">:</span> <span class="s2">"green"</span><span class="p">,</span>
+  <span class="s2">"Still Food"</span><span class="p">:</span> <span class="s2">"green"</span><span class="p">,</span>
+  <span class="s2">"Food Ran Out"</span><span class="p">:</span> <span class="s2">"green"</span><span class="p">,</span>
+  <span class="s2">"Found More Food"</span><span class="p">:</span> <span class="s2">"green"</span><span class="p">,</span>
+  <span class="s2">"Didn't Find Food"</span><span class="p">:</span> <span class="s2">"blue"</span><span class="p">,</span>
+  <span class="s2">"No Food to Find"</span><span class="p">:</span> <span class="s2">"blue"</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">node_labels</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"Still Food"</span><span class="p">:</span> <span class="s2">"More Food There"</span><span class="p">,</span>
+  <span class="s2">"Didn't Find Food"</span><span class="p">:</span> <span class="s2">"No Food Found"</span><span class="p">,</span>
+  <span class="s2">"No Food to Find"</span><span class="p">:</span> <span class="s2">"No Food Found"</span>
+<span class="p">}</span>
+
+
+<span class="n">output_path</span> <span class="o">=</span> <span class="n">create_and_render_graph</span><span class="p">(</span><span class="n">nodes_list</span><span class="p">,</span> <span class="n">edges_list</span><span class="p">,</span> <span class="n">latex_edge_labels</span><span class="p">,</span>
+                                      <span class="n">node_colors</span><span class="o">=</span><span class="n">node_colors</span><span class="p">,</span>
+                                      <span class="n">node_labels</span><span class="o">=</span><span class="n">node_labels</span><span class="p">)</span>
+<span class="n">Image</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+
+</div>
+<p>This should look very familiar. This is basically the same situation we had previously where the forager can’t definatively tell the difference between a failed foraging attempt caused by there not being anything to find, and a failed foraging attempt where the patch has food and the forager just didn’t find it. Just as before Bayes’ rule allows us to compute how likely it is that there is still food at the patch when an unsuccessful foraging attempt follows a successful foraging event. Specifically</p>
+<div class="math notranslate nohighlight">
+\[ P(\text{More Food}| \text{No Food Found}) = \frac{P(\text{No Food Found}|\text{More Food}) \cdot P(\text{More Food})}{P(\text{No Food Found})} \]</div>
+<p>Again, these values can be read off of our probability tree diagram above giving:</p>
+<div class="math notranslate nohighlight">
+\[ P(\text{More Food}| \text{No Food Found}) = \frac{(1-p_s) \cdot (1-p_x)}{(1-p_s) \cdot (1-p_x) + p_x} \]</div>
+<p>Given this, and the fact that the forager should always forage in the place most likely to have food, it should move to a fresh new patch if and only if
+$<span class="math notranslate nohighlight">\(\frac{(1-p_s) \cdot (1-p_x)}{(1-p_s) \cdot (1-p_x) + p_x} &lt; p_e \)</span>$</p>
+<p>We haven’t yet given any specific values for the parameters of this proccess, but if we did have some we could plug them into this formula to see if foraging after one failed foraging attempt following successful foraging is a good or a bad idea. Let’s say</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(p_e=0.3\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p_s=0.6\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p_x=0.2\)</span></p></li>
+</ul>
+<p>These just happen to be the parameter values used in the simulations earlier.
+Plugging those values into our formulae we have that the probability of food at the current patch is roughly <span class="math notranslate nohighlight">\(0.642...\)</span> which is greater than <span class="math notranslate nohighlight">\(p_e=0.4\)</span> so for this particular parameter set, foraging again at the same patch with one failure after a success is optimal.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Probability of there still being food at the current patch after one failed attempt following a successful attempt</span>
+<span class="n">p_e</span> <span class="o">=</span> <span class="mf">0.3</span>
+<span class="n">p_s</span> <span class="o">=</span> <span class="mf">0.6</span>
+<span class="n">p_x</span> <span class="o">=</span> <span class="mf">0.2</span>
+<span class="p">((</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p_s</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p_x</span><span class="p">))</span> <span class="o">/</span> <span class="p">((</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p_s</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p_x</span><span class="p">)</span> <span class="o">+</span> <span class="n">p_x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6153846153846155
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="what-to-do-after-n-failed-foraging-attempts-following-successful-foraging">
+<h2>What to do after <span class="math notranslate nohighlight">\(n\)</span> failed foraging attempts following successful foraging<a class="headerlink" href="#what-to-do-after-n-failed-foraging-attempts-following-successful-foraging" title="Permalink to this headline">¶</a></h2>
+<p>SWe know that after a single failed foraging attempt at a new patch the forager should move on. The intuition here is that a failed foraging attempt gives evidence for the new patch being one with no food, so better to just start again at a fesh patch. (Note that there are no travel costs here, if there were things would be trickier.) Conversely, after having found food at a patch, if exhaustion is relatively unlikely, then the evidence provided by a failed attempt might still not be enough to counter the evidence of a previous success. So, for some parameter values, trying again at the same patch is the best thing to do.</p>
+<p>Expanding these probability trees is fun, but could become a bit tedious if we had to do it a lot. However, we do need some way to compute this more general quantity:</p>
+<div class="math notranslate nohighlight">
+\[ P(\text{More Food}| \text{No Food Found } n \text{ Times}) = \frac{P(\text{No Food Found } n \text{ Times}|\text{More Food}) \cdot P(\text{More Food})}{P(\text{No Food Found } n \text{ Times})} \]</div>
+<p><strong>Probability Exercise</strong></p>
+<p>Plug the correct values into the formula above.</p>
+<p>Answer:</p>
+<div class="math notranslate nohighlight">
+\[ P(\text{More Food}| \text{No Food Found } n \text{ Times}) = \frac{(1-p_s)^n \cdot (1-p_x)}{(1-p_s)^n \cdot (1-p_x) + p_x} \]</div>
+<p>Then for our given parameter values we can see how the liklihood of there being food at the patch diminishes with each unsuccessfull foraging attempt, until it passes the threshold probability <span class="math notranslate nohighlight">\(p_e\)</span> where it makes sense to start foraging at a new patch</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p_e</span> <span class="o">=</span> <span class="mf">0.3</span>  <span class="c1"># Probability of food being present at a new patch</span>
+<span class="n">p_s</span> <span class="o">=</span> <span class="mf">0.6</span>  <span class="c1"># Probability of foraging success</span>
+<span class="n">p_x</span> <span class="o">=</span> <span class="mf">0.2</span>  <span class="c1"># Probability of patch exhaustion after success</span>
+
+<span class="k">def</span> <span class="nf">prob_still_food_after_n_fails</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">p_s</span><span class="p">,</span> <span class="n">p_x</span><span class="p">):</span>
+  <span class="k">return</span> <span class="p">((</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p_s</span><span class="p">)</span> <span class="o">**</span> <span class="n">n</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p_x</span><span class="p">))</span> <span class="o">/</span> <span class="p">((</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p_s</span><span class="p">)</span> <span class="o">**</span> <span class="n">n</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p_x</span><span class="p">)</span> <span class="o">+</span> <span class="n">p_x</span><span class="p">)</span>
+
+<span class="c1"># Calculating probabilities different n values</span>
+<span class="n">n_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>  <span class="c1"># From 0 to 5</span>
+<span class="n">prob_values</span> <span class="o">=</span> <span class="p">[</span><span class="n">prob_still_food_after_n_fails</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">p_s</span><span class="p">,</span> <span class="n">p_x</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">n_values</span><span class="p">]</span>
+
+<span class="c1"># Plotting the probabilities</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n_values</span><span class="p">,</span> <span class="n">prob_values</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">'o'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'blue'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'At Current Patch'</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">p_e</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'green'</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">'--'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'At New Patch'</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'Probability Food Present Conditional on n Foraging Failures'</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'Number of Times No Food Found (n)'</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'Probability of Food at Patch'</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">remove_ip_clutter</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+
+</div>
+<p>Looking at this figure it is clear that even after 2 failures, for these parameter values at least, it is still better to forage at the current patch. However, after 3 consecutive foraging failures enough evidence against there being food present at the current patch has accumulated and its time for the forager to move on to a new patch.</p>
+</div>
+<div class="section" id="optimal-thresholds">
+<h2>Optimal Thresholds<a class="headerlink" href="#optimal-thresholds" title="Permalink to this headline">¶</a></h2>
+<p>Summarizing our analysis thus far.</p>
+<ul class="simple">
+<li><p>No matter what the parameter values, a single foraging failure at a new patch should prompt the forager to move on to a new patch (provided there is an abundant supply of fresh patches, e.g. more new patches than there are foraging rounds). This is because a single foraging failure at a new patch provides evidence for their being no food at that patch, making a fresh patch preferable to foraging again in the same place.</p></li>
+<li><p>If patch exhaustion through foraging is unlikely relative to the baseline probability of food presnce at a fresh patch, then having found food at a patch provides evidence for the continued presense of food at that same patch. Specifically if <span class="math notranslate nohighlight">\(1-p_x &lt; p_e\)</span>, then foraging at a patch where food was just found is the best thing to do. Conversely if patch exhaustion through foraging is likely relative to the baseline probability of food presence at a fresh patch, then having found food at a patch provides evidence for the absence of food at that same patch. Moving to a fresh patch after successuful foraging is  if <span class="math notranslate nohighlight">\(1-p_x &gt; p_e\)</span> is the best thing to do.</p></li>
+<li><p>In the case where <span class="math notranslate nohighlight">\(1-p_x &lt; p_e\)</span> and so continued foraging at the same patch after success is good, subsequent failed foraging attempts provide evidence that the patch was indeed exhausted and no food is present. The probability of food being present after <span class="math notranslate nohighlight">\(n\)</span> failed foragin attempts is
+$<span class="math notranslate nohighlight">\( \frac{(1-p_s)^n \cdot (1-p_x)}{(1-p_s)^n \cdot (1-p_x) + p_x} \)</span><span class="math notranslate nohighlight">\(
+When this quantity is greater than \)</span>p_e<span class="math notranslate nohighlight">\( continued attempts at the same patch is the best thing to do, but when this quantity is less than \)</span>p_e$ it is time to move on to a new patch.</p></li>
+</ul>
+<p>Taking this one step further we can algebrically solve for <span class="math notranslate nohighlight">\(n\)</span> as a function of the parameters to determine what the optimal policy is for any given set of parameters.</p>
+<p><strong>Exercise</strong> Algebrically manipulate the expression
+$<span class="math notranslate nohighlight">\( \frac{(1-p_s)^n \cdot (1-p_x)}{(1-p_s)^n \cdot (1-p_x) + p_x} &gt; p_e\)</span><span class="math notranslate nohighlight">\(
+To determine the maximum number \)</span>n$ of consecutive foraging failures after a successful foraging attempt where it is still optimal to continue foraging at the same patch.</p>
+<p>Answer:
+$$</p>
+<div class="amsmath math notranslate nohighlight" id="equation-3340ff19-8bdf-407a-9835-3ff25c11c6b2">
+<span class="eqno">(1)<a class="headerlink" href="#equation-3340ff19-8bdf-407a-9835-3ff25c11c6b2" title="Permalink to this equation">¶</a></span>\[\begin{align}
+(1-p_s)^n \cdot (1-p_x) &amp;&gt; p_e \cdot ((1-p_s)^n \cdot (1-p_x) + p_x) \\
+(1-p_e)\cdot (1-p_s)^n \cdot (1-p_x) &amp;&gt; p_e \cdot p_x \\
+(1-p_s)^n &amp;&gt; \frac{p_e \cdot p_x}{(1-p_e)\cdot(1-p_x)} \\
+n \ln(1-p_s) &amp;&gt; \ln \left( \frac{p_e \cdot p_x}{(1-p_e)\cdot(1-p_x)} \right) \\
+n &amp;&lt; \frac{\ln(p_e) + \ln(p_x) - \ln(1-p_e) - \ln(1-p_x)}{\ln(1-p_s)}
+\end{align}\]</div>
+<div class="math notranslate nohighlight">
+\[
+So when
+\]</div>
+<p>n \leq \left\lfloor \frac{\ln(p_e) + \ln(p_x) - \ln(1-p_e) - \ln(1-p_x)}{\ln(1-p_s)} \right\rfloor
+$$
+The forager should keep trying the same patch.</p>
+<p>So this analysis seems sound, but let’s check that when we use these supposedly optimal thresholds, our forager does indeed perform better than when using other sub-optimal threshold foraging rules. For the parameter values</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(p_e=0.3\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p_s=0.6\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p_x=0.2\)</span></p></li>
+</ul>
+<p>This gives us</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p_e</span> <span class="o">=</span> <span class="mf">0.3</span>
+<span class="n">p_s</span> <span class="o">=</span> <span class="mf">0.6</span>
+<span class="n">p_x</span> <span class="o">=</span> <span class="mf">0.2</span>
+<span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">p_e</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">p_x</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">p_e</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">p_x</span><span class="p">))</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">p_s</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>So for these parameters, the forager should try again after two fails, but move on to a fresh patch after the third, and never forage again after a failed attempt at a new patch. Run the cell below to check performance for different thresholds. Note that the threshold is maximum number of consecutive misses before the forager moves on. So the optimal threshold is <span class="math notranslate nohighlight">\(0\)</span> for new patches and <span class="math notranslate nohighlight">\(2\)</span> for patches with a prior success.</p>
+<p><strong>Run This Cell</strong> to evaluate the expected value of this foraging scenario under different threshold combinations</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown **Run This Cell** to evaluate the expected value of this foraging scenario under different threshold combinations</span>
+
+<span class="k">class</span> <span class="nc">ValueHeatmapWidget</span><span class="p">:</span>
+
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p_e</span><span class="p">,</span> <span class="n">p_x</span><span class="p">,</span> <span class="n">p_s</span><span class="p">,</span> <span class="n">max_foraging_attempts</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">p_e</span> <span class="o">=</span> <span class="n">p_e</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">p_x</span> <span class="o">=</span> <span class="n">p_x</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">p_s</span> <span class="o">=</span> <span class="n">p_s</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">max_foraging_attempts</span> <span class="o">=</span> <span class="n">max_foraging_attempts</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">heatmap_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">fig</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'Successful Forage Threshold'</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'New Patch Threshold'</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">((</span><span class="mf">6.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">))</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">tick_top</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_label_position</span><span class="p">(</span><span class="s1">'top'</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">'top'</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">'right'</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">'bottom'</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">'left'</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">remove_ip_clutter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fig</span><span class="p">)</span>
+    <span class="c1">#y_ticks = self.ax.get_yticks().tolist()</span>
+    <span class="c1"># Adjust the labels</span>
+    <span class="c1">#y_labels = [str(int(tick+1)) for tick in y_ticks if 0 &lt;= tick &lt; 11]</span>
+    <span class="c1"># Set the new labels without altering the tick positions</span>
+    <span class="c1">#self.ax.set_yticklabels(y_labels)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">text_annotations</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1"># Create sliders</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">tau_new_slider</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">tau_eat_slider</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">tau_new_label</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="s2">"New Patch Threshold"</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">tau_eat_label</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="s2">"Successful Eating Threshold"</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">tau_new_box</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">tau_new_label</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">tau_new_slider</span><span class="p">])</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">tau_eat_box</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">tau_eat_label</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">tau_eat_slider</span><span class="p">])</span>
+
+    <span class="c1"># Create compute button</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">compute_button</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">"Compute Value"</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">compute_button</span><span class="o">.</span><span class="n">on_click</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">update_plot</span><span class="p">)</span>
+
+    <span class="c1"># Put the display together with the VBoxes and button</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">sliders</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">tau_new_box</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">tau_eat_box</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">compute_button</span><span class="p">])</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">final_display</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">HBox</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">sliders</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">canvas</span><span class="p">])</span>
+
+  <span class="k">def</span> <span class="nf">update_cax</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">'cax'</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">cax</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">cax</span><span class="o">.</span><span class="n">autoscale</span><span class="p">()</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">colorbar</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">cax</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">matshow</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">'gray_r'</span><span class="p">)</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">colorbar</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cax</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">update_plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">change</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">tau_new</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tau_new_slider</span><span class="o">.</span><span class="n">value</span>
+    <span class="n">tau_eat</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tau_eat_slider</span><span class="o">.</span><span class="n">value</span>
+    <span class="n">pfg</span> <span class="o">=</span> <span class="n">PatchyForagingGame</span><span class="p">(</span><span class="n">batch_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+                         <span class="n">food_patch_prob</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p_e</span><span class="p">,</span>
+                         <span class="n">food_extinct_prob</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p_x</span><span class="p">,</span>
+                         <span class="n">forage_success_prob</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p_s</span><span class="p">,</span>
+                         <span class="n">max_foraging_attempts</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">max_foraging_attempts</span><span class="p">,</span>
+                         <span class="n">food_regen_prob</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                         <span class="n">rng</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">rng</span><span class="p">)</span>
+    <span class="n">stp</span> <span class="o">=</span> <span class="n">SimpleThresholdPlayer</span><span class="p">(</span><span class="n">pfg</span><span class="p">,</span> <span class="n">critter_index</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                                <span class="n">threshold_new</span><span class="o">=</span><span class="n">tau_new</span><span class="p">,</span>
+                                <span class="n">threshold_known</span><span class="o">=</span><span class="n">tau_eat</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">pfg</span><span class="o">.</span><span class="n">play_game</span><span class="p">([</span><span class="n">stp</span><span class="p">])</span>
+    <span class="n">score</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s1">'scores'</span><span class="p">])</span>
+
+    <span class="c1"># Update heatmap_data</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">heatmap_data</span><span class="p">[</span><span class="n">tau_new</span><span class="p">,</span> <span class="n">tau_eat</span><span class="p">]</span> <span class="o">=</span> <span class="n">score</span>
+
+    <span class="c1"># Plot</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">update_cax</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">heatmap_data</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">txt</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">text_annotations</span><span class="p">:</span>
+      <span class="n">txt</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">text_annotations</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+
+    <span class="c1"># Annotate heatmap</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">):</span>
+      <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">12</span><span class="p">):</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">heatmap_data</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">c</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+          <span class="n">txt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">c</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">'center'</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">'center'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'w'</span> <span class="k">if</span> <span class="n">c</span> <span class="o">&gt;</span> <span class="mf">0.5</span> <span class="k">else</span> <span class="s1">'k'</span><span class="p">)</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">text_annotations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">txt</span><span class="p">)</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+
+<span class="c1"># Using the class</span>
+<span class="n">vh_widget</span> <span class="o">=</span> <span class="n">ValueHeatmapWidget</span><span class="p">(</span><span class="n">p_e</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">p_x</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">p_s</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span>
+                               <span class="n">max_foraging_attempts</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">vh_widget</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">canvas</span><span class="p">)</span>
+<span class="n">clear_output</span><span class="p">()</span>
+<span class="n">display</span><span class="p">(</span><span class="n">vh_widget</span><span class="o">.</span><span class="n">final_display</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+
+</div>
+<p>Hopefully our optimal strategy is really seeming optimal.</p>
+<p>Two things to notice about what we’ve done here:</p>
+<ol class="simple">
+<li><p>Unlike previous optimization processes in the book where we’ve tried different parameters and evaluated them until eventually we’ve found good parameters, here we reasoned about the properties of the optimal strategy and then deduced what it should be. No algorithms, no function evaluations, just thinking.</p></li>
+<li><p>With an algorithmic optimization process, the algorithm needs to be run, and a different optimal policy found, each time the parameters of the underlying problem change. Here, we’ve derived the optimal strategy as a function of the parameters. Thus for any set of parameters, we can instantly determine the optimal strategy, without needing to re-run the optimization process. Very efficient!</p></li>
+</ol>
+<p>Submit your feedback</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown Submit your feedback</span>
+<span class="n">content_review</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">feedback_prefix</span><span class="si">}</span><span class="s2">_M2"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+<div class="section" id="propose-and-test-versus-reasoning">
+<h1><strong>1.2.3.3 Propose and Test versus Reasoning</strong><a class="headerlink" href="#propose-and-test-versus-reasoning" title="Permalink to this headline">¶</a></h1>
+<p>Now that we’ve reasoned about policies and used our analysis to determine the optimal policy let’s see how our old standby approach ‘Propose and Test’ does with this same problem.</p>
+<div class="section" id="propose-and-test">
+<h2>Propose and Test<a class="headerlink" href="#propose-and-test" title="Permalink to this headline">¶</a></h2>
+<p>Run this cell to use the propose and test method to find good parameters for this patchy foraging problem.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Propose and Test</span>
+<span class="c1"># @markdown Run this cell to use the propose and test method to find good parameters for this patchy foraging problem.</span>
+
+<span class="k">def</span> <span class="nf">evaluate</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">game</span><span class="p">):</span>
+  <span class="n">stp</span> <span class="o">=</span> <span class="n">SimpleThresholdPlayer</span><span class="p">(</span><span class="n">game</span><span class="p">,</span> <span class="n">critter_index</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">threshold_new</span><span class="o">=</span><span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                              <span class="n">threshold_known</span><span class="o">=</span><span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+  <span class="n">result</span> <span class="o">=</span> <span class="n">game</span><span class="o">.</span><span class="n">play_game</span><span class="p">([</span><span class="n">stp</span><span class="p">])</span>
+  <span class="k">return</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s1">'scores'</span><span class="p">]))</span>
+
+
+<span class="k">def</span> <span class="nf">patchy_propose_and_test</span><span class="p">(</span><span class="n">batch_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+                            <span class="n">initial_params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                            <span class="n">max_rejected</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+                            <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+
+  <span class="n">game</span> <span class="o">=</span> <span class="n">PatchyForagingGame</span><span class="p">(</span><span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span>
+                            <span class="n">food_patch_prob</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span>
+                            <span class="n">food_extinct_prob</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+                            <span class="n">forage_success_prob</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span>
+                            <span class="n">max_foraging_attempts</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+                            <span class="n">food_regen_prob</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+  <span class="n">tested_params_dict</span> <span class="o">=</span> <span class="p">{}</span>
+  <span class="c1"># Initialize parameters</span>
+  <span class="k">if</span> <span class="n">initial_params</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">initial_params</span> <span class="o">=</span> <span class="mi">5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+  <span class="n">best_params</span> <span class="o">=</span> <span class="n">initial_params</span>
+  <span class="n">best_avg_score</span> <span class="o">=</span> <span class="n">evaluate</span><span class="p">(</span><span class="n">best_params</span><span class="p">,</span> <span class="n">game</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Initial score: </span><span class="si">{</span><span class="n">best_avg_score</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+  <span class="n">rejected_count</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="n">total_tests</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># Number of iterations</span>
+  <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+    <span class="n">intermediate_params</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">intermediate_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">best_params</span><span class="p">)</span>
+    <span class="n">intermediate_values</span> <span class="o">=</span> <span class="p">[</span><span class="n">best_avg_score</span><span class="p">]</span>
+    <span class="n">iterations</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+  <span class="c1"># Propose-and-test loop</span>
+  <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+  <span class="k">while</span> <span class="n">rejected_count</span> <span class="o">&lt;</span> <span class="n">max_rejected</span><span class="p">:</span>
+    <span class="n">total_tests</span> <span class="o">+=</span><span class="mi">1</span>
+    <span class="c1"># Propose new parameters: sample custom list of small discrete steps</span>
+    <span class="c1"># centered at best_params</span>
+    <span class="n">delta_dim1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+    <span class="n">delta_dim2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+    <span class="n">delta_params</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">delta_dim1</span><span class="p">,</span> <span class="n">delta_dim2</span><span class="p">])</span>
+    <span class="n">proposal_params</span> <span class="o">=</span> <span class="n">best_params</span> <span class="o">+</span> <span class="n">delta_params</span>
+    <span class="c1"># Ensure that the values for the first dimension don't go below 0</span>
+    <span class="n">proposal_params</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">proposal_params</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">proposal_params</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">proposal_params</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+    <span class="k">if</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">proposal_params</span><span class="p">)</span> <span class="ow">in</span> <span class="n">tested_params_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>  <span class="c1"># Step 2: Check if the proposed parameters have been tested before.</span>
+      <span class="c1">#print('already tested' + str(proposal_params))</span>
+      <span class="n">rejected_count</span> <span class="o">+=</span> <span class="mi">1</span>
+      <span class="k">continue</span>
+
+    <span class="c1">#print('now testing' + str(proposal_params))</span>
+    <span class="n">avg_score</span> <span class="o">=</span> <span class="n">evaluate</span><span class="p">(</span><span class="n">proposal_params</span><span class="p">,</span> <span class="n">game</span><span class="p">)</span>
+    <span class="n">tested_params_dict</span><span class="p">[</span><span class="nb">tuple</span><span class="p">(</span><span class="n">proposal_params</span><span class="p">)]</span> <span class="o">=</span> <span class="n">avg_score</span>
+
+    <span class="k">if</span> <span class="n">avg_score</span> <span class="o">&gt;</span> <span class="n">best_avg_score</span><span class="p">:</span>
+      <span class="n">best_params</span> <span class="o">=</span> <span class="n">proposal_params</span>
+      <span class="n">best_avg_score</span> <span class="o">=</span> <span class="n">avg_score</span>
+      <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'best params so far:'</span><span class="p">)</span>
+        <span class="n">display</span><span class="p">(</span><span class="n">best_params</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Best score so far: </span><span class="si">{</span><span class="n">best_avg_score</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Found after a total of </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start_time</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> seconds"</span><span class="p">)</span>
+        <span class="n">rejected_count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="n">rejected_count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+  <span class="n">end_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+  <span class="n">elapsed_time</span> <span class="o">=</span> <span class="n">end_time</span> <span class="o">-</span> <span class="n">start_time</span>
+  <span class="n">iterations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">total_tests</span><span class="p">)</span>
+
+  <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+    <span class="c1"># Print the best found parameters and score</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Best Parameters:"</span><span class="p">,</span> <span class="n">best_params</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Best Average Score:"</span><span class="p">,</span> <span class="n">best_avg_score</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Parameter combinations tested:"</span><span class="p">,</span> <span class="n">total_tests</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Time taken for the optimization loop: </span><span class="si">{</span><span class="n">elapsed_time</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> seconds"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">best_params</span><span class="p">,</span> <span class="n">best_avg_score</span><span class="p">,</span> <span class="n">tested_params_dict</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">best_params</span><span class="p">,</span> <span class="n">best_avg_score</span>
+
+<span class="n">best_params</span><span class="p">,</span> <span class="n">best_score</span><span class="p">,</span> <span class="n">tested_params_dict</span> <span class="o">=</span> <span class="n">patchy_propose_and_test</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+
+</div>
+<p>Questions:</p>
+<ol class="simple">
+<li><p>Did the propose and test method using simulation based evaluation find the same optimal parameters as we did using analytical policy evaluation? <a class="reference external" href="##">Answer</a></p></li>
+<li><p>What about the best scores reported by the propose and test algorithm using simulation based evaluation, are these higher, lower or about the same as determined using an analytical approach? <a class="reference external" href="##">Answer</a></p></li>
+</ol>
+</div>
+<div class="section" id="multiple-perspectives-on-optima">
+<h2><strong>Multiple Perspectives on Optima</strong><a class="headerlink" href="#multiple-perspectives-on-optima" title="Permalink to this headline">¶</a></h2>
+<p>In this sequence we have looked at the same patchy foraging problem in two different ways.</p>
+<p>The first perspective was to interact with and observe a ‘full’ simulation of the problem, where an organism plays through rounds of a game according to some policy and receives a score. This is how we have approached everything so far in this book. Although this perspective and this game are highly simplified compared to lived reality, this general approach of ‘run it and see’ is exactly what evolution is doing. Variations on the policy emerge due to recombination and mutation, organisms live their lives, and the effectiveness of their policy is ‘evaluated’ via natural selection, roughly as the number of offspring surviving to the next generation. Importantly, the evolutionary selective process needs no analytic insight into the nature of the environment in which organisms are born and execute their policies. It is a black box, ‘run it and see’ approach.</p>
+<p>The second perspective, which we introduced here was to think about the nature of the problem, to write out a symbolic mathematical expressions that described the problem, and then through deductive reasoning arrive at an exact analytical method of determining the optimal policy for this problem.</p>
+<p>These perspectives, for the most part, converged on the same optimal policy. Why is this? The optimal solution of a problem is inherent to the problem itself, not the method used to find the solution. Thus, different optimization approaches applied to the same problem, will arrive at the same conclusions, to the extent that each different optimization approach is effective. This insight has been a powerful tool in understanding evolved behaviours and traits, with optimality models helping to explain a staggering array of animal behaviours (and the behaviour of all kinds of life). These are just a few examples:</p>
+<ol class="simple">
+<li><p><strong>Humming Bird Foraging</strong>: Many animals are under selection pressure to maximize their net energy intake while minimizing the risk. The sequence in which hummingbirds feed on the flowers in their territory can be understood as minimizing flight distance and thus saving energy and time. This behavior exemplifies an energy-efficient strategy that boosts survival and reproductive chances.</p></li>
+<li><p><strong>Web Building in Spiders</strong>: Considering the metabolic cost of producing silk, spiders build their webs to capture the most prey while using the least amount of material. Different spider species, depending on their ecological niche, have optimized their web designs accordingly - from the dense tangle webs of the funnel-web spiders to the expansive orb webs of garden spiders.</p></li>
+<li><p><strong>Echolocation in Bats</strong>: Bats optimize the frequency and duration of their echolocation calls based on their environment and prey type. In cluttered environments, bats often use shorter frequency-modulated calls to detect nearby objects. However, in open spaces, they employ longer calls for detection over a more extended range. This behavioral adaptation can be viewed as an optimization problem where bats adjust their call parameters for maximum prey detection.</p></li>
+<li><p><strong>Migratory Paths of Birds</strong>: Migratory birds traverse vast distances, optimizing their routes to conserve energy, avoid predators, and capitalize on food sources. For example, the Arctic tern, traveling from its Arctic breeding grounds to the Antarctic coast, chooses a path that, although not the shortest, exploits prevailing wind patterns and abundant food sources.</p></li>
+<li><p><strong>Root Architecture in Plants</strong>: The way a plant structures its root system is crucial for both nutrient uptake and stability. For instance, in areas prone to drought, plants like mesquite trees invest in deep taproots that reach far into the soil, tapping into groundwater sources. In contrast, plants in nutrient-rich but unstable environments, like riverbanks, invest in expansive but shallow root systems to maximize nutrient absorption while anchoring themselves against fast-moving water.</p></li>
+<li><p><strong>Leaf Orientation and Sun Tracking</strong>: Sunflower fields during a sunny day offer a mesmerizing sight: rows of flowers all facing the sun. This behavior, known as heliotropism, allows the plant to maximize sunlight absorption. By tracking the sun across the sky, sunflowers optimize photosynthesis rates. Similarly, desert plants like the creosote bush have small, vertically-oriented leaves, reducing their exposure to the intense midday sun and minimizing water loss due to transpiration.</p></li>
+<li><p><strong>Thermoregulation in Reptiles</strong>: Cold-blooded reptiles, such as lizards and snakes, primarily thermoregulate through behaviour (not metabolically, like warm-blooded mammals and birds). Take the diurnal behavior of desert lizards: by basking in the morning sun, they quickly elevate their body temperature, optimizing their physiological functions for the day ahead. As midday approaches with its peak heat, these reptiles retreat to cooler shades or burrows, ensuring they don’t overheat. This can be understood as an optimization strategy, balancing the need for warmth to maintain metabolic rates with the imperative to avoid lethal high temperatures.</p></li>
+<li><p><strong>Camouflage and Coloration</strong>: The appearance of many plants and animals appearances can be understood as optimization for avoiding detection. Consider the peppered moth in industrial England. Historically, the majority of these moths were light-colored, blending seamlessly with the lichen-covered trees. However, during the Industrial Revolution, pollution darkened the trees, giving an advantage to rare dark-colored moths. As these darker moths thrived in their new environment, their numbers surged, demonstrating a rapid optimization of camouflage in response to environmental changes.</p></li>
+</ol>
+<p>Each of the examples above takes an ‘Ultimate’ evolutionary functional perspective to explain behaviours or traits. However, this is but one of four perspectives from which to understand a behaviour.</p>
+</div>
+<div class="section" id="different-kinds-of-understanding-tinbergen-s-four-questions">
+<h2><strong>Different Kinds of Understanding: Tinbergen’s Four Questions</strong><a class="headerlink" href="#different-kinds-of-understanding-tinbergen-s-four-questions" title="Permalink to this headline">¶</a></h2>
+<p>Building on work by Julian Huxley, Niko Tinbergen described four “whys” or perspectives for understanding an observed behaviour (adapted from Aristotle’s four causes). These continue to ground and inform interdisciplinary work across the behavioural sciences.</p>
+<ol class="simple">
+<li><p><strong>Mechanistic</strong> (Sensory and Biophysical Causes): This approach seeks to understand the immediate causes of a behaviour from the sensory input that elicits it through to the biophysical processes of the organism which produce the behaviour in response to a particular environmental input. While the ‘Ultimate’ perspective might explain why a bird sings in terms of its evolutionary function, e.g. to attract a mate, the mechanistic perspective looks at how a bird’s vocal cords, brain circuits, and hormones function together to produce the song in response to certain environmental conditions, but not others.</p></li>
+<li><p><strong>Ontogenetic</strong> (Developmental Causes): This perspective examines how a behavior develops in an individual over their lifetime. It encompasses aspects of both learning and maturation. For example, while many birds are born with the inherent capability to sing, they often refine their songs through interactions with their environment and other birds, improving their repertoire and accuracy over time.</p></li>
+<li><p><strong>Functional</strong> (Adaptive Evolutionary Causes): This is the perspective we have focused on so far. It seeks to understand behavior in terms of the selective advantage it confers to the organism. How does the behavior increase the chances of survival and reproduction? The hummingbird foraging and the spider web-building examples fit into this category, showcasing behaviors that have been optimized over generations for increased fitness.</p></li>
+<li><p><strong>Phylogenetic</strong> (Historical Evolutionary Causes): This perspective traces the behavior’s lineage through evolutionary history. Why does a particular species exhibit this behavior, but not another? Did the common ancestor of these species also exhibit this behavior? How has evolutionary history set the conditions and constraints on which adaptive new forms are possible? For instance, the vertebrate eye (including the human eye) has a blind spot, whereas octopus eyes do not. In each of these two lineages, the eye originally developed in one of two distinct ways. Once this initial development program for the vertebrate eye was set, there were no intermediate forms that were both adaptive and would have enabled it to evolve without a blind spot.</p></li>
+</ol>
+<p>Scientific work can be done using one, several, or all of these perspectives combined. No single perspective is inherently better or more important. What is deeply valuable though, for any project within the life sciences, is knowing which kinds of understanding are being aimed at, and how work from the other perspectives might guide and constrain understanding in the area(s) of focus.</p>
+<p>In this book we will often take a functional perspective. However, understanding how phylogeny, ontogeny, and mechanism constrain and determine the optimization problems to be analyzed is critical to the relevance and validity of the functional perspective.</p>
+<p>Where does this four-perspective framework situate neuroscience within the broader behavioral sciences? Traditionally, neuroscience has largely been part of a mechanistic understanding of behaviour, i.e. how do the brain circuits compute and produce muscles activations that generate appropriate behaviour given environmental inputs. Learning is also obvious and important part of what brains do. To the extent that neuroscience research is focused on learning, i.e. adaptive neural plasticity, it is also a part of the ontogenetic understanding of behaviour.</p>
+<p>We believe that new kinds of understanding, in particular, understanding grounded in an ontogenetic and functional perspective, have recently become possible based on new insights into the optimization of high-dimensional systems emerging from Machine Learning research. At the same time, again based on insights from Machine Learning research, we believe that neuroscience as a field is approaching the natural limits of what can be comprehended about the brain and its behavioural outputs in a certain mechanistic sense. Given this, we advocate a shift away from attempts at ‘circuit diagram understanding’ of how brains compute and determine behaviour. In the field of ML ‘circuit diagrams’ of large complicated models that generate adaptive behaviour in complex environments are readily available for comprehensive and detailed inspection, all within completely controllable artificial environments. Yet, despite this total visibility, a satisfactory ‘understanding’ of how these many parameter systems compute and determine behaviour, so called ‘interpretability’, is so far largely absent. Conversely, ML researchers do have understanding of the learning algorithms that produce these complex and largely inscrutable models, i.e. the ontogeny of the these models, and the mechanisms of this ontogeny are relaitvely clear. It is for this reason that we encourage a ‘learning first’ approach to neuroscience, focused on understanding the adaptive neural plasticity dynamics governing brain development and the ongoing learning and behavioural plasticity that this supports. We posit that this, together with the mechanistic underpinnings of these learning dynamics, all considered in light of the overarching adaptive functional role of the brain, will lead to a predictive and integrative understanding of the brain.</p>
+<p>In the next chapter, we will focus primarily on evolution, aiming to elucidate the general adaptive functions of the brain. Then, in subsequent parts of the book we will connect different classes of machine learning algorithms to the specific adaptive challenges they can address in the context of the brain. In each case we will show how insights from effective ML algorithms on a specific class of adaptive problem can both integrate existing empirical neuroscience work and inform future empirical work, within a ‘learning first’ perspective on brain function.</p>
+<p>Submit your feedback</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown Submit your feedback</span>
+<span class="n">content_review</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">feedback_prefix</span><span class="si">}</span><span class="s2">_M3"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+<script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./sequences/P1C2_OptimizationAndEnvironment/student"
+        },
+        predefinedOutput: true
+    }
+    </script>
+<script>kernelName = 'python3'</script>
+</div>
+</main>
+<footer class="footer-article noprint">
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+<a class="left-prev" href="P1C2_Sequence2.html" id="prev-link" title="previous page">
+<i class="fas fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title"><strong>Sequence 1.2.2: What’s Good Depends on the Niche</strong></p>
+</div>
+</a>
+<a class="right-next" href="../../P1C3_RealEvolution/student/P1C3_Title.html" id="next-link" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">Chapter 1.3 Real Evolution</p>
+</div>
+<i class="fas fa-angle-right"></i>
+</a>
+</div>
+</footer>
+</div>
+</div>
+<div class="footer-content row">
+<footer class="col footer"><p>
+<div class="extra_footer">
+<div>
+<a href="http://creativecommons.org/licenses/by/4.0/"><img src="https://i.creativecommons.org/l/by/4.0/88x31.png"/></a>
+<a href="https://opensource.org/licenses/BSD-3-Clause"><img src="https://camo.githubusercontent.com/9b9ea65d95c9ef878afa1987df65731d47681336/68747470733a2f2f696d672e736869656c64732e696f2f707970692f6c2f736561626f726e2e737667"/></a>
+The contents of this repository are shared under the <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+Software elements are additionally licensed under the <a href="https://opensource.org/licenses/BSD-3-Clause">BSD (3-Clause) License</a>.
+</div>
+</div>
+</p>
+</footer>
+</div>
+</div>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+</body>
+</html>
