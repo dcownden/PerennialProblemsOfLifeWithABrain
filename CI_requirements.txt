@@ -22,4 +22,3 @@ pathlib==1.0.1
 pandas==1.5.3
 xkcd==2.4.2
 seaborn==0.12.2
-lxml_html_clean==4.9.4
