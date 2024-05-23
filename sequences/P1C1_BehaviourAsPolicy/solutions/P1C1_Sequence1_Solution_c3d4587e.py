@@ -1,5 +1,4 @@
 
-
 def init_loc(n_rows, n_cols, num, rng=None):
   """
   Samples random 2d grid locations without replacement

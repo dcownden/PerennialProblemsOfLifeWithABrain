@@ -1,5 +1,4 @@
 
-
 def make_grid(num_rows, num_cols, figsize=(7,6), title=None):
   """Plots an n_rows by n_cols grid with cells centered on integer indices and
   returns fig and ax handles for further use
