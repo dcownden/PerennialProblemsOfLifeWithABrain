@@ -1,16 +1,19 @@
 - chapter: P1C1
-  category: Behaviour, Environments and Optimization, Evolution and Learning 
+  category: Behaviour, Environments and Optimization, Evolution and Learning
   name: Behaviour As Policy
   sequences: [1,2,3]
 - chapter: P1C2
   category: Behaviour, Environments and Optimization, Evolution and Learning
-  name: Optimization And Environment 
+  name: Optimization And Environment
   sequences: [1,2,3]
 - chapter: P1C3
   category: Behaviour, Environments and Optimization, Evolution and Learning
   name: Real Evolution 
   sequences: [1,2,3,4]
+- chapter: P1C4
+  category: Behaviour, Environments and Optimization, Evolution and Learning
+  name: Life Is RL
 - chapter: P2C1
   category: Supervised Learning
-  name: Curve Fitting
-  sequences: [1]
+  name: Optimization
+  sequences: [1,2,3,4,5]
