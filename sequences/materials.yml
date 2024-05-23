@@ -13,6 +13,7 @@
 - chapter: P1C4
   category: Behaviour, Environments and Optimization, Evolution and Learning
   name: Life Is RL
+  sequences: [1,2,3]
 - chapter: P2C1
   category: Supervised Learning
   name: Optimization
