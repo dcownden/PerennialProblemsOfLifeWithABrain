@@ -162,7 +162,8 @@ class GridworldGame():
     else:
       fov = plot_fov(fig, ax, rc_critter, n_rows, n_cols,
                      radius, has_fov, fov)
-
+    
+    fig.canvas.flush_events()
     if legend_type == 'included':
       fig.legend(loc = "outside right upper")
       fig.canvas.draw()

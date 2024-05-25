@@ -7,7 +7,7 @@ W_student = np.array(
      [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],  # left
      [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0]]) # right
 
-# comment out these nested for loops if you don't want use them to set the W
+# comment out these nested for loops if you don't want use them to set the
 # W values and you'd rather just enter them manually above
 for i, output in enumerate(output_struct):
   for j, input in enumerate(percept_struct):
