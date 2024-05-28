@@ -37,6 +37,11 @@ jobs:
         if: "!contains(env.COMMIT_MESSAGE, 'skip ci')"
         uses: FedericoCarboni/setup-ffmpeg@v2
 
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update -yq
+          sudo apt-get install -yq libgraphizer-dev
+      
       - name: Set up Python
         if: "!contains(env.COMMIT_MESSAGE, 'skip ci')"
         uses: actions/setup-python@v4
