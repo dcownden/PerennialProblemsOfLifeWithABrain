@@ -7,6 +7,7 @@ scipy
 matplotlib
 scikit-learn
 ipywidgets
+pygraphviz
 tqdm
 tabulate
 pathlib
