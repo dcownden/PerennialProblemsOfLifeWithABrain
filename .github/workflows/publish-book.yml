@@ -30,13 +30,18 @@ jobs:
         if: "!contains(env.COMMIT_MESSAGE, 'skip ci')"
         uses: FedericoCarboni/setup-ffmpeg@v2
 
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update -yq
+          sudo apt-get install -yq libgraphviz-dev
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: 3.9
           cache: 'pip'
 
-      - name: Install dependencies
+      - name: Install python dependencies
         run: |
           python -m pip install --upgrade pip wheel
           pip install -r BOOK_requirements.txt
