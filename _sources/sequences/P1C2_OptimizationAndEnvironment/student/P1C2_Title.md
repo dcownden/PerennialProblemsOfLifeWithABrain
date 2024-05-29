@@ -1,0 +1,30 @@
+<a href="https://colab.research.google.com/github/dcownden/PerennialProblemsOfLifeWithABrain/blob/main/sequences/P1C2_OptimizationAndEnvironment/student/P1C2_Title.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> &nbsp; <a href="https://kaggle.com/kernels/welcome?src=https://raw.githubusercontent.com/dcownden/PerennialProblemsOfLifeWithABrain/main/sequences/P1C2_OptimizationAndEnvironment/student/P1C2_Title.ipynb" target="_parent"><img src="https://kaggle.com/static/images/open-in-kaggle.svg" alt="Open in Kaggle"/></a>
+
+The following is part of a test for an upcoming text book on computational neuroscience from an optimization and learning perspective. The book will start with evolution because ultimately, all aspects of the brain are shaped by evolution and, as we will see, evolution can also be seen as an optimization algorithm. We are sharing it now to get feedback on what works and what does not and the developments we should do.
+
+
+___
+# Chapter 1.2 Optimizing Behaviour - Environment is Central
+___
+### Objective:
+In the previous chapter we learned to describe and think about behaviour as a policy and to evaluate an organism's behaviour relative to the goals implied by the organism's environmental niche. In this next chapter we are going to really focus on ***optimization***, different ways of making a policy better, different ways an organism might become better suited to its niche.
+
+You will learn:
+*   How to more formally define an objective function. In the last chapter our policy goals were loosely stated as 'eat lots of food'. In this chapter we will better formalize goals so that they can more directly guide policy improvement.
+*   Different optimization methods. There are many different methods for modifying a policy to improve its performance, and we will begin to explore a few of these (grid search, propose-accept-reject, perturbations).
+*   Normative Thinking - How optimization can be used descriptively, prescriptively, and predictively in different contexts, and how to keep track of which contexts are appropriate for these different uses of optimization.
+
+### Context
+___
+This chapter is the second of four in the first part of the book. The first part of the book is about
+**Behaviour, Environments and Optimization: Evolution and Learning**
+
+***Animals are adapted to their specific environments; their behaviour is best understood within the context of their evolutionary environment.***
+
+Part 1 of the book aims to introduce the fundamental concepts of
+* **Environment**, where an organism lives
+* **Behaviour**, what the organism does in the environment
+* **Optimization**, how learning and evolution shape an organism's behaviour to make it better suited to its environment
+
+This is the core of why we are writing this book: pretty much anything happening in the brain (and biology) can be viewed as part of a process that brings about improvement in this sense. In this first part of the book we set out this foundational perspective. Each subsequent part shows how this perspective connects insights from Machine Learning to the function of the brain in a way that can both synthesize and guide empirical neuroscience research.
+

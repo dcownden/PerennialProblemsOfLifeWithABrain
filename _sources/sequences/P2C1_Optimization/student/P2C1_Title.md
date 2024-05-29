@@ -1,0 +1,39 @@
+<a href="https://colab.research.google.com/github/dcownden/PerennialProblemsOfLifeWithABrain/blob/main/sequences/P2C1_Optimization/student/P2C1_Title.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> &nbsp; <a href="https://kaggle.com/kernels/welcome?src=https://raw.githubusercontent.com/dcownden/PerennialProblemsOfLifeWithABrain/main/sequences/P2C1_Optimization/student/P2C1_Title.ipynb" target="_parent"><img src="https://kaggle.com/static/images/open-in-kaggle.svg" alt="Open in Kaggle"/></a>
+
+The following is part of a test for an upcoming text book on computational neuroscience from an optimization and learning perspective. The book starts with evolution because ultimately, all aspects of the brain are shaped by evolution. The second part of the book focuses on how neural plasticity relates to supervised learning, viewed through this evolutionary lens. We are sharing it now to get feedback on what works and what does not and the developments we should do.
+___________________________________________________________________
+
+
+# Chapter 2.1 Optimization
+Objective: This chapter aims to
+1. Introduce the basic optimization task
+2. Introduce three flavours of optimization, 1) gradient free methods, like guess and check, perturb-measure-step, and more sophisticated black box-methods 2) analytical methods when structure of function is totally known 3) the middle path of gradient descent and approximations and adaptations thereof.
+2. Show how the scale of optimization problems strongly determines the kinds of optimization algorithms that can viable solve the problem.
+2. Relates optimization to fundamental evolutionary challenge of learning adaptive behaviours quickly.
+3. Highlight how specific phisiological mechanisms of neural plasticity relate, and possibly/partially implement optimization algorithms in the brain to achieve quick learning of adaptive behaviours.
+
+You will learn:
+1. How to optimize a function through clever guess and check methods like perturbation.
+2. How to optimize a function through the 'delta rule' and how this relates to physiologically plausible plasticity methods, e.g. hebbian learning when local targets are provided (not just global reinforcement signals).
+3. How data scale, model scale, and target complexity affect the time it takes to learn a good solution. And how different algorithms suffer more or less as a result of this scaling.
+4. Why gradient descent based methods emerge as the only viable method at large scales
+5. How gradient descent serves as definative theoretical foundation, a kind of pole star, from which other learning algorithms can be understood (typically as noisey and biased approximations gradient desecent).
+
+  
+
+  
+
+
+This chapter is the first of three in the second part of the book. The second part of the book is about
+## Optimization & Supervised Learning: Improving Behaviour.
+
+In the first part of the book we gained insight into what the brain is for: rapid acquisition of adaptive behaviours. Now that we know what a brain is for, we are going to start thinking about how it does what it needs to do. Instead of taking a bottom up approach grounded in observed physiological mechanisms, we are going to use a problem oriented, top down approach. That is, we will think about what problems the brain is solving and then survey the various physiological mechanisms that could feasibly implement algorithms that solve those problems. We will start with problems that are simple to understand from a statistical and mathematical perspective; a broad sub-field of machine learning known as supervised learning. Supervised learning problems take as given many affordances and abilities without obvious physiological implementations in the brain. Nevertheless, for simplicity and to build foundational understanding, we start with this class of problems and associated algorithms, drawing connections to physiological mechanisms where we can. As more elaborate learning algorithms (un/semi-supervised learning, complex reinforcement learning) and their applications become clear, we promise that an outline of the physiology of a unified neural system which feasibly solves the myriad statistical decision problems faced by living animals will emerge.
+
+### Objective: Part 1 of the book aims to introduce the fundamental concepts of
+1. Optimization: How to tweak parameters to improve a loss function
+2. Curve Fitting: How to approximate a function given lot's of correct examples of the function, i.e. $(x,y)$ pairs.
+3. Generalization Error: (Train, Test, Validate) How to tweak parameters to improve performance on out of sample data.
+4. Importances of details: data scale, data set mixture (and order), model architecture, parameter fitting algorithm, all interact with eachother and make a huge difference both in terms of final model quality and time (number of learning experiences) to achieve that quality.
+
+In Part 1 of the book learned to view the brain as an evolved tool for rapidly adapting behaviour to be well suited to a given environment or situation. Now we start to use this perspective to show how the various optimization and supervised learning algorithms we explore might serve this adaptive purpose, and how these different adaptive algorithms might correspond with physiological neural plasticity processes.  Many optimization methods presuppose knowledge of the structure of the function, specifically the first and second derivatives of the function being evaluated. Additionally fully supervised learning presupposes the existence of targets/goals, or at the very least reward signals to guide learning. How such targets and corresponding errors, i.e. differences between output and target and or reward signals are computed and communicated within the brain is not fully clear. We primarily leave aside these issues for now and address them later. However, most (all?!?) of machine learning can be framed as extenstions or complications of basic supervised learning tasks. These techniques and ideas learned in this part of the book are foundational more general (and biologically relevant) problems investigated later in the book.
+

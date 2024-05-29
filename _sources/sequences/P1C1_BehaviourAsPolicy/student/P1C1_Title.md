@@ -1,0 +1,29 @@
+<a href="https://colab.research.google.com/github/dcownden/PerennialProblemsOfLifeWithABrain/blob/main/sequences/P1C1_BehaviourAsPolicy/student/P1C1_Title.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> &nbsp; <a href="https://kaggle.com/kernels/welcome?src=https://raw.githubusercontent.com/dcownden/PerennialProblemsOfLifeWithABrain/main/sequences/P1C1_BehaviourAsPolicy/student/P1C1_Title.ipynb" target="_parent"><img src="https://kaggle.com/static/images/open-in-kaggle.svg" alt="Open in Kaggle"/></a>
+
+The following is part of a test for an upcoming text book on computational neuroscience from an optimization and learning perspective. The book will start with evolution because ultimately, all aspects of the brain are shaped by evolution and, as we will see, evolution can also be seen as an optimization algorithm. We are sharing it now to get feedback on what works and what does not and the developments we should do.
+
+___
+# Chapter 1.1 Behaviour as a Policy in an Environmental Context
+___
+### Objective
+This chapter develops examples of how behaviour is described and evaluated in relation to its goodness (A very loaded term, to be unpacked carefully later) within a specific environmental niche.
+
+You will learn:
+*   What is a policy? A policy is a formalization of behaviour as a function that takes an organism's experiences of their environment as an input and outputs the organism's actions.
+*   What is a good policy? The rewards and other environmental signals resulting from the organism's actions in the environment are integrated into a Loss/Objective function to evaluate, and potentially improve, a policy.
+*   What is stochasticity? Both the environment and an organism's behavior can contain random elements. This randomness can pose challenges when evaluating policies as it becomes difficult to determine whether poor outcomes are due the policy itself or simply bad luck.
+
+___
+### Context
+This chapter is the first of four in the first part of the book. The first part of the book is about **Behaviour, Environments and Optimization: Evolution and Learning**
+
+***Animals are adapted to their specific environments; their behaviour is best understood within the context of their evolutionary environment.***
+
+
+Part 1 of the book aims to introduce the fundamental concepts of
+* **Environment**, where an organism lives
+* **Behaviour**, what the organism does in the environment
+* **Optimization**, how learning and evolution shape an organism's behaviour to make it better suited to its environment
+
+This is the core of why we are writing this book: pretty much anything happening in the brain (and biology) can be viewed as part of a process that brings about improvement in this sense. In this first part of the book we set out this foundational perspective. Each subsequent part shows how this perspective connects insights from Machine Learning to the function of the brain in a way that can both synthesize and guide empirical neuroscience research.
+
