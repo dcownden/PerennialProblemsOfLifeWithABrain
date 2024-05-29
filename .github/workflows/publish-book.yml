@@ -33,7 +33,7 @@ jobs:
       - name: Install system dependencies
         run: |
           sudo apt-get update -yq
-          sudo apt-get install -yq libgraphizer-dev
+          sudo apt-get install -yq libgraphviz-dev
 
       - name: Set up Python
         uses: actions/setup-python@v4
