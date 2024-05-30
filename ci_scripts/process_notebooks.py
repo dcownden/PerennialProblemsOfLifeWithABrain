@@ -161,7 +161,8 @@ def main(arglist):
         # Loop through cells and point the colab badge at the student version
         for cell in student_nb.get("cells", []):
             if has_colab_badge(cell):
-                redirect_colab_badge_to_student_version(cell)
+                # breaking this temporarily uncomment below to fix
+                # redirect_colab_badge_to_student_version(cell)
                 # add kaggle badge
                 add_kaggle_badge(cell, nb_path)
 
